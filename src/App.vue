@@ -1,18 +1,16 @@
 <template>
   <div id="app">
     <StagewiseToolbar v-if="isDevelopment" :config="stagewiseConfig" />
-    <AgricHome />
+    <router-view />
   </div>
 </template>
 
 <script>
-import AgricHome from './components/AgricHome.vue'
 import { StagewiseToolbar } from '@stagewise/toolbar-vue'
 
 export default {
   name: 'App',
   components: {
-    AgricHome,
     StagewiseToolbar
   },
   setup() {

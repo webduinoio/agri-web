@@ -2,13 +2,13 @@
   <div class="bg-white">
     <!-- Header -->
     <header class="bg-green-700/80 text-white fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
-      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">慶奇科技</h1>
+      <div class="container mx-auto pr-4 py-3 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold ml-2 md:ml-1 lg:ml-2">慶奇科技</a>
         <nav class="hidden md:flex space-x-6 items-center">
-          <a class="hover:text-green-200" href="#">產品介紹</a>
-          <a class="hover:text-green-200" href="#">場域實績</a>
-          <a class="hover:text-green-200" href="#">食農教育</a>
-          <a class="hover:text-green-200" href="#">聯絡我們</a>
+          <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
+          <a class="hover:text-green-200" href="#installations">場域實績</a>
+          <a class="hover:text-green-200" href="/education">食農教育</a>
+          <a class="hover:text-green-200" href="#contact">聯絡我們</a>
           <a class="hover:text-green-200" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
         </nav>
         <button class="md:hidden text-white">
@@ -21,66 +21,67 @@
     <main>
       <!-- Hero Section -->
       <section 
-        class="relative h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center text-white"
+        class="relative h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center text-white overflow-hidden"
         style="background-image: url('https://md.webduino.io/uploads/upload_accf01f5f5a02fc7b9bb62bdcc561651.png'); background-size: cover; background-position: center;"
       >
-        <div class="absolute inset-0 bg-black/30"></div>
-        <div class="relative z-10 text-center px-4">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">樂農智慧農業</h2>
-          <p class="text-lg md:text-xl mb-8">成就農業達人的最後一哩路</p>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" fill="white" preserveAspectRatio="none" style="width: 100%; height: 180px;">
+            <path d="M0,160 C480,320 960,320 1440,160 L1440,320 L0,320 Z"></path>
+          </svg>
+        </div>
+        <div class="relative z-10 text-center px-4 -mt-20">
+          <img src="/assets/logo.png" alt="樂農智慧農業" class="mx-auto mb-8 h-32 md:h-40 lg:h-48 w-auto"/>
           <div class="space-x-4">
-            <a class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300" href="#">登入樂農系統</a>
-            <a class="bg-white hover:bg-gray-100 text-green-700 font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300" href="#">整合商登錄</a>
+            <a class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300" href="https://agric-dashboard.webduino.io/login">登入樂農系統</a>
+            <a class="bg-white hover:bg-gray-100 text-green-600 font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300" href="#">整合商登錄</a>
           </div>
         </div>
       </section>
+      <div class="bg-white pt-0 pb-4">
+        <div class="container mx-auto px-4">
+          <img src="/assets/5icon.png" alt="五個功能圖標" class="w-full h-auto object-contain"/>
+        </div>
+      </div>
 
       <!-- Icons Section -->
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 text-center">
-            <div class="flex flex-col items-center">
-              <img alt="澆灌圖示" class="h-16 w-16 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2xRg23pgrH3byV-qjabiT5OmJASloiHMT5MKSNq2zukBQl7NeBHYAFNgBai-JhoR1AotIDWiPF1wHbSg4zbGTNU2_46ZoeKA2Y1IilGVLT0uBwCoIdtZ-mwaDGxm5TkSn0Eoyy2zQ7P2HFLGvwxpuHMIucUbm50dKKrcot-cNjY1GaqQBw3lKmTBlajYqoIHU5dWx8A2TA8GrGlLOYt_S2a6p7GSVTjawNyfK7J54BndCb8YDl48GhON6QHIyf7WqGoFp9sKEenRj"/>
-              <p class="text-gray-700">_</p>
-            </div>
-            <div class="flex flex-col items-center">
-              <img alt="施肥圖示" class="h-16 w-16 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYL4C-WhupX1YDk9ofYO8TQ4K8qO9D1TIDzS5W_kG9_MhU0Mnx6YHFVflXRu4TWPAPcOiwBBSwls2dd76b1zTGiaAhNt6h9A4ivwPDXjBBBxMTSOjCZDE0Z4JvABlFCdZ3-FfJOA1JhEBtl_2mlYtSVo_DA44l6qqsKbWVx8lOgRGIDcVtswlxPsxq6k2sR9CN7OtS41YjqKa_FSwx7MY0lDJsPZR5yJN2B2uc2SHAx09WNn-Kq_Tc2jWF9gXEIk-0q7fvksGb_hOU"/>
-              <p class="text-gray-700">_</p>
-            </div>
-            <div class="flex flex-col items-center">
-              <img alt="噴藥圖示" class="h-16 w-16 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtw1JRNbQoz7DWELA4LoncZhZ_r0Y1UaocyV3tvy8AtOUaVbW5VXYBcr4d3IsibAOFxH4tCRmEhbvL0cJo2feF5TyR3zWKpjJefMBrfVq35v8Xky2K1eaUB7GgC2vUThIAj6O3aOyR5H5YwiGpr5XMJJSYkgiBZGxMS0qyHD3uCawOXA9s25T5_4rI9P-TrgFe8bqMACPCoTEM4rXCziGUHjYzw-o_L0OZ2-vsBKfWFysxR6Dw1uafeW_J1fobuEuBD_kU5sF7WkyL"/>
-              <p class="text-gray-700">_</p>
-            </div>
-            <div class="flex flex-col items-center">
-              <img alt="排水圖示" class="h-16 w-16 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUuaIV9Tj7AH6wZyEWCMaMi4u3NQ20aeI1uUzpVv3Y1nyrPKYqzFIKH-KuCv7jNk8FKAUutKwVgmPMT41xpHuVr36uCb1cCLpFfpi4h2kMkKvepgH6Db68DPw_ayax5G3ViDTaM96q5LnQoOSBDPajj3uqezk9TPZEv8ov68mIRIVzOnKPChWpARgQ_OFu6zjELyPuH9W2wgfH_SMfhX43C6dJeSD9UAdqNHrrEExCtDOzWBN5Qc1q1fT6xi60p4nIqGu2wjACb1p6"/>
-              <p class="text-gray-700">_</p>
-            </div>
-            <div class="flex flex-col items-center">
-              <img alt="監測圖示" class="h-16 w-16 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaTbYsgrg5SEQ2GCMnOwsLJukgnqQITTmemU9_b-RooUooqcsWdzRBi1GP75cOPge9zEnfDmtnXPziBJBe4BN8TDzQSCpZBpycDMonqmuULJQR7is0BNG_Vtx_HnGSoKHYb6tIV1V5ShbKcR_BhsJpPXIt52eKVG-dnfCEF3euP5cUShHLC78LWtdnGupbq-6Azd09tfb14R6ix3upxtzXgGafjEtXOXK9WlQGOmfIm5bsJX-BhOtcep24hraaVLsn5DQycX-87WX8"/>
-              <p class="text-gray-700">_</p>
-            </div>
-            <div class="flex flex-col items-center">
-              <img alt="控制圖示" class="h-16 w-16 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu6HYDgpgq_MUUj5Llhcz2jbEcAIB8iQiHV9iOg-cX6xj691SFkWi5UyAIFgTp5sOr6ehjC7jQpmVfOz-H0SYfSNAjfCZxSUwmWOb7tE6rg5ET2QA_z5hMuhHcF4rZoF9b3-Wm7axZt1Yu3xXyprNIXcO-ShJM3NxqHXMz8uMXwkBO5f1p-MAiXR_en8PRm2Bs2a3XXTys1HB1BhbB2bY-yeQdx-X6P09jInN1clBKbFIQEVI6mcpQTZ7aNFztZRAZXjD4ZIYAnLp2"/>
-              <p class="text-gray-700">_</p>
-            </div>
-          </div>
-          
-          <div class="flex flex-col items-center mt-16 pt-8 pb-8 md:pt-12 md:pb-12">
-            <span class="material-icons text-8xl md:text-9xl text-green-700 mb-6 md:mb-8 transform rotate-12">smartphone</span>
-            <p class="text-center text-xl md:text-2xl font-semibold text-gray-800">
-              拿起手機就能控制場域，<br class="md:hidden"/>用科技延續農業的傳承與驕傲
+          <div class="flex flex-col items-center mt-4 pt-2 pb-8 md:pt-12 md:pb-12">
+            <svg class="w-32 h-32 md:w-40 md:h-40 mb-6 md:mb-8 transform rotate-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148.36 243.53">
+              <path class="fill-green-700" d="M132.3,12.31L50.06.2c-10.23-1.51-19.83,5.63-21.33,15.86L.2,209.89c-1.5,10.22,5.62,19.83,15.86,21.33l82.24,12.11c10.23,1.51,19.83-5.64,21.33-15.86l28.53-193.83c1.51-10.22-5.63-19.83-15.86-21.33ZM79.07,24.93l15.63,2.3c1.38.2,2.35,1.49,2.15,2.87-.2,1.38-1.5,2.34-2.88,2.14l-15.63-2.3c-1.38-.2-2.35-1.5-2.15-2.88s1.5-2.33,2.88-2.13ZM58.65,227.25c-4.63-.68-7.83-4.99-7.15-9.63s4.99-7.83,9.62-7.15,7.83,4.99,7.15,9.62c-.68,4.63-4.99,7.84-9.62,7.16ZM108.5,207.1l-93.15-13.71L38.19,38.22l93.15,13.71-22.84,155.17Z"/>
+            </svg>
+            <p class="text-center text-xl md:text-2xl font-semibold text-gray-800 [&>br]:mb-6">
+              拿起手機就能控制場域<br/>用科技延續農業的傳承與驕傲
             </p>
           </div>
         </div>
       </section>
 
+      <div class="w-full border-b border-gray-200"></div>
+
       <!-- 全台安裝場域 -->
-      <section class="py-16">
+      <section class="py-16" id="installations">
         <div class="container mx-auto px-4 text-center">
           <h3 class="text-3xl font-bold text-green-700 mb-4">全台安裝場域</h3>
-          <img alt="台灣安裝場域地圖" class="mx-auto max-w-full h-auto rounded-lg shadow-md" src="https://md.webduino.io/uploads/upload_cf76855ee7c1bb555b45b49e41787866.jpg"/>
+          <a href="#" class="block" @click.prevent="showPopup = true">
+            <img alt="台灣安裝場域地圖" class="mx-auto max-w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300" src="https://md.webduino.io/uploads/upload_cf76855ee7c1bb555b45b49e41787866.jpg"/>
+          </a>
         </div>
       </section>
+
+      <!-- Pop-up Window -->
+      <div v-if="showPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" @click="showPopup = false">
+        <div class="bg-white rounded-lg p-8 max-w-2xl w-full mx-4" @click.stop>
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-green-700">安裝場域</h2>
+            <button @click="showPopup = false" class="text-gray-500 hover:text-gray-700">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+          <!-- 这里可以添加更多内容 -->
+        </div>
+      </div>
 
       <!-- 農研技術核心科技 -->
       <section class="py-16 bg-green-50">
@@ -91,22 +92,22 @@
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <img alt="手機遠端遙控圖示" class="h-20 w-20 mx-auto mb-4" src="https://md.webduino.io/uploads/upload_f49d97687f3b01341757637cfc023c18.png"/>
+              <img alt="手機遠端遙控圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_01.svg"/>
               <h4 class="text-xl font-semibold mb-2">環境監測</h4>
               <p class="text-gray-600">文字文字文字文字文字文字</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <img alt="AI智慧控制圖示" class="h-20 w-20 mx-auto mb-4" src="https://md.webduino.io/uploads/upload_9296169e6039702f62fb1445aa780ebd.png"/>
+              <img alt="AI智慧控制圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_02.svg"/>
               <h4 class="text-xl font-semibold mb-2">數據分析</h4>
               <p class="text-gray-600">文字文字文字文字文字文字</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <img alt="數據分析圖示" class="h-20 w-20 mx-auto mb-4" src="https://md.webduino.io/uploads/upload_78b18fb1a6b76a322f1a0753a21e20d6.png"/>
+              <img alt="數據分析圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_03.svg"/>
               <h4 class="text-xl font-semibold mb-2">專屬模型</h4>
               <p class="text-gray-600">文字文字文字文字文字文字</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
-              <img alt="數據分析圖示" class="h-20 w-20 mx-auto mb-4" src="https://md.webduino.io/uploads/upload_a6a1488601a3e161f6f498d99b66100b.png"/>
+              <img alt="數據分析圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_04.svg"/>
               <h4 class="text-xl font-semibold mb-2">自動控制</h4>
               <p class="text-gray-600">文字文字文字文字文字文字</p>
             </div>
@@ -116,9 +117,41 @@
             <div class="md:w-1/2">
               <h4 class="text-2xl font-bold text-green-700 mb-4">新一代樂農小主機</h4>
               <p class="text-gray-700 mb-4 text-lg">可同時連接 3-10 種裝置。因應多樣態客製化環控與栽培需求，整合各式 RS485 裝置。</p>
-              <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="#">查看詳細</a>
+              <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">最新資訊</a>
             </div>
           </div>
+          
+          <!-- 產品介紹 -->
+          <div class="mt-16">
+            <h3 class="text-3xl font-bold text-green-700 text-center mb-12">主機介紹</h3>
+                          <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                  <img alt="產品一示意圖" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" src="/assets/tinyhost.png"/>
+                  <h4 class="text-xl font-semibold text-green-700 mb-2">樂農小主機｜基礎入門</h4>
+                  <p class="text-gray-600 mb-4">可串接 3 種感 / 控設備。即時確認設備的連接與類型。
+                  </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                  <img alt="產品二示意圖" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" src="/assets/tinyhost_pro.png"/>
+                  <h4 class="text-xl font-semibold text-green-700 mb-2">樂農小主機 PRO｜進階實用</h4>
+                  <p class="text-gray-600 mb-4">串接可達 10 種設備，連接影像 / 感測 / 控制，操作場域更便利！
+                  </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                  <img alt="產品三示意圖" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" src="/assets/wifi_4way.png"/>
+                  <h4 class="text-xl font-semibold text-green-700 mb-2">Wi-Fi 四路控制器｜感測首選</h4>
+                  <p class="text-gray-600 mb-4">24小時雲端監控，隨時隨地掌握農場狀況，數據分析一目了然。</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 場域控制一目瞭然 -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h3 class="text-3xl font-bold text-green-700 text-center mb-12">場域控制一目瞭然</h3>
+          <img alt="場域控制儀表板截圖" class="w-full h-auto object-contain rounded-lg shadow-xl" src="/assets/儀表板_25.png"/>
         </div>
       </section>
       
@@ -128,51 +161,51 @@
           <h3 class="text-3xl font-bold text-green-700 text-center mb-12">我們可以控制什麼</h3>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 text-center">
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">water_drop</span>
+              <img src="/assets/0_con-13.png" alt="澆灌水" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">澆灌水</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">air</span>
+              <img src="/assets/0_con-14.png" alt="風扇" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">風扇</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">wind_power</span>
+              <img src="/assets/0_con-15.png" alt="馬達" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">馬達</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">shower</span>
+              <img src="/assets/0_con-16.png" alt="水霧" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">水霧</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">roofing</span>
+              <img src="/assets/0_con-17.png" alt="捲簾" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">捲簾</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">lightbulb</span>
+              <img src="/assets/0_con-18.png" alt="燈光" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">燈光</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">thermostat</span>
+              <img src="/assets/0_con-19.png" alt="光度" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">光度</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">thermostat_auto</span>
+              <img src="/assets/0_con-20.png" alt="溫濕度" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">溫濕度</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">terrain</span>
+              <img src="/assets/0_con-21.png" alt="土壤濕度" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">土壤濕度</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">speed</span>
+              <img src="/assets/0_con-22.png" alt="流量計" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">流量計</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">water</span>
+              <img src="/assets/0_con-23.png" alt="雨量計" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">雨量計</p>
             </div>
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow">
-              <span class="material-icons text-4xl text-green-600 mb-2">sensors</span>
+              <img src="/assets/0_con-24.png" alt="各式 RS485" class="w-12 h-12 mb-2"/>
               <p class="text-gray-700">各式 RS485</p>
             </div>
           </div>
@@ -183,7 +216,7 @@
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <h3 class="text-3xl font-bold text-green-700 text-center mb-12">場域控制一目瞭然</h3>
-          <img alt="場域控制儀表板截圖" class="w-full rounded-lg shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgQ7XmT0Ed1-xfARFztsyJsrkxwmKtXJy-oWyEnw4z8-LEBIOQiNWDNj2WmimJ05WVPzJo5amYYQHyMKNAdiGH34rDYnyMfcfI9VYe1tdkmRheeUVu1ewXM4lww2syUZIFjXGi7W5TzyspuxoCdh_DkBswza4xb7NZyj1B_HXsgjA_HK3Yd8Dqyu2Vi7ih_90ClsaTzKCMUmbiHPc0hKKpZs1US5SsEIqhHqUq9uBSOm4zgufBLO1KXVymyY2MMzuDdviOInFFcQcl"/>
+          <img alt="場域控制儀表板截圖" class="w-full h-auto object-contain rounded-lg shadow-xl" src="/assets/儀表板_25.png"/>
         </div>
       </section>
 
@@ -191,52 +224,52 @@
       <section class="py-16">
         <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <img alt="手機控制場域示意圖" class="w-full rounded-lg shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1tYlLDjnCeWwXPi4WdxXQa5Eg32Ui41x_7DHBFM1xNryCXZcJfengvEncFqd0xX6uwgeP069ipRyjOj_kqsPgmWDtHo_zjVUyWEUDg4wc9PmuBuubk5X8dCn7i3W9ogQYjXDfXGAs_ddHC8vcHXp6GIoAj4prwiM3uwgqd73rD1SmTimVOEMNRnbBv7zod7Ipgza5lpFKOnoPVLP6Zxk1TH9aYtmnKivXwg9GhhSenRzsmj3DfrH40_2QGknWtOvhLC3TujVAa4Q9"/>
+            <img alt="手機控制場域示意圖" class="w-full rounded-lg shadow-lg" src="/assets/3_1.png"/>
           </div>
           <div class="text-center md:text-left">
             <h3 class="text-3xl font-bold text-green-700 mb-4">ㄧ機在手，場域我懂</h3>
+            <p class="text-lg text-gray-700 mb-6">打開手機就能立即看到場域溫濕度與設備是否啟動等狀態！讓農務管理更輕鬆。</p>
+            <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="#">了解更多</a>
+          </div>
+          <div>
+            <img alt="手機控制場域示意圖" class="w-full rounded-lg shadow-lg" src="/assets/3_2.png"/>
+          </div>
+          <div class="text-center md:text-left">
+            <h3 class="text-3xl font-bold text-green-700 mb-4">有問題只要 LINE 一下</h3>
             <p class="text-lg text-gray-700 mb-6">打開APP/網頁就能立即掌握現場溫濕度與設備運轉狀態，啟動自動化控制，讓農務管理更輕鬆。</p>
             <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="#">了解更多</a>
           </div>
           <div>
-            <img alt="手機控制場域示意圖" class="w-full rounded-lg shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1tYlLDjnCeWwXPi4WdxXQa5Eg32Ui41x_7DHBFM1xNryCXZcJfengvEncFqd0xX6uwgeP069ipRyjOj_kqsPgmWDtHo_zjVUyWEUDg4wc9PmuBuubk5X8dCn7i3W9ogQYjXDfXGAs_ddHC8vcHXp6GIoAj4prwiM3uwgqd73rD1SmTimVOEMNRnbBv7zod7Ipgza5lpFKOnoPVLP6Zxk1TH9aYtmnKivXwg9GhhSenRzsmj3DfrH40_2QGknWtOvhLC3TujVAa4Q9"/>
+            <img alt="手機控制場域示意圖" class="w-full rounded-lg shadow-lg" src="/assets/3_3.png"/>
           </div>
           <div class="text-center md:text-left">
-            <h3 class="text-3xl font-bold text-green-700 mb-4">ㄧ機在手，場域我懂</h3>
-            <p class="text-lg text-gray-700 mb-6">打開APP/網頁就能立即掌握現場溫濕度與設備運轉狀態，啟動自動化控制，讓農務管理更輕鬆。</p>
-            <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="#">了解更多</a>
-          </div>
-          <div>
-            <img alt="手機控制場域示意圖" class="w-full rounded-lg shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1tYlLDjnCeWwXPi4WdxXQa5Eg32Ui41x_7DHBFM1xNryCXZcJfengvEncFqd0xX6uwgeP069ipRyjOj_kqsPgmWDtHo_zjVUyWEUDg4wc9PmuBuubk5X8dCn7i3W9ogQYjXDfXGAs_ddHC8vcHXp6GIoAj4prwiM3uwgqd73rD1SmTimVOEMNRnbBv7zod7Ipgza5lpFKOnoPVLP6Zxk1TH9aYtmnKivXwg9GhhSenRzsmj3DfrH40_2QGknWtOvhLC3TujVAa4Q9"/>
-          </div>
-          <div class="text-center md:text-left">
-            <h3 class="text-3xl font-bold text-green-700 mb-4">ㄧ機在手，場域我懂</h3>
-            <p class="text-lg text-gray-700 mb-6">打開APP/網頁就能立即掌握現場溫濕度與設備運轉狀態，啟動自動化控制，讓農務管理更輕鬆。</p>
+            <h3 class="text-3xl font-bold text-green-700 mb-4">用積木降低客製成本</h3>
+            <p class="text-lg text-gray-700 mb-6">專家輔助</p>
             <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="#">了解更多</a>
           </div>
         </div>
       </section>
 
-      <!-- 服務特色 -->
+      <!-- 誰適合使用樂農 -->
       <section class="py-16 bg-green-50">
-        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <img alt="LINE客服支援示意圖" class="w-full h-48 object-cover rounded-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcbkvT5djV2Pv7R_BEUTFQaZ_Dm7pIRYUTDBM1rYz9Vg9SWKWtVdZndGAz_79I-EHLWqhdI5YaIw_-ZYNdUXHKdBZyTfCTDOX5UcQUYzp74ZD1vQcHy0rIeLS0MK2yqYg4NwP2mNzyKrdlCTKskr9898xMxzWEXzLiwBv75BLbL0vxOhKcp2wIPyMrF7T8u3ipaIlCK83FxWHjIAsdbGumuiwt90YW4sRsnGXvEo3_r4Qsald9k9jOZ8BapDRoJc9Ti3rPJkLxJiMG"/>
-            <h4 class="text-xl font-semibold text-green-700 mb-2">有問題只愛LINE一下</h4>
-            <p class="text-gray-600 mb-4">農友可透過LINE即時反應問題，快速排除障礙，讓系統運作更順暢！</p>
-            <a class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg text-sm" href="#">
-              <span class="material-icons inline-block align-middle mr-1 text-lg">chat</span> LINE客服
-            </a>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <img alt="澆水完成通知示意圖" class="w-full h-48 object-cover rounded-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO0iV8s_hjaIKm3L3LRGjK2BbboKKHUPduwPJ7Gzu_07gtPlI0NT7ywnWPhr0CfhRbJqIilUfpYWCOy0kR6U8TC7eAXqxGy1nawjltPenPA6jHMh72VSYAZeVKpf20VjfdebwKyeqAaV1oW04_pmlWRXsQBPiQ6MUBd6zbDe9QH2ePo85m9YRoAfehKWZJiaTKmbp_KuKHplTVqYWQSXbEpvvms7dosQJ9JVO_tElqat4QcAeFlE30faZsQPnppKafgE8hESfSaL-A"/>
-            <h4 class="text-xl font-semibold text-green-700 mb-2">澆灌警報LINE立即報</h4>
-            <p class="text-gray-600 mb-4">自動澆水/施肥/噴藥，完成工作LINE自動通知，掌握設備最新動態。</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <img alt="成本降低示意圖" class="w-full h-48 object-cover rounded-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPAsYsnCQpktIrSpOgXbR2DT8gfRHlM_PQLcRPyQdJyqQJ1pjieGoJRtRKgZP7IbEXUjjT5MXZ0wX9CM-dOcs3PcMVd-Z1DbMZ1j_LHCQNgPGr-ICX0JeX1HipT2TGelq2exiINUP1zzbU56t1kzvOqHiLnS5ixiaI8i6RsPdvOXkMS889iV1jqPfeCaR06OSYGNS5POkmuNea4vv5FR0LF70ijMB4iWMgjDUUgShRMWkr4DPy0GPpKYwjKrhbvr6SiK44ZZ4im6Oq"/>
-            <h4 class="text-xl font-semibold text-green-700 mb-2">想要更多省點成本更低</h4>
-            <p class="text-gray-600 mb-4">我們提供百位農友以上安裝實績，讓您節省摸索成本，完成自己的專屬場域模型。</p>
+        <div class="container mx-auto px-4">
+          <h3 class="text-3xl font-bold text-green-700 text-center mb-12">誰適合使用樂農</h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <img alt="LINE客服支援示意圖" class="w-full h-48 object-cover rounded-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcbkvT5djV2Pv7R_BEUTFQaZ_Dm7pIRYUTDBM1rYz9Vg9SWKWtVdZndGAz_79I-EHLWqhdI5YaIw_-ZYNdUXHKdBZyTfCTDOX5UcQUYzp74ZD1vQcHy0rIeLS0MK2yqYg4NwP2mNzyKrdlCTKskr9898xMxzWEXzLiwBv75BLbL0vxOhKcp2wIPyMrF7T8u3ipaIlCK83FxWHjIAsdbGumuiwt90YW4sRsnGXvEo3_r4Qsald9k9jOZ8BapDRoJc9Ti3rPJkLxJiMG"/>
+              <h4 class="text-xl font-semibold text-green-700 mb-2">農戶/相關單位</h4>
+              <p class="text-gray-600 mb-4">樂農智慧農業提供完整的環控解決方案，讓您輕鬆管理農場。</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <img alt="澆水完成通知示意圖" class="w-full h-48 object-cover rounded-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO0iV8s_hjaIKm3L3LRGjK2BbboKKHUPduwPJ7Gzu_07gtPlI0NT7ywnWPhr0CfhRbJqIilUfpYWCOy0kR6U8TC7eAXqxGy1nawjltPenPA6jHMh72VSYAZeVKpf20VjfdebwKyeqAaV1oW04_pmlWRXsQBPiQ6MUBd6zbDe9QH2ePo85m9YRoAfehKWZJiaTKmbp_KuKHplTVqYWQSXbEpvvms7dosQJ9JVO_tElqat4QcAeFlE30faZsQPnppKafgE8hESfSaL-A"/>
+              <h4 class="text-xl font-semibold text-green-700 mb-2">校園/相關單位</h4>
+              <p class="text-gray-600 mb-4">慶奇深耕智慧農業與科技教育多年，</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <img alt="成本降低示意圖" class="w-full h-48 object-cover rounded-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPAsYsnCQpktIrSpOgXbR2DT8gfRHlM_PQLcRPyQdJyqQJ1pjieGoJRtRKgZP7IbEXUjjT5MXZ0wX9CM-dOcs3PcMVd-Z1DbMZ1j_LHCQNgPGr-ICX0JeX1HipT2TGelq2exiINUP1zzbU56t1kzvOqHiLnS5ixiaI8i6RsPdvOXkMS889iV1jqPfeCaR06OSYGNS5POkmuNea4vv5FR0LF70ijMB4iWMgjDUUgShRMWkr4DPy0GPpKYwjKrhbvr6SiK44ZZ4im6Oq"/>
+              <h4 class="text-xl font-semibold text-green-700 mb-2">SI 整合商</h4>
+              <p class="text-gray-600 mb-4">我們專注技術的開發，與您攜手配合，讓農戶更輕鬆踏入智慧農業。</p>
+            </div>
           </div>
         </div>
       </section>
@@ -247,7 +280,7 @@
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h5 class="text-lg font-semibold text-white mb-3">聯絡我們</h5>
+            <h5 class="text-lg font-semibold text-white mb-3" id="contact">聯絡我們</h5>
             <p class="mb-1">慶奇科技股份有限公司</p>
             <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">place</span> 高雄市前鎮區復興四路 2 號 4 樓 A10</p>
             <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">phone</span> 07-3388-511</p>
@@ -257,9 +290,9 @@
             <h5 class="text-lg font-semibold text-white mb-3">快速連結</h5>
             <ul class="space-y-1">
               <li><a class="hover:text-green-400" href="#">產品介紹</a></li>
-              <li><a class="hover:text-green-400" href="#">場域實績</a></li>
+              <li><a class="hover:text-green-400" href="#installations">場域實績</a></li>
               <li><a class="hover:text-green-400" href="#">食農教育</a></li>
-              <li><a class="hover:text-green-400" href="#">聯絡我們</a></li>
+              
             </ul>
           </div>
           <div>
@@ -281,10 +314,17 @@
 
 <script>
 export default {
-  name: 'AgricHome'
+  name: 'AgricHome',
+  data() {
+    return {
+      showPopup: false
+    }
+  }
 }
 </script>
 
 <style scoped>
-/* 如果需要額外的 Vue 特定樣式可以在這裡添加 */
+html {
+  scroll-behavior: smooth;
+}
 </style> 
