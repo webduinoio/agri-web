@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/agri-web/',
+  base: './',
   server: {
     port: 3000,
     open: true
