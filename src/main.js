@@ -4,7 +4,7 @@ import App from './App.vue'
 import AgricHome from './components/AgricHome.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', component: AgricHome }
   ]

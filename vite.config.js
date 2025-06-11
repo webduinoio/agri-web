@@ -11,8 +11,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: (id) => {
-        // 在生產環境建置時排除stagewise
-        if (process.env.NODE_ENV === 'production' && id.includes('@stagewise')) {
+        // 只在 build 階段排除 stagewise，preview 階段保留
+        if (process.env.NODE_ENV === 'production' && 
+            process.env.npm_lifecycle_event === 'build' && 
+            id.includes('@stagewise')) {
           return true
         }
         return false
@@ -22,5 +24,9 @@ export default defineConfig({
   define: {
     // 確保process.env.NODE_ENV在瀏覽器中可用
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+  },
+  // 為 preview 模式設定優化
+  preview: {
+    port: 4173
   }
 }) 
