@@ -3,7 +3,7 @@
     <!-- Header -->
     <header class="bg-green-700/80 text-white fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
       <div class="container mx-auto pr-4 py-3 flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold ml-2 md:ml-1 lg:ml-2">慶奇科技</a>
+        <a href="/home" class="text-2xl font-bold ml-2 md:ml-1 lg:ml-2">慶奇科技</a>
         <nav class="hidden md:flex space-x-6 items-center">
           <a class="hover:text-green-200" href="/">首頁</a>
           <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>

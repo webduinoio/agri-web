@@ -3,7 +3,7 @@
     <!-- Header -->
     <header class="bg-green-700/80 text-white fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
       <div class="container mx-auto pr-4 py-3 flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold ml-2 md:ml-1 lg:ml-2">慶奇科技</a>
+        <a href="/home" class="text-2xl font-bold ml-2 md:ml-1 lg:ml-2">慶奇科技</a>
         <nav class="hidden md:flex space-x-6 items-center">
           <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
           <a class="hover:text-green-200" href="#installations">場域實績</a>
@@ -34,7 +34,7 @@
           <img src="/assets/logo.png" alt="樂農智慧農業" class="mx-auto mb-8 h-32 md:h-40 lg:h-48 w-auto"/>
           <div class="space-x-4">
             <a class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300" href="https://agric-dashboard.webduino.io/login">登入樂農系統</a>
-            <a class="bg-white hover:bg-gray-100 text-green-600 font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300" href="#">整合商登錄</a>
+            <a class="bg-white hover:bg-gray-100 text-green-600 font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300" href="/integrator-register">整合商登錄</a>
           </div>
         </div>
       </section>
@@ -51,9 +51,10 @@
             <svg class="w-32 h-32 md:w-40 md:h-40 mb-6 md:mb-8 transform rotate-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148.36 243.53">
               <path class="fill-green-700" d="M132.3,12.31L50.06.2c-10.23-1.51-19.83,5.63-21.33,15.86L.2,209.89c-1.5,10.22,5.62,19.83,15.86,21.33l82.24,12.11c10.23,1.51,19.83-5.64,21.33-15.86l28.53-193.83c1.51-10.22-5.63-19.83-15.86-21.33ZM79.07,24.93l15.63,2.3c1.38.2,2.35,1.49,2.15,2.87-.2,1.38-1.5,2.34-2.88,2.14l-15.63-2.3c-1.38-.2-2.35-1.5-2.15-2.88s1.5-2.33,2.88-2.13ZM58.65,227.25c-4.63-.68-7.83-4.99-7.15-9.63s4.99-7.83,9.62-7.15,7.83,4.99,7.15,9.62c-.68,4.63-4.99,7.84-9.62,7.16ZM108.5,207.1l-93.15-13.71L38.19,38.22l93.15,13.71-22.84,155.17Z"/>
             </svg>
-            <p class="text-center text-xl md:text-2xl font-semibold text-gray-800 [&>br]:mb-6">
-              拿起手機就能控制場域<br/>用科技延續農業的傳承與驕傲
-            </p>
+            <div class="text-center text-2xl md:text-3xl font-semibold text-gray-800">
+              <p class="mb-4">拿起手機就能控制場域</p>
+              <p>用科技延續農業的傳承與驕傲</p>
+            </div>
           </div>
         </div>
       </section>
@@ -88,35 +89,35 @@
         <div class="container mx-auto px-4">
           <h3 class="text-3xl font-bold text-green-700 text-center mb-12">農研技術核心科技</h3>
           <div class="text-center mb-12">
-            <p class="text-lg text-gray-700 max-w-3xl mx-auto">樂農智慧農業是以<span class="text-green-600 font-semibold">農民需求</span>、在地農民豐富的栽種經驗，以及田間感測器建立場域專屬模型，透過雲端平台進行自動化控制，<span class="text-green-600 font-semibold">讓農業變得更輕鬆</span>。</p>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto">樂農智慧農業是以<span class="text-green-600 font-semibold">農民需求</span>、在地農民豐富的栽種經驗，以及田間感測器建立場域專屬模型，透過雲端平台進行自動化控制，<span class="text-green-600 font-semibold">讓農業變得更輕鬆</span>。</p>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <img alt="手機遠端遙控圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_01.svg"/>
               <h4 class="text-xl font-semibold mb-2">環境監測</h4>
-              <p class="text-gray-600">文字文字文字文字文字文字</p>
+              <p class="text-gray-600 text-lg">文字文字文字文字文字文字</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <img alt="AI智慧控制圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_02.svg"/>
               <h4 class="text-xl font-semibold mb-2">數據分析</h4>
-              <p class="text-gray-600">文字文字文字文字文字文字</p>
+              <p class="text-gray-600 text-lg">文字文字文字文字文字文字</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <img alt="數據分析圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_03.svg"/>
               <h4 class="text-xl font-semibold mb-2">專屬模型</h4>
-              <p class="text-gray-600">文字文字文字文字文字文字</p>
+              <p class="text-gray-600 text-lg">文字文字文字文字文字文字</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <img alt="數據分析圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_04.svg"/>
               <h4 class="text-xl font-semibold mb-2">自動控制</h4>
-              <p class="text-gray-600">文字文字文字文字文字文字</p>
+              <p class="text-gray-600 text-lg">文字文字文字文字文字文字</p>
             </div>
           </div>
           <div class="mt-16 bg-white p-8 rounded-lg shadow-xl flex flex-col md:flex-row items-center">
             <img alt="感測器場域監測圖" class="w-full md:w-1/2 rounded-lg mb-6 md:mb-0 md:mr-8" src="https://md.webduino.io/uploads/upload_d9104de43bc3ff1f4e3e238c4959a7ae.png"/>
             <div class="md:w-1/2">
               <h4 class="text-2xl font-bold text-green-700 mb-4">新一代樂農小主機</h4>
-              <p class="text-gray-700 mb-4 text-lg">可同時連接 3-10 種裝置。因應多樣態客製化環控與栽培需求，整合各式 RS485 裝置。</p>
+              <p class="text-gray-700 mb-4 text-xl">可同時連接 3-10 種裝置。因應多樣態客製化環控與栽培需求，整合各式 RS485 裝置。</p>
               <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">最新資訊</a>
             </div>
           </div>
@@ -124,39 +125,31 @@
           <!-- 產品介紹 -->
           <div class="mt-16">
             <h3 class="text-3xl font-bold text-green-700 text-center mb-12">主機介紹</h3>
-                          <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                  <img alt="產品一示意圖" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" src="/assets/tinyhost.png"/>
-                  <h4 class="text-xl font-semibold text-green-700 mb-2">樂農小主機｜基礎入門</h4>
-                  <p class="text-gray-600 mb-4">可串接 3 種感 / 控設備。即時確認設備的連接與類型。
-                  </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                  <img alt="產品二示意圖" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" src="/assets/tinyhost_pro.png"/>
-                  <h4 class="text-xl font-semibold text-green-700 mb-2">樂農小主機 PRO｜進階實用</h4>
-                  <p class="text-gray-600 mb-4">串接可達 10 種設備，連接影像 / 感測 / 控制，操作場域更便利！
-                  </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                  <img alt="產品三示意圖" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" src="/assets/wifi_4way.png"/>
-                  <h4 class="text-xl font-semibold text-green-700 mb-2">Wi-Fi 四路控制器｜感測首選</h4>
-                  <p class="text-gray-600 mb-4">24小時雲端監控，隨時隨地掌握農場狀況，數據分析一目了然。</p>
-                </div>
+            <div class="grid md:grid-cols-3 gap-8">
+              <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <img alt="產品一示意圖" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" src="/assets/tinyhost.png"/>
+                <h4 class="text-xl font-semibold text-green-700 mb-2">樂農小主機｜基礎入門</h4>
+                <p class="text-gray-600 mb-4 text-lg">可串接 3 種感 / 控設備。即時確認設備的連接與類型。
+                </p>
               </div>
+              <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <img alt="產品二示意圖" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" src="/assets/tinyhost_pro.png"/>
+                <h4 class="text-xl font-semibold text-green-700 mb-2">樂農小主機 PRO｜進階實用</h4>
+                <p class="text-gray-600 mb-4 text-lg">串接可達 10 種設備，連接影像 / 感測 / 控制，操作場域更便利！
+                </p>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <img alt="產品三示意圖" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" src="/assets/wifi_4way.png"/>
+                <h4 class="text-xl font-semibold text-green-700 mb-2">Wi-Fi 四路控制器｜感測首選</h4>
+                <p class="text-gray-600 mb-4 text-lg">24小時雲端監控，隨時隨地掌握農場狀況，數據分析一目了然。</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- 場域控制一目瞭然 -->
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <h3 class="text-3xl font-bold text-green-700 text-center mb-12">場域控制一目瞭然</h3>
-          <img alt="場域控制儀表板截圖" class="w-full h-auto object-contain rounded-lg shadow-xl" src="/assets/儀表板_25.png"/>
-        </div>
-      </section>
-      
-      <!-- 我們可以控制什麼 -->
-      <section class="py-16">
+       <!-- 我們可以控制什麼 -->
+       <section class="py-16">
         <div class="container mx-auto px-4">
           <h3 class="text-3xl font-bold text-green-700 text-center mb-12">我們可以控制什麼</h3>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 text-center">
@@ -212,6 +205,14 @@
         </div>
       </section>
 
+      <!-- 串接氣象站 -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h3 class="text-3xl font-bold text-green-700 text-center mb-12">串接氣象站</h3>
+          <img alt="場域控制儀表板截圖" class="w-full h-auto object-contain rounded-lg shadow-xl" src="/assets/氣象站.png"/>
+        </div>
+      </section>
+
       <!-- 場域控制一目瞭然 -->
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -219,6 +220,8 @@
           <img alt="場域控制儀表板截圖" class="w-full h-auto object-contain rounded-lg shadow-xl" src="/assets/儀表板_25.png"/>
         </div>
       </section>
+
+     
 
       <!-- 手機控制 -->
       <section class="py-16">
@@ -228,7 +231,7 @@
           </div>
           <div class="text-center md:text-left">
             <h3 class="text-3xl font-bold text-green-700 mb-4">ㄧ機在手，場域我懂</h3>
-            <p class="text-lg text-gray-700 mb-6">打開手機就能立即看到場域溫濕度與設備是否啟動等狀態！讓農務管理更輕鬆。</p>
+            <p class="text-xl text-gray-700 mb-6">打開手機就能立即看到場域溫濕度與設備是否啟動等狀態！讓農務管理更輕鬆。</p>
             <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="#">了解更多</a>
           </div>
           <div>
@@ -236,7 +239,7 @@
           </div>
           <div class="text-center md:text-left">
             <h3 class="text-3xl font-bold text-green-700 mb-4">有問題只要 LINE 一下</h3>
-            <p class="text-lg text-gray-700 mb-6">打開APP/網頁就能立即掌握現場溫濕度與設備運轉狀態，啟動自動化控制，讓農務管理更輕鬆。</p>
+            <p class="text-xl text-gray-700 mb-6">打開APP/網頁就能立即掌握現場溫濕度與設備運轉狀態，啟動自動化控制，讓農務管理更輕鬆。</p>
             <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="#">了解更多</a>
           </div>
           <div>
@@ -244,7 +247,7 @@
           </div>
           <div class="text-center md:text-left">
             <h3 class="text-3xl font-bold text-green-700 mb-4">用積木降低客製成本</h3>
-            <p class="text-lg text-gray-700 mb-6">專家輔助</p>
+            <p class="text-xl text-gray-700 mb-6">專家輔助</p>
             <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300" href="#">了解更多</a>
           </div>
         </div>
@@ -258,17 +261,17 @@
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
               <img alt="LINE客服支援示意圖" class="w-full h-48 object-cover rounded-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcbkvT5djV2Pv7R_BEUTFQaZ_Dm7pIRYUTDBM1rYz9Vg9SWKWtVdZndGAz_79I-EHLWqhdI5YaIw_-ZYNdUXHKdBZyTfCTDOX5UcQUYzp74ZD1vQcHy0rIeLS0MK2yqYg4NwP2mNzyKrdlCTKskr9898xMxzWEXzLiwBv75BLbL0vxOhKcp2wIPyMrF7T8u3ipaIlCK83FxWHjIAsdbGumuiwt90YW4sRsnGXvEo3_r4Qsald9k9jOZ8BapDRoJc9Ti3rPJkLxJiMG"/>
               <h4 class="text-xl font-semibold text-green-700 mb-2">農戶/相關單位</h4>
-              <p class="text-gray-600 mb-4">樂農智慧農業提供完整的環控解決方案，讓您輕鬆管理農場。</p>
+              <p class="text-gray-600 mb-4 text-lg">樂農智慧農業提供完整的環控解決方案，讓您輕鬆管理農場。</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
               <img alt="澆水完成通知示意圖" class="w-full h-48 object-cover rounded-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO0iV8s_hjaIKm3L3LRGjK2BbboKKHUPduwPJ7Gzu_07gtPlI0NT7ywnWPhr0CfhRbJqIilUfpYWCOy0kR6U8TC7eAXqxGy1nawjltPenPA6jHMh72VSYAZeVKpf20VjfdebwKyeqAaV1oW04_pmlWRXsQBPiQ6MUBd6zbDe9QH2ePo85m9YRoAfehKWZJiaTKmbp_KuKHplTVqYWQSXbEpvvms7dosQJ9JVO_tElqat4QcAeFlE30faZsQPnppKafgE8hESfSaL-A"/>
               <h4 class="text-xl font-semibold text-green-700 mb-2">校園/相關單位</h4>
-              <p class="text-gray-600 mb-4">慶奇深耕智慧農業與科技教育多年，</p>
+              <p class="text-gray-600 mb-4 text-lg">慶奇深耕智慧農業與科技教育多年，</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
               <img alt="成本降低示意圖" class="w-full h-48 object-cover rounded-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPAsYsnCQpktIrSpOgXbR2DT8gfRHlM_PQLcRPyQdJyqQJ1pjieGoJRtRKgZP7IbEXUjjT5MXZ0wX9CM-dOcs3PcMVd-Z1DbMZ1j_LHCQNgPGr-ICX0JeX1HipT2TGelq2exiINUP1zzbU56t1kzvOqHiLnS5ixiaI8i6RsPdvOXkMS889iV1jqPfeCaR06OSYGNS5POkmuNea4vv5FR0LF70ijMB4iWMgjDUUgShRMWkr4DPy0GPpKYwjKrhbvr6SiK44ZZ4im6Oq"/>
               <h4 class="text-xl font-semibold text-green-700 mb-2">SI 整合商</h4>
-              <p class="text-gray-600 mb-4">我們專注技術的開發，與您攜手配合，讓農戶更輕鬆踏入智慧農業。</p>
+              <p class="text-gray-600 mb-4 text-lg">我們專注技術的開發，與您攜手配合，讓農戶更輕鬆踏入智慧農業。</p>
             </div>
           </div>
         </div>
