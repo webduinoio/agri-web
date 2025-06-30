@@ -89,6 +89,30 @@
         <h2 class="section-title bg-teal-600">設備規格</h2>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           <div class="circular-spec-item">
+            <div class="circle-container bg-blue-200">
+              <img alt="樂農小主機" src="/assets/設備/小主機.png" @click="openTinyHostModal" class="cursor-pointer"/>
+            </div>
+            <p class="font-medium text-gray-700 text-lg">樂農小主機</p>
+          </div>
+          <div class="circular-spec-item">
+            <div class="circle-container bg-green-200">
+              <img alt="樂農小主機 PRO" src="/assets/設備/小主機 pro.png" @click="openTinyHostProModal" class="cursor-pointer"/>
+            </div>
+            <p class="font-medium text-gray-700 text-lg">樂農小主機 PRO</p>
+          </div>
+          <div class="circular-spec-item">
+            <div class="circle-container bg-purple-200">
+              <img alt="Wi-Fi 四路控制器" src="/assets/設備/四路控制器.png"/>
+            </div>
+            <p class="font-medium text-gray-700 text-lg">Wi-Fi 四路控制器</p>
+          </div>
+          <div class="circular-spec-item">
+            <div class="circle-container bg-orange-200">
+                              <img alt="無線轉接器" src="/assets/設備/無線轉接器.png" @click="openWirelessAdapterModal" class="cursor-pointer"/>
+            </div>
+            <p class="font-medium text-gray-700 text-lg">無線轉接器</p>
+          </div>
+          <div class="circular-spec-item">
             <div class="circle-container bg-blue-100">
               <img alt="四路繼電器" src="/assets/設備/四路繼電器.png" @click="openSpecModal" class="cursor-pointer"/>
             </div>
@@ -108,13 +132,13 @@
           </div>
           <div class="circular-spec-item">
             <div class="circle-container bg-indigo-100">
-              <img alt="光度百葉箱" src="/assets/設備/光度百葉箱.png"/>
+              <img alt="光度百葉箱" src="/assets/設備/光度百葉箱.png" @click="openWeatherModal" class="cursor-pointer"/>
             </div>
             <p class="font-medium text-gray-700 text-lg">光度百葉箱</p>
           </div>
           <div class="circular-spec-item">
             <div class="circle-container bg-red-100">
-              <img alt="流量計" src="/assets/設備/流量計.png"/>
+              <img alt="流量計" src="/assets/設備/流量計.png" @click="openFlowModal" class="cursor-pointer"/>
             </div>
             <p class="font-medium text-gray-700 text-lg">流量計</p>
           </div>
@@ -126,40 +150,35 @@
           </div>
           <div class="circular-spec-item">
             <div class="circle-container bg-gray-200">
-              <img alt="空氣溫濕度" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApHBAYa4G_6zqcHKKORjTmmzSNRgw9hpIq9S9EVrWs2HegmBclxlKlxyqsxYjfucnvsw-saWBYgGqEEAdCAElTCFHCXmPq85cpe1cOTo51MFc1C6vrF5cKlh1T9y0d9haa1MUmCMfh_E_9rqlsJ2DhMHhUIjEfqRpAiB-LWIX8NnRf1qa0GGDaSFfuf6ne3N1yIIG4rsQSWsBwOIAc7IRs3NUnziXAs4EoWTDhWBqqIprKM8xaQnuH6hsiVVPKBoK4Uo2vfUh7g_kq"/>
+              <img alt="紅外線測溫儀" src="/assets/設備/紅外線測溫儀.png" @click="openInfraredModal" class="cursor-pointer"/>
             </div>
-            <p class="font-medium text-gray-700 text-lg">007</p>
+            <p class="font-medium text-gray-700 text-lg">紅外線測溫儀</p>
           </div>
           <div class="circular-spec-item">
             <div class="circle-container bg-cyan-100">
-              <img alt="光學雨量計" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPHslLWkgd1FqkI6KqmITH2Yc4IthA0Ul33kZbAztUX_xZBOhgkmC1FT7aR2g0HIZAzEGKT8w2jl8XZaTcfCSLKtTKW0xrwU7v90HWGs0dTVGSp_LUMEVL-qPc8-SSeaptkzb_4o3fz0voAWOfdO3HWsF8_xdV_KUMXEoC-nWjEzn4NBjNtpHCJ5QgaDSB9TKGvZh-SEt-rh3gYXcEvPvDna9o0gK2YxnLUwPjEpXnYbnN1szDv5H2W6QJ6E89-cogFcqgBTNBrty-"/>
+              <img alt="風速計" src="/assets/設備/風速計.png" @click="openWindModal" class="cursor-pointer"/>
             </div>
-            <p class="font-medium text-gray-700 text-lg">008</p>
+            <p class="font-medium text-gray-700 text-lg">風速計</p>
           </div>
           <div class="circular-spec-item">
             <div class="circle-container bg-lime-100">
-              <img alt="環境傳感器" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-nEsQ71pY_jVHypuGSz8x4G1X019TIRMJuO1SxpPQ7EKelnOHzAPf05LFKB7LQseT_rN-qAbriZ3ijKZqAp-GnFJRYjnrJCtp_xZPWXiW8XEba2-Xs9qMz2ksyaQMPP14og71DfKAdKaOUrk5m89UciHQrEhQpwIkgas0UFCZlV2Ey_pJIg5yDw_JDRF1Qk2Lcc8TXk1bSIODGKOdPUjRlbdv_KUl-1U-O3OuVeDC1fcah9n5lFOlkzz4t6lqUWBzTZvswO9k6hxb"/>
+              <img alt="水質酸鹼度 + 溫度" src="/assets/設備/水質酸鹼度 + 溫度.png" @click="openWaterQualityModal" class="cursor-pointer"/>
             </div>
-            <p class="font-medium text-gray-700 text-lg">009</p>
+            <p class="font-medium text-gray-700 text-lg">水質酸鹼度 + 溫度</p>
           </div>
           <div class="circular-spec-item">
             <div class="circle-container bg-pink-100">
-              <img alt="灌溉控制器" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ONoFXrcKRlXIO8qccyR7MTYA1qzaIVXWkQ749DjSJegNWQO7ncf6tKkQRCgQFz9AUDhUSIuFgJwF6l1BAaaAi4JixF5zzSrOb3xlECDmBhBrEN-HBY7BRiMkk81i2j2b_vUE-fBG5hn-bbj5tg82LlXKeyrmcanU5EQJQ3E1Bw6VtiJX6hZLprjEOBR3D-7WJSvs3ujVe4Tk_FGqNiZei70DDZESyrOrY_AWinN_mz35z9Jp0Pvprjr_1f03ttvNy5fweOCJjDej"/>
+              <img alt="水濁度偵測" src="/assets/設備/水濁度偵測1.png" @click="openTurbidity1Modal" class="cursor-pointer"/>
             </div>
-            <p class="font-medium text-gray-700 text-lg">010</p>
+            <p class="font-medium text-gray-700 text-lg">水濁度偵測</p>
           </div>
           <div class="circular-spec-item">
             <div class="circle-container bg-orange-100">
-              <img alt="四路控制器" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABD5mep_wEHY16ARRZgcsB-fAH3gCFL1Ih9NFPKMi9tDVze1UNm4n5isUIbcOoMh-SKR3RvJEvr84g-xLQBqiwdviFzdmN2m8jABxv6mVaZ7EfN2YO3oVxXo2XYDQ44C6U6SPOR-Z6x4Uojdz5JWlvgQTcjvDqxp2etWlRHYDIcQnspRGzhrP-D8i_8uzJ-NaGUhZJvM7K8I9Q2JtRP-LNfW62PKC9t7c5Y8it-DWih1OHzCWOhoxM4RBu2nZlqWbEoYDWAHH7lpQi"/>
+              <img alt="水濁度偵測" src="/assets/設備/水濁度偵測2.png" @click="openTurbidity2Modal" class="cursor-pointer"/>
             </div>
-            <p class="font-medium text-gray-700 text-lg">011</p>
+            <p class="font-medium text-gray-700 text-lg">水濁度偵測</p>
           </div>
-          <div class="circular-spec-item">
-            <div class="circle-container bg-teal-100">
-              <img alt="溫度感測器" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApHBAYa4G_6zqcHKKORjTmmzSNRgw9hpIq9S9EVrWs2HegmBclxlKlxyqsxYjfucnvsw-saWBYgGqEEAdCAElTCFHCXmPq85cpe1cOTo51MFc1C6vrF5cKlh1T9y0d9haa1MUmCMfh_E_9rqlsJ2DhMHhUIjEfqRpAiB-LWIX8NnRf1qa0GGDaSFfuf6ne3N1yIIG4rsQSWsBwOIAc7IRs3NUnziXAs4EoWTDhWBqqIprKM8xaQnuH6hsiVVPKBoK4Uo2vfUh7g_kq"/>
-            </div>
-            <p class="font-medium text-gray-700 text-lg">012</p>
-          </div>
+          
         </div>
       </section>
 
@@ -431,6 +450,771 @@
         </div>
       </div>
     </div>
+
+    <!-- Weather Modal -->
+    <div v-if="showWeatherModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeWeatherModal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeWeatherModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">百葉箱溫溼光度三合一</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/百葉箱規格.jpg" alt="百葉箱規格" class="mx-auto"/>
+          </div>
+          
+          <div class="space-y-8">
+            <!-- 光照度規格 -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">光照度</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr class="bg-gray-100">
+                      <th class="border border-gray-300 px-4 py-3 text-left font-semibold">項目</th>
+                      <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">量程</td>
+                      <td class="border border-gray-300 px-4 py-3">0~20萬 LUX</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">精度</td>
+                      <td class="border border-gray-300 px-4 py-3">±7%（25℃）</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">工作溫度</td>
+                      <td class="border border-gray-300 px-4 py-3">-20~60℃</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">工作濕度</td>
+                      <td class="border border-gray-300 px-4 py-3">0%~80% RH</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">供電</td>
+                      <td class="border border-gray-300 px-4 py-3">DC 10~30V</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">輸出信號</td>
+                      <td class="border border-gray-300 px-4 py-3">RS485（Modbus 協議）</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">回應速度</td>
+                      <td class="border border-gray-300 px-4 py-3">< 0.1 秒</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">長期穩定性</td>
+                      <td class="border border-gray-300 px-4 py-3">≤ 5% / 年</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 溫濕度規格 -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">溫濕度</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr class="bg-gray-100">
+                      <th class="border border-gray-300 px-4 py-3 text-left font-semibold">項目</th>
+                      <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">溫度量程</td>
+                      <td class="border border-gray-300 px-4 py-3">-40℃ ~ 120℃</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">濕度量程</td>
+                      <td class="border border-gray-300 px-4 py-3">0% RH ~ 99% RH</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">溫度精度</td>
+                      <td class="border border-gray-300 px-4 py-3">±0.5℃（25℃）</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">濕度精度</td>
+                      <td class="border border-gray-300 px-4 py-3">±3% RH（60%，25℃）</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">供電</td>
+                      <td class="border border-gray-300 px-4 py-3">DC 10~30V</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">輸出信號</td>
+                      <td class="border border-gray-300 px-4 py-3">RS485（Modbus 協議）</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">回應時間</td>
+                      <td class="border border-gray-300 px-4 py-3">< 15 秒（1m/s 風速）</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">長期穩定性</td>
+                      <td class="border border-gray-300 px-4 py-3">溫度 ≤ 0.1℃，濕度 ≤ 1% RH</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flow Modal -->
+    <div v-if="showFlowModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeFlowModal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeFlowModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">水流量計（6分） 規格表</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/流量計規格.jpg" alt="流量計規格" class="mx-auto"/>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格項目</th>
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">詳細資訊</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">型號</td>
+                  <td class="border border-gray-300 px-4 py-3">FS300A</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">接口尺寸</td>
+                  <td class="border border-gray-300 px-4 py-3">G3/4"（6分）</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">流量範圍</td>
+                  <td class="border border-gray-300 px-4 py-3">1 ~ 60 L/min</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">水壓範圍</td>
+                  <td class="border border-gray-300 px-4 py-3">≦ 1.75 Mpa</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">工作電壓範圍</td>
+                  <td class="border border-gray-300 px-4 py-3">3.5 ~ 24V DC</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">內徑</td>
+                  <td class="border border-gray-300 px-4 py-3">16 mm</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">外徑</td>
+                  <td class="border border-gray-300 px-4 py-3">26 mm</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">螺牙長度</td>
+                  <td class="border border-gray-300 px-4 py-3">17 mm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TinyHost Modal -->
+    <div v-if="showTinyHostModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeTinyHostModal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeTinyHostModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">樂農小主機</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/小主機規格.jpg" alt="樂農小主機規格" class="mx-auto"/>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格項目</th>
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">詳細資訊</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">型號</td>
+                  <td class="border border-gray-300 px-4 py-3">樂農小主機</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">處理器</td>
+                  <td class="border border-gray-300 px-4 py-3">ESP32-C3 單核 32 位元 RISC-V CPU，最高 160 MHz</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">內建記憶體</td>
+                  <td class="border border-gray-300 px-4 py-3">400 KB SRAM，384 KB ROM</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">無線連接</td>
+                  <td class="border border-gray-300 px-4 py-3">2.4 GHz Wi-Fi (IEEE 802.11b/g/n)，Bluetooth 5 (LE)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">顯示螢幕</td>
+                  <td class="border border-gray-300 px-4 py-3">0.96 吋 OLED，解析度 128×64，採用 SSD1306 控制晶片，I2C 介面</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">通訊介面</td>
+                  <td class="border border-gray-300 px-4 py-3">RS485，最多可連接 3 個設備</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">支援感測器</td>
+                  <td class="border border-gray-300 px-4 py-3">光度、溫濕度、雨量計、流量計、土壤三合一感測器...等</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">支援控制器</td>
+                  <td class="border border-gray-300 px-4 py-3">四路控制器（4 接口）、八路控制器（8 接口）</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">電源供應</td>
+                  <td class="border border-gray-300 px-4 py-3">DC 12V</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">通訊協定</td>
+                  <td class="border border-gray-300 px-4 py-3">Modbus RTU（可擴展至其他協定）</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">資料存儲</td>
+                  <td class="border border-gray-300 px-4 py-3">雲端平台儲存歷史數據</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">遠端監控</td>
+                  <td class="border border-gray-300 px-4 py-3">手機網頁 或 Web 網頁</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">自動化控制</td>
+                  <td class="border border-gray-300 px-4 py-3">Blockly 介面設計，最多 3 個自定義任務</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">通知功能</td>
+                  <td class="border border-gray-300 px-4 py-3">支援 LINE 對話、Telegram 通知</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">實體按鈕</td>
+                  <td class="border border-gray-300 px-4 py-3">兩個：重開機按鈕、多功能按鈕（恢復出廠設定、啟動韌體線上更新）</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">安裝方式</td>
+                  <td class="border border-gray-300 px-4 py-3">需由系統整合商或技術人員安裝</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">適用場域</td>
+                  <td class="border border-gray-300 px-4 py-3">溫室、農場、畜牧場、戶外農業場域等</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TinyHost Pro Modal -->
+    <div v-if="showTinyHostProModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeTinyHostProModal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeTinyHostProModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">樂農小主機 PRO</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/小主機 pro 規格.jpg" alt="樂農小主機 PRO 規格" class="mx-auto"/>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格項目</th>
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">詳細資訊</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">型號</td>
+                  <td class="border border-gray-300 px-4 py-3">樂農小主機Pro</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">處理器</td>
+                  <td class="border border-gray-300 px-4 py-3">H618 四核 Cortex-A53，最高 1.5GHz</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">內建記憶體</td>
+                  <td class="border border-gray-300 px-4 py-3">1GB DDR4</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">無線連接</td>
+                  <td class="border border-gray-300 px-4 py-3">2.4GHz/5GHz Wi-Fi (IEEE 802.11 a/b/g/n/ac)，Bluetooth 5.0</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">有線網路</td>
+                  <td class="border border-gray-300 px-4 py-3">RJ45 10/100Mbps 乙太網路接口</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">電源供應</td>
+                  <td class="border border-gray-300 px-4 py-3">DC 5V（USB-C）</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">資料存儲</td>
+                  <td class="border border-gray-300 px-4 py-3">32G 記憶卡</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">遠端監控</td>
+                  <td class="border border-gray-300 px-4 py-3">手機網頁 或 Web 網頁</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">搭配網路攝影機</td>
+                  <td class="border border-gray-300 px-4 py-3">D-Link DCS-6100LHV2、D-Link DCS-8620LH</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">安裝方式</td>
+                  <td class="border border-gray-300 px-4 py-3">需由系統整合商或技術人員安裝</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">適用場域</td>
+                  <td class="border border-gray-300 px-4 py-3">溫室、農場、畜牧場、戶外農業場域等</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wireless Adapter Modal -->
+    <div v-if="showWirelessAdapterModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeWirelessAdapterModal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeWirelessAdapterModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">無線轉接器</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/無線轉接器規格.jpg" alt="無線轉接器規格" class="mx-auto"/>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格項目</th>
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">詳細資訊</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">型號</td>
+                  <td class="border border-gray-300 px-4 py-3">無線轉接器</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">處理器</td>
+                  <td class="border border-gray-300 px-4 py-3">ESP32-C3 單核 32 位元 RISC-V CPU，最高 160 MHz</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">內建記憶體</td>
+                  <td class="border border-gray-300 px-4 py-3">400 KB SRAM，384 KB ROM</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">無線連接</td>
+                  <td class="border border-gray-300 px-4 py-3">2.4 GHz Wi-Fi (IEEE 802.11b/g/n)，Bluetooth 5 (LE)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">支援感測器</td>
+                  <td class="border border-gray-300 px-4 py-3">土壤三合一感測器</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">電源供應</td>
+                  <td class="border border-gray-300 px-4 py-3">USB TypeC (5V)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">資料存儲</td>
+                  <td class="border border-gray-300 px-4 py-3">雲端平台儲存歷史數據</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">遠端監控</td>
+                  <td class="border border-gray-300 px-4 py-3">手機網頁 或 Web 網頁</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">自動化控制</td>
+                  <td class="border border-gray-300 px-4 py-3">Blockly 介面設計，最多 3 個自定義任務</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">通知功能</td>
+                  <td class="border border-gray-300 px-4 py-3">支援 LINE 對話、Telegram 通知</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">安裝方式</td>
+                  <td class="border border-gray-300 px-4 py-3">需由系統整合商或技術人員安裝</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">適用場域</td>
+                  <td class="border border-gray-300 px-4 py-3">溫室、農場、畜牧場、戶外農業場域等</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infrared Modal -->
+    <div v-if="showInfraredModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeInfraredModal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeInfraredModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">紅外線測溫儀</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/紅外線測溫儀規格.jpg" alt="紅外線測溫儀規格" class="mx-auto"/>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格項目</th>
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">詳細資訊</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">環境溫度</td>
+                  <td class="border border-gray-300 px-4 py-3">0 ~ 60℃</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">存儲溫度</td>
+                  <td class="border border-gray-300 px-4 py-3">-20 ~ 80℃</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">相對濕度</td>
+                  <td class="border border-gray-300 px-4 py-3">10 ~ 95%（不結露）</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">材料</td>
+                  <td class="border border-gray-300 px-4 py-3">不鏽鋼</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">工作電源</td>
+                  <td class="border border-gray-300 px-4 py-3">5 ~ 36 V DC</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">最大電流</td>
+                  <td class="border border-gray-300 px-4 py-3">20 mA</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">通訊信號</td>
+                  <td class="border border-gray-300 px-4 py-3">RS485 (Modbus RTU)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wind Modal -->
+    <div v-if="showWindModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeWindModal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeWindModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">風速風向參數</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/風速計規格.jpg" alt="風速計規格" class="mx-auto"/>
+          </div>
+          
+          <div class="space-y-8">
+            <!-- 風速參數 -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">風速參數</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr class="bg-gray-100">
+                      <th class="border border-gray-300 px-4 py-3 text-left font-semibold">項目</th>
+                      <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">精度</td>
+                      <td class="border border-gray-300 px-4 py-3">±(0.2 m/s ± 0.02 × v) (v 為真實風速)</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">精度</td>
+                      <td class="border border-gray-300 px-4 py-3">± 3°</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">量程</td>
+                      <td class="border border-gray-300 px-4 py-3">0 ~ 60 m/s</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">量程</td>
+                      <td class="border border-gray-300 px-4 py-3">0 ~ 359°</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-300 px-4 py-3 font-medium">影響時間</td>
+                      <td class="border border-gray-300 px-4 py-3">1 s</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="border border-gray-300 px-4 py-3 font-medium">輸出信號</td>
+                      <td class="border border-gray-300 px-4 py-3">RS485 / 4G</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Water Quality Modal -->
+    <div v-if="showWaterQualityModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeWaterQualityModal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeWaterQualityModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">水質酸鹼度 + 溫度</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/水質酸鹼度 + 溫度規格.png" alt="水質酸鹼度 + 溫度規格" class="mx-auto"/>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">項目</th>
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">產品型號</td>
+                  <td class="border border-gray-300 px-4 py-3">XM3318</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">測量範圍</td>
+                  <td class="border border-gray-300 px-4 py-3">0 ~ 1000 NTU</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">測量精度</td>
+                  <td class="border border-gray-300 px-4 py-3">±3% FS</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">輸出信號</td>
+                  <td class="border border-gray-300 px-4 py-3">RS485（可選配電流型或電壓型）</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">響應時間</td>
+                  <td class="border border-gray-300 px-4 py-3">&lt;500 ms</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">供電電源</td>
+                  <td class="border border-gray-300 px-4 py-3">DC 5 ~ 24V</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">輸入端口</td>
+                  <td class="border border-gray-300 px-4 py-3">XH2.54-3P</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">波特率</td>
+                  <td class="border border-gray-300 px-4 py-3">預設 9600</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">功耗</td>
+                  <td class="border border-gray-300 px-4 py-3">&lt;0.2W</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">工作溫濕度</td>
+                  <td class="border border-gray-300 px-4 py-3">-30 ~ 65℃，0 ~ 90%RH（無凝結）</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">存儲溫濕度</td>
+                  <td class="border border-gray-300 px-4 py-3">-30 ~ 65℃，0 ~ 90%RH（無凝結）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Turbidity 1 Modal -->
+    <div v-if="showTurbidity1Modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeTurbidity1Modal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeTurbidity1Modal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">水濁度偵測</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/水濁度偵測1規格.png" alt="水濁度偵測規格" class="mx-auto"/>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">項目</th>
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">產品型號</td>
+                  <td class="border border-gray-300 px-4 py-3">XM3318</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">測量範圍</td>
+                  <td class="border border-gray-300 px-4 py-3">0 ~ 1000 NTU</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">測量精度</td>
+                  <td class="border border-gray-300 px-4 py-3">±3% FS</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">輸出信號</td>
+                  <td class="border border-gray-300 px-4 py-3">RS485（可選配電流型或電壓型）</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">響應時間</td>
+                  <td class="border border-gray-300 px-4 py-3">&lt;500 ms</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">供電電源</td>
+                  <td class="border border-gray-300 px-4 py-3">DC 5 ~ 24V</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">輸入端口</td>
+                  <td class="border border-gray-300 px-4 py-3">XH2.54-3P</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">波特率</td>
+                  <td class="border border-gray-300 px-4 py-3">預設 9600</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">功耗</td>
+                  <td class="border border-gray-300 px-4 py-3">&lt;0.2W</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">工作溫濕度</td>
+                  <td class="border border-gray-300 px-4 py-3">-30 ~ 65℃，0 ~ 90%RH（無凝結）</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">存儲溫濕度</td>
+                  <td class="border border-gray-300 px-4 py-3">-30 ~ 65℃，0 ~ 90%RH（無凝結）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Turbidity 2 Modal -->
+    <div v-if="showTurbidity2Modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeTurbidity2Modal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeTurbidity2Modal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">水濁度偵測</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/水濁度偵測2規格.png" alt="水濁度偵測規格" class="mx-auto"/>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">項目</th>
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">產品型號</td>
+                  <td class="border border-gray-300 px-4 py-3">MAQ-136</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">量程規格</td>
+                  <td class="border border-gray-300 px-4 py-3">0～1m、0～3m、0～5m、0～10m（最高可定制至 500m）</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">精度等級</td>
+                  <td class="border border-gray-300 px-4 py-3">0.5級，可定制 0.2 級</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">年漂移</td>
+                  <td class="border border-gray-300 px-4 py-3">±0.2%FS</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">輸出信號</td>
+                  <td class="border border-gray-300 px-4 py-3">預設 4~20mA，可定制 0~5V、RS485 等</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">供電方式</td>
+                  <td class="border border-gray-300 px-4 py-3">24V DC</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">過載能力</td>
+                  <td class="border border-gray-300 px-4 py-3">150%</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">測量介質</td>
+                  <td class="border border-gray-300 px-4 py-3">水、油等不銹鋼兼容介質</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">工作溫度</td>
+                  <td class="border border-gray-300 px-4 py-3">-10～+40℃</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">存儲溫度</td>
+                  <td class="border border-gray-300 px-4 py-3">0～+40℃</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">整體材質</td>
+                  <td class="border border-gray-300 px-4 py-3">316L 不銹鋼，304 外殼、橡膠線纜</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">防護等級</td>
+                  <td class="border border-gray-300 px-4 py-3">探頭 IP68，整體 IP65</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -443,7 +1227,17 @@ export default {
       modalImageSrc: '',
       modalImageAlt: '',
       showSpecModal: false,
-      showSoilModal: false
+      showSoilModal: false,
+      showWeatherModal: false,
+      showFlowModal: false,
+      showTinyHostModal: false,
+      showTinyHostProModal: false,
+      showWirelessAdapterModal: false,
+      showInfraredModal: false,
+      showWindModal: false,
+      showWaterQualityModal: false,
+      showTurbidity1Modal: false,
+      showTurbidity2Modal: false
     }
   },
   methods: {
@@ -468,6 +1262,66 @@ export default {
     },
     closeSoilModal() {
       this.showSoilModal = false
+    },
+    openWeatherModal() {
+      this.showWeatherModal = true
+    },
+    closeWeatherModal() {
+      this.showWeatherModal = false
+    },
+    openFlowModal() {
+      this.showFlowModal = true
+    },
+    closeFlowModal() {
+      this.showFlowModal = false
+    },
+    openTinyHostModal() {
+      this.showTinyHostModal = true
+    },
+    closeTinyHostModal() {
+      this.showTinyHostModal = false
+    },
+    openTinyHostProModal() {
+      this.showTinyHostProModal = true
+    },
+    closeTinyHostProModal() {
+      this.showTinyHostProModal = false
+    },
+    openWirelessAdapterModal() {
+      this.showWirelessAdapterModal = true
+    },
+    closeWirelessAdapterModal() {
+      this.showWirelessAdapterModal = false
+    },
+    openInfraredModal() {
+      this.showInfraredModal = true
+    },
+    closeInfraredModal() {
+      this.showInfraredModal = false
+    },
+    openWindModal() {
+      this.showWindModal = true
+    },
+    closeWindModal() {
+      this.showWindModal = false
+    },
+    openWaterQualityModal() {
+      this.showWaterQualityModal = true
+    },
+    closeWaterQualityModal() {
+      this.showWaterQualityModal = false
+    },
+    openTurbidity1Modal() {
+      this.showTurbidity1Modal = true
+    },
+    closeTurbidity1Modal() {
+      this.showTurbidity1Modal = false
+    },
+    openTurbidity2Modal() {
+      this.showTurbidity2Modal = true
+    },
+    closeTurbidity2Modal() {
+      this.showTurbidity2Modal = false
     }
   }
 }

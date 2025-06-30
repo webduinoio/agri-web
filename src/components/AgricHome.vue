@@ -65,28 +65,97 @@
       <section class="py-16" id="installations">
         <div class="container mx-auto px-4 text-center">
           <h3 class="text-3xl font-bold text-green-700 mb-4">全台安裝場域</h3>
-          <a href="#" class="block" @click.prevent="showPopup = true">
-            <img alt="台灣安裝場域地圖" class="mx-auto max-w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300" src="https://md.webduino.io/uploads/upload_cf76855ee7c1bb555b45b49e41787866.jpg"/>
-          </a>
+                      <div class="relative inline-block">
+              <img alt="台灣安裝場域地圖" class="mx-auto max-w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300" src="/assets/台灣地圖2.png"/>
+              <img alt="桃城蒔菜標記" class="absolute top-[8%] left-[76%] md:top-[10%] md:left-[75%] lg:top-[10%] lg:left-[76%] transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 cursor-pointer hover:scale-110 transition-transform duration-300" src="/assets/SVG/桃城蒔菜.svg" @click="openFarmPopup('taocheng')"/>
+              <img alt="富春山農場標記" class="absolute bottom-[20%] left-[46%] md:bottom-[18%] md:left-[48%] lg:bottom-[18%] lg:left-[48%] transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 cursor-pointer hover:scale-110 transition-transform duration-300" src="/assets/SVG/富春山農場.svg" @click="openFarmPopup('fuchun')"/>
+              <img alt="儒園鮮果標記" class="absolute bottom-[11%] left-[50%] md:bottom-[9%] md:left-[52%] lg:bottom-[9%] lg:left-[52%] transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 cursor-pointer hover:scale-110 transition-transform duration-300" src="/assets/SVG/儒園鮮果.svg" @click="openFarmPopup('ruyuan')"/>
+            </div>
         </div>
       </section>
 
       <!-- Pop-up Window -->
-      <div v-if="showPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" @click="showPopup = false">
-        <div class="bg-white rounded-lg p-8 max-w-2xl w-full mx-4" @click.stop>
-          <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-green-700">安裝場域</h2>
-            <button @click="showPopup = false" class="text-gray-500 hover:text-gray-700">
+      <div v-if="currentFarm" class="fixed inset-0 flex items-center justify-center z-50" @click="closePopup">
+        <div class="bg-white bg-opacity-85 backdrop-blur-md border-4 border-white rounded-lg shadow-2xl max-w-xl w-full mx-4 max-h-[90vh] flex flex-col" @click.stop>
+          <!-- 固定標題區域 -->
+          <div class="flex justify-between items-center p-8 pb-4 flex-shrink-0">
+            <h2 class="text-2xl font-bold text-green-700">{{ getFarmTitle() }}</h2>
+            <button @click="closePopup" class="text-gray-500 hover:text-gray-700">
               <span class="material-icons">close</span>
             </button>
           </div>
-          <!-- 这里可以添加更多内容 -->
+          <!-- 可滾動內容區域 -->
+          <div class="px-8 pb-8 overflow-y-auto flex-1">
+            <!-- 桃城蒔菜照片展示 -->
+            <div v-if="currentFarm === 'taocheng'" class="space-y-6">
+              <div class="text-center">
+                <img alt="桃城蒔菜場域照片1" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城1.jpg"/>
+                <p class="text-base text-gray-700 font-medium">馬達控制器</p>
+              </div>
+              
+              <div class="text-center">
+                <img alt="桃城蒔菜場域照片2" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城2.jpg"/>
+                <p class="text-base text-gray-700 font-medium">馬達控制器</p>
+              </div>
+              
+              <div class="text-center">
+                <img alt="桃城蒔菜場域照片3" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城3.jpg"/>
+                <p class="text-base text-gray-700 font-medium">馬達控制器偵測流量計數據保護馬達管路</p>
+              </div>
+              
+              <div class="text-center">
+                <img alt="桃城蒔菜場域照片4" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城4.jpg"/>
+                <p class="text-base text-gray-700 font-medium">灌溉用控制器</p>
+              </div>
+              
+              <div class="text-center">
+                <img alt="桃城蒔菜場域照片5" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城5.jpg"/>
+                <p class="text-base text-gray-700 font-medium">溫室內環境感測器</p>
+              </div>
+              
+              <div class="text-center">
+                <img alt="桃城蒔菜場域照片6" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城6.jpg"/>
+                <p class="text-base text-gray-700 font-medium">溫室外累積光度環境感測器</p>
+              </div>
+            </div>
+
+            <!-- 富春山農場照片展示 -->
+            <div v-if="currentFarm === 'fuchun'" class="space-y-6">
+              <div class="text-center">
+                <img alt="富春山農場場域照片1" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/富春山1.jpg"/>
+                <p class="text-base text-gray-700 font-medium">自動液肥控制系統：加壓馬達、電磁閥、文氏管、三台灌溉用控制器</p>
+              </div>
+              
+              <div class="text-center">
+                <img alt="富春山農場場域照片2" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/富春山2.jpg"/>
+                <p class="text-base text-gray-700 font-medium">電箱與控制器</p>
+              </div>
+              
+              <div class="text-center">
+                <img alt="富春山農場場域照片3" class="w-full h-80 object-contain rounded-lg mb-3" src="/assets/場域照片/富春山3.jpg"/>
+                <p class="text-base text-gray-700 font-medium">環境感測器，偵測網室內環境的溫濕度。</p>
+              </div>
+            </div>
+
+                          <!-- 儒園鮮果照片展示 -->
+              <div v-if="currentFarm === 'ruyuan'" class="space-y-6">
+                <div class="text-center">
+                  <img alt="儒園鮮果場域照片1" class="w-full h-80 object-contain rounded-lg mb-3" src="/assets/場域照片/儒園1.jpg"/>
+                  <p class="text-base text-gray-700 font-medium">灌溉、降溫用控制器</p>
+                </div>
+                
+                <div class="text-center">
+                  <img alt="儒園鮮果場域照片2" class="w-full h-80 object-contain rounded-lg mb-3" src="/assets/場域照片/儒園2.jpg"/>
+                  <p class="text-base text-gray-700 font-medium">偵測環境溫濕度用環境感測器</p>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
 
       <!-- 農研技術核心科技 -->
       <section class="py-16 bg-green-50">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-8 md:px-12 lg:px-16">
           <h3 class="text-3xl font-bold text-green-700 text-center mb-12">農研技術核心科技</h3>
           <div class="text-center mb-12">
             <p class="text-xl text-gray-700 max-w-3xl mx-auto">樂農智慧農業是以<span class="text-green-600 font-semibold">農民需求</span>、在地農民豐富的栽種經驗，以及田間感測器建立場域專屬模型，透過雲端平台進行自動化控制，<span class="text-green-600 font-semibold">讓農業變得更輕鬆</span>。</p>
@@ -95,22 +164,19 @@
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <img alt="手機遠端遙控圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_01.svg"/>
               <h4 class="text-xl font-semibold mb-2">環境監測</h4>
-              <p class="text-gray-600 text-lg">文字文字文字文字文字文字</p>
+              
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <img alt="AI智慧控制圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_02.svg"/>
               <h4 class="text-xl font-semibold mb-2">數據分析</h4>
-              <p class="text-gray-600 text-lg">文字文字文字文字文字文字</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <img alt="數據分析圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_03.svg"/>
               <h4 class="text-xl font-semibold mb-2">專屬模型</h4>
-              <p class="text-gray-600 text-lg">文字文字文字文字文字文字</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
               <img alt="數據分析圖示" class="h-20 w-20 mx-auto mb-4" src="/assets/SVG/4_04.svg"/>
               <h4 class="text-xl font-semibold mb-2">自動控制</h4>
-              <p class="text-gray-600 text-lg">文字文字文字文字文字文字</p>
             </div>
           </div>
           <div class="mt-16 bg-white p-8 rounded-lg shadow-xl flex flex-col md:flex-row items-center">
@@ -209,7 +275,7 @@
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <h3 class="text-3xl font-bold text-green-700 text-center mb-12">串接氣象站</h3>
-          <img alt="場域控制儀表板截圖" class="w-full h-auto object-contain rounded-lg shadow-xl" src="/assets/氣象站.png"/>
+          <img alt="場域控制儀表板截圖" class="w-3/4 h-auto object-contain rounded-lg shadow-xl mx-auto" src="/assets/氣象站.png"/>
         </div>
       </section>
 
@@ -217,7 +283,7 @@
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <h3 class="text-3xl font-bold text-green-700 text-center mb-12">場域控制一目瞭然</h3>
-          <img alt="場域控制儀表板截圖" class="w-full h-auto object-contain rounded-lg shadow-xl" src="/assets/儀表板_25.png"/>
+          <img alt="場域控制儀表板截圖" class="w-3/4 h-auto object-contain rounded-lg shadow-xl mx-auto" src="/assets/儀表板_25.png"/>
         </div>
       </section>
 
@@ -320,7 +386,27 @@ export default {
   name: 'AgricHome',
   data() {
     return {
-      showPopup: false
+      currentFarm: null // 當前選中的農場：'taocheng'、'fuchun'、'ruyuan'
+    }
+  },
+  methods: {
+    openFarmPopup(farmName) {
+      this.currentFarm = farmName
+    },
+    closePopup() {
+      this.currentFarm = null
+    },
+    getFarmTitle() {
+      switch (this.currentFarm) {
+        case 'taocheng':
+          return '桃城蒔菜 - 安裝場域'
+        case 'fuchun':
+          return '富春山農場 - 安裝場域'
+        case 'ruyuan':
+          return '儒園鮮果 - 安裝場域'
+        default:
+          return '農場資訊'
+      }
     }
   }
 }

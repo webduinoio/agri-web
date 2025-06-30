@@ -7,7 +7,7 @@
         <nav class="hidden md:flex space-x-6 items-center">
           <a class="hover:text-green-200" href="/">首頁</a>
           <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
-          <a class="hover:text-green-200" href="/#installations">場域實績</a>
+          <a class="hover:text-green-200" href="/home#installations">場域實績</a>
           <a class="hover:text-green-200 text-green-200" href="/education">食農教育</a>
           <a class="hover:text-green-200" href="/#contact">聯絡我們</a>
           <a class="hover:text-green-200" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
@@ -21,7 +21,7 @@
     <!-- Main Content -->
     <main class="pt-16">
       <div class="container mx-auto px-4 py-8">
-        <img src="/assets/三面六項.png" alt="食農教育 ABC 模式" class="w-full max-w-3xl mx-auto rounded-lg mb-2"/>
+        <img src="/assets/三面六項.png" alt="食農教育 ABC 模式" class="w-full max-w-2xl mx-auto rounded-lg mb-2"/>
         <p class="text-center text-gray-500 text-sm mb-4">圖片來源：農業部｜食農教育知能手冊</p>
         <div class="bg-[#8B5A2B] text-white px-8 py-2 rounded-md w-fit mx-auto mb-8 text-xl">食農教育三面六項</div>
         <img src="/assets/全民食農.png" alt="全民食農教育" class="w-full max-w-4xl mx-auto rounded-lg mb-2"/>
