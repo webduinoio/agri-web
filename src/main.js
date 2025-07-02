@@ -8,7 +8,7 @@ import AgricEducation from './components/AgricEducation.vue'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: IntegratorRegister },
+    { path: '/', component: AgricHome },
     { path: '/home', component: AgricHome },
     { path: '/integrator-register', component: IntegratorRegister },
     { path: '/education', component: AgricEducation }

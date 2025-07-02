@@ -1,33 +1,63 @@
 <template>
   <div class="bg-gray-50 min-h-screen">
+    <!-- Password Modal -->
+    <div v-if="showPasswordModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" @click="closePasswordModal">
+      <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4" @click.stop>
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">整合商認證</h2>
+        <p class="text-gray-600 mb-4 text-center">請輸入整合商認證碼</p>
+        <input 
+          v-model="passwordInput" 
+          type="password" 
+          placeholder="請輸入認證碼"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 mb-4"
+          @keyup.enter="checkPassword"
+        />
+        <div v-if="passwordError" class="text-red-500 text-sm mb-4 text-center">{{ passwordError }}</div>
+        <div class="flex gap-4">
+          <button @click="closePasswordModal" class="flex-1 px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">取消</button>
+          <button @click="checkPassword" class="flex-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">確認</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Header -->
     <header class="bg-green-700/80 text-white fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
-      <div class="container mx-auto pr-4 py-3 flex justify-between items-center">
-        <a href="/home" class="text-2xl font-bold ml-2 md:ml-1 lg:ml-2">慶奇科技</a>
-        <nav class="hidden md:flex space-x-6 items-center">
+      <div class="px-4 lg:px-8 py-3 flex justify-between items-center">
+        <a href="/home" class="text-2xl font-bold">慶奇科技</a>
+        <nav class="hidden md:flex space-x-6 items-center text-lg">
           <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
           <a class="hover:text-green-200" href="/home#installations">場域實績</a>
           <a class="hover:text-green-200" href="/education">食農教育</a>
           <a class="hover:text-green-200" href="/home#contact">聯絡我們</a>
           <a class="hover:text-green-200" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
         </nav>
-        <button class="md:hidden text-white">
+        <button class="md:hidden text-white" @click="toggleMobileMenu">
           <span class="material-icons">menu</span>
         </button>
+        <!-- Mobile Menu -->
+        <div v-if="showMobileMenu" class="absolute top-full left-0 right-0 bg-green-700 md:hidden">
+          <nav class="flex flex-col space-y-2 p-4">
+            <a class="hover:text-green-200 py-2" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
+            <a class="hover:text-green-200 py-2" href="/home#installations">場域實績</a>
+            <a class="hover:text-green-200 py-2" href="/education">食農教育</a>
+            <a class="hover:text-green-200 py-2" href="/home#contact">聯絡我們</a>
+            <a class="hover:text-green-200 py-2" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
+          </nav>
+        </div>
       </div>
     </header>
 
     <!-- Main Content -->
-    <div class="container mx-auto p-4 md:p-8 max-w-5xl pt-24 mt-16">
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl pt-20 md:pt-24 md:mt-4" :class="{ 'opacity-50': showPasswordModal }">
       <!-- Title Header -->
-      <header class="mb-8 text-center">
+      <header class="mb-0 md:mb-4 text-center">
        
       </header>
 
       <!-- Main System Image -->
-      <section class="mb-12">
+      <section class="mb-8">
         <img alt="智慧巡田自動控制系統圖" class="w-full h-auto rounded-lg shadow-lg" src="/assets/整合商首圖.jpg"/>
-        <p class="text-sm text-gray-500 mt-6 text-center">*可依場域搭配不同設備，設備清單請向下參考</p>
+        <p class="text-sm text-gray-500 mt-2 text-center">*可依場域搭配不同設備，設備清單請向下參考</p>
       </section>
 
       <!-- 實際安裝場域參考 -->
@@ -40,7 +70,7 @@
               <img alt="露天火龍果田2" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer" src="/assets/火龍果2.jpg" @click="openImageModal('/assets/火龍果2.jpg')"/>
             </div>
             <div class="p-4">
-              <h3 class="font-semibold text-xl text-gray-800">露天 | 火龍果</h3>
+              <h3 class="font-bold text-xl text-gray-800">露天 | 火龍果</h3>
             </div>
           </div>
           <div class="card">
@@ -49,7 +79,7 @@
               <img alt="溫室短期葉菜2" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer" src="/assets/溫室2.jpg" @click="openImageModal('/assets/溫室2.jpg')"/>
             </div>
             <div class="p-4">
-              <h3 class="font-semibold text-xl text-gray-800">溫室 | 短期葉菜</h3>
+              <h3 class="font-bold text-xl text-gray-800">溫室 | 短期葉菜</h3>
             </div>
           </div>
           <div class="card">
@@ -58,7 +88,7 @@
               <img alt="網室鹿角蕨蘭花2" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer" src="/assets/網室2.jpg" @click="openImageModal('/assets/網室2.jpg')"/>
             </div>
             <div class="p-4">
-              <h3 class="font-semibold text-xl text-gray-800">網室 | 鹿角蕨、蘭花</h3>
+              <h3 class="font-bold text-xl text-gray-800">網室 | 鹿角蕨、蘭花</h3>
             </div>
           </div>
           <div class="card">
@@ -67,7 +97,7 @@
               <img alt="校園食農葉菜類花園2" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer" src="/assets/校園2.jpg" @click="openImageModal('/assets/校園2.jpg')"/>
             </div>
             <div class="p-4">
-              <h3 class="font-semibold text-xl text-gray-800">校園食農 | 葉菜類、花園</h3>
+              <h3 class="font-bold text-xl text-gray-800">校園食農 | 葉菜類、花園</h3>
             </div>
           </div>
         </div>
@@ -144,7 +174,7 @@
           </div>
           <div class="circular-spec-item">
             <div class="circle-container bg-yellow-100">
-              <img alt="光學雨量計" src="/assets/設備/光學雨量計.png"/>
+              <img alt="光學雨量計" src="/assets/設備/光學雨量計.png" @click="openRainGaugeModal" class="cursor-pointer"/>
             </div>
             <p class="font-medium text-gray-700 text-lg">光學雨量計</p>
           </div>
@@ -212,7 +242,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-12">
+    <footer class="bg-gray-800 text-gray-300 py-12" :class="{ 'opacity-50': showPasswordModal }">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <div>
@@ -1004,7 +1034,7 @@
         <div class="text-left">
           <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">水質酸鹼度 + 溫度</h2>
           <div class="mb-6 text-center">
-            <img src="/assets/規格圖片/水質酸鹼度 + 溫度規格.png" alt="水質酸鹼度 + 溫度規格" class="mx-auto"/>
+            <img src="/assets/規格圖片/水質酸鹼度 + 溫度規格.png" alt="水質酸鹼度 + 溫度規格" class="mx-auto w-1/3"/>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300">
@@ -1077,7 +1107,7 @@
         <div class="text-left">
           <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">水濁度偵測</h2>
           <div class="mb-6 text-center">
-            <img src="/assets/規格圖片/水濁度偵測1規格.png" alt="水濁度偵測規格" class="mx-auto"/>
+            <img src="/assets/規格圖片/水濁度偵測1規格.png" alt="水濁度偵測規格" class="mx-auto w-1/3"/>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300">
@@ -1150,7 +1180,7 @@
         <div class="text-left">
           <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">水濁度偵測</h2>
           <div class="mb-6 text-center">
-            <img src="/assets/規格圖片/水濁度偵測2規格.png" alt="水濁度偵測規格" class="mx-auto"/>
+            <img src="/assets/規格圖片/水濁度偵測2規格.png" alt="水濁度偵測規格" class="mx-auto w-1/3"/>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300">
@@ -1215,6 +1245,87 @@
         </div>
       </div>
     </div>
+
+    <!-- Rain Gauge Modal -->
+    <div v-if="showRainGaugeModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" @click="closeRainGaugeModal">
+      <div class="relative bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
+        <button @click="closeRainGaugeModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">光學雨量感測器</h2>
+          <div class="mb-6 text-center">
+            <img src="/assets/規格圖片/光學雨量計規格.jpg" alt="光學雨量計規格" class="mx-auto w-1/3"/>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">規格項目</th>
+                  <th class="border border-gray-300 px-4 py-3 text-left font-semibold">詳細資訊</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">輸出方式</td>
+                  <td class="border border-gray-300 px-4 py-3">RS485</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">供電電壓</td>
+                  <td class="border border-gray-300 px-4 py-3">DC 12 ~ 24V</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">功耗</td>
+                  <td class="border border-gray-300 px-4 py-3">&lt; 0.3W（@12V DC：約 20mA）</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">分辨率</td>
+                  <td class="border border-gray-300 px-4 py-3">0.1 mm</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">典型精度</td>
+                  <td class="border border-gray-300 px-4 py-3">±5%（@25°C）</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">最大瞬時雨量</td>
+                  <td class="border border-gray-300 px-4 py-3">24 mm / min</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">感雨直徑</td>
+                  <td class="border border-gray-300 px-4 py-3">6 cm</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">工作溫度範圍</td>
+                  <td class="border border-gray-300 px-4 py-3">-40 ~ 60°C</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">工作濕度範圍</td>
+                  <td class="border border-gray-300 px-4 py-3">0 ~ 99% RH（無凝結）</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">工作壓力範圍</td>
+                  <td class="border border-gray-300 px-4 py-3">標準大氣壓 ±10%</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">長期穩定性</td>
+                  <td class="border border-gray-300 px-4 py-3">光照 ≤ 5% / 年（RS485 型）</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-3 font-medium">承受電壓</td>
+                  <td class="border border-gray-300 px-4 py-3">≤ 30V DC</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-3 font-medium">承受電流</td>
+                  <td class="border border-gray-300 px-4 py-3">≤ 1A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -1237,8 +1348,36 @@ export default {
       showWindModal: false,
       showWaterQualityModal: false,
       showTurbidity1Modal: false,
-      showTurbidity2Modal: false
+      showTurbidity2Modal: false,
+      showRainGaugeModal: false,
+      showMobileMenu: false,
+      showPasswordModal: true,
+      passwordInput: '',
+      passwordError: '',
+      isAuthenticated: false
     }
+  },
+  mounted() {
+    // 檢查是否已經認證過 (暫時隱藏記憶功能)
+    // const isAuth = sessionStorage.getItem('integratorAuth')
+    // if (isAuth === 'true') {
+    //   this.isAuthenticated = true
+    //   this.showPasswordModal = false
+    // }
+    
+    // 確保頁面在頂部並防止背景滾動
+    if (this.showPasswordModal) {
+      window.scrollTo(0, 0)
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+    }
+  },
+  beforeUnmount() {
+    // 恢復滾動
+    document.body.style.overflow = ''
+    document.body.style.position = ''
+    document.body.style.width = ''
   },
   methods: {
     openImageModal(imageSrc) {
@@ -1322,6 +1461,39 @@ export default {
     },
     closeTurbidity2Modal() {
       this.showTurbidity2Modal = false
+    },
+    openRainGaugeModal() {
+      this.showRainGaugeModal = true
+    },
+    closeRainGaugeModal() {
+      this.showRainGaugeModal = false
+    },
+    toggleMobileMenu() {
+      this.showMobileMenu = !this.showMobileMenu
+    },
+    checkPassword() {
+      if (this.passwordInput === '123456') {
+        this.isAuthenticated = true
+        this.showPasswordModal = false
+        this.passwordError = ''
+        // 恢復滾動
+        document.body.style.overflow = ''
+        document.body.style.position = ''
+        document.body.style.width = ''
+        // 記住認證狀態 (暫時隱藏記憶功能)
+        // sessionStorage.setItem('integratorAuth', 'true')
+      } else {
+        this.passwordError = '認證碼錯誤，請重新輸入'
+        this.passwordInput = ''
+      }
+    },
+    closePasswordModal() {
+      // 恢復滾動
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+      // 返回首頁
+      this.$router.push('/home')
     }
   }
 }
