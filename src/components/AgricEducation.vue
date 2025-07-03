@@ -238,15 +238,15 @@
             </a>
           </div>
         </div>
- <div class="w-24 mx-auto border-t-2 border-primary-brown my-12"></div>
+         <div class="w-24 mx-auto border-t-2 border-primary-brown my-12"></div>
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-brown">學校裝設實照</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 max-w-5xl mx-auto">
-          <img alt="School farming setup with sensors" class="w-full h-48 object-cover rounded-lg shadow-md" src="/assets/s-41.jpg"/>
-          <img alt="Outdoor farming equipment at a school" class="w-full h-48 object-cover rounded-lg shadow-md" src="/assets/s-42.jpg"/>
-          <img alt="Student interacting with farming technology" class="w-full h-48 object-cover rounded-lg shadow-md" src="/assets/s-43.jpg"/>
-          <img alt="Close-up of plants in a school garden" class="w-full h-48 object-cover rounded-lg shadow-md" src="/assets/s-44.jpg"/>
-          <img alt="Another view of outdoor farming setup" class="w-full h-48 object-cover rounded-lg shadow-md" src="/assets/s-45.jpg"/>
-          <img alt="Harvested produce from school garden" class="w-full h-48 object-cover rounded-lg shadow-md" src="/assets/s-46.jpg"/>
+          <img alt="School farming setup with sensors" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-41.jpg"/>
+          <img alt="Outdoor farming equipment at a school" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-42.jpg"/>
+          <img alt="Student interacting with farming technology" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-43.jpg"/>
+          <img alt="Close-up of plants in a school garden" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-44.jpg"/>
+          <img alt="Another view of outdoor farming setup" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-45.jpg"/>
+          <img alt="Harvested produce from school garden" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-46.jpg"/>
         </div>
         <button class="btn-primary block mx-auto px-10 mb-12 text-xl" style="font-weight: 700 !important;">
           <span class="md:font-medium">立即洽詢食農方案</span>
@@ -268,16 +268,16 @@
           <div>
             <h5 class="text-lg font-semibold text-white mb-3">快速連結</h5>
             <ul class="space-y-1">
-              <li><a class="hover:text-green-400" href="#">產品介紹</a></li>
-              <li><a class="hover:text-green-400" href="#installations">場域實績</a></li>
-              <li><a class="hover:text-green-400" href="#">食農教育</a></li>
+              <li><a class="hover:text-green-400" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a></li>
+              <li><a class="hover:text-green-400" href="/home#installations">場域實績</a></li>
+              <li><a class="hover:text-green-400" href="/education">食農教育</a></li>
+              <li><a class="hover:text-green-400" href="/integrator-register">整合商專區</a></li>
             </ul>
           </div>
           <div>
             <h5 class="text-lg font-semibold text-white mb-3">關注我們</h5>
-            <div class="flex space-x-4">
-              <a class="text-gray-400 hover:text-white" href="#"><img alt="Facebook icon" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj0469GvjxwDlqnECXSV_ypXfmB7cLw_yXMNyQdtj6OnI3_RkzFtmTF7ECgIJNDT4tyBB6Q7DG4v2Z8PjzQQXzfrqQB-mdWQuv0khop_iZlI4VaJGA9Ijl5pPclEq1H8a9veoU77zXqoWDnwD4gjRD3-WJR77PIw_A81jUIsY_ewcm4D2iGS9QYiEuZ3sv9HzTB_vZsS0mrOgUEEQ11hkco1Edvjv3K3qLtoVLlBCFaTW78M1Zb5cmE0q2K-F4QvhcO7RkzfEyEIIF"/></a>
-              <a class="text-gray-400 hover:text-white" href="#"><img alt="LINE icon" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlrWtpnODJWwwPkOu6yEQQnx19ma8vwZlJ_2oqOqCUMvHHTEh1Tj1oknx8FYv_-g4mYhngPA5Q82aSLwuYIi_Kfa10yq1mScKlsgnRE5w5D-z4QTC3OZzkEWMHYDSiS7hejQcXPuAe5lxDVdBEDXnEh-tdYqLnTP0wD730Al4y3X2HIpU_Zufgjl8FWAApwhPJIHOttC4wHof9yzh16g6SKE5RlV2PmDiXRqcXXYA3YiJgSh5y-u9mbEe3o0UGW0h77ODYO74rOv1m"/></a>
+            <div class="flex justify-start">
+              <a href="https://www.facebook.com/agrickit" target="_blank"><img alt="Facebook icon" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj0469GvjxwDlqnECXSV_ypXfmB7cLw_yXMNyQdtj6OnI3_RkzFtmTF7ECgIJNDT4tyBB6Q7DG4v2Z8PjzQQXzfrqQB-mdWQuv0khop_iZlI4VaJGA9Ijl5pPclEq1H8a9veoU77zXqoWDnwD4gjRD3-WJR77PIw_A81jUIsY_ewcm4D2iGS9QYiEuZ3sv9HzTB_vZsS0mrOgUEEQ11hkco1Edvjv3K3qLtoVLlBCFaTW78M1Zb5cmE0q2K-F4QvhcO7RkzfEyEIIF"/></a>
             </div>
           </div>
         </div>
