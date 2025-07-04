@@ -29,7 +29,8 @@
 
     <!-- Main Content -->
     <main class="pt-16">
-      <div class="container mx-auto px-4 py-8">
+      <!-- 頂部介紹區塊 -->
+      <div ref="introSection" class="container mx-auto px-4 py-8 transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': introVisible, 'translate-y-20 opacity-0': !introVisible }">
         <img src="/assets/三面六項.png" alt="食農教育 ABC 模式" class="w-full max-w-2xl mx-auto rounded-lg mb-2"/>
         <div class="text-center text-gray-500 font-bold text-3xl md:text-4xl lg:text-5xl mb-2 lg:mb-4">食農教育三面六項</div>
         <p class="text-center text-gray-500 text-sm mb-8">圖片來源：農業部｜食農教育知能手冊</p>
@@ -41,9 +42,10 @@
       <img src="/assets/食農樂農.png" alt="食農教育 x 樂農智慧農業" class="w-full h-auto object-contain mb-12"/>
 
       <div class="container mx-auto px-4">
+        <!-- SDGs 區塊 -->
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-brown">結合 SDGs 多項議題</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
-          <div class="flex flex-col">
+        <div ref="sdgsSection" class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
+          <div class="flex flex-col transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': sdgsVisible, 'translate-y-10 opacity-0': !sdgsVisible }" :style="{ 'animation-delay': sdgsVisible ? '0ms' : '0ms' }">
             <div 
               class="bg-orange-400 text-white rounded-lg shadow-lg text-center aspect-square flex flex-col justify-center md:aspect-auto h-40 md:h-56 cursor-pointer md:cursor-default transition-all duration-300"
               :class="flippedCards[0] ? 'pt-4 px-6 pb-6 md:p-6' : 'p-6'"
@@ -67,7 +69,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': sdgsVisible, 'translate-y-10 opacity-0': !sdgsVisible }" :style="{ 'animation-delay': sdgsVisible ? '100ms' : '0ms' }">
             <div 
               class="bg-yellow-500 text-white rounded-lg shadow-lg text-center aspect-square flex flex-col justify-center md:aspect-auto h-40 md:h-56 cursor-pointer md:cursor-default transition-all duration-300"
               :class="flippedCards[1] ? 'pt-4 px-6 pb-6 md:p-6' : 'p-6'"
@@ -89,7 +91,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': sdgsVisible, 'translate-y-10 opacity-0': !sdgsVisible }" :style="{ 'animation-delay': sdgsVisible ? '200ms' : '0ms' }">
             <div 
               class="bg-green-600 text-white rounded-lg shadow-lg text-center aspect-square flex flex-col justify-center md:aspect-auto h-40 md:h-56 cursor-pointer md:cursor-default transition-all duration-300"
               :class="flippedCards[2] ? 'pt-4 px-6 pb-6 md:p-6' : 'p-6'"
@@ -111,7 +113,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': sdgsVisible, 'translate-y-10 opacity-0': !sdgsVisible }" :style="{ 'animation-delay': sdgsVisible ? '300ms' : '0ms' }">
             <div 
               class="bg-amber-600 text-white rounded-lg shadow-lg text-center aspect-square flex flex-col justify-center md:aspect-auto h-40 md:h-56 cursor-pointer md:cursor-default transition-all duration-300"
               :class="flippedCards[3] ? 'pt-4 px-6 pb-6 md:p-6' : 'p-6'"
@@ -133,7 +135,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': sdgsVisible, 'translate-y-10 opacity-0': !sdgsVisible }" :style="{ 'animation-delay': sdgsVisible ? '400ms' : '0ms' }">
             <div 
               class="bg-teal-600 text-white rounded-lg shadow-lg text-center aspect-square flex flex-col justify-center md:aspect-auto h-40 md:h-56 cursor-pointer md:cursor-default transition-all duration-300"
               :class="flippedCards[4] ? 'pt-4 px-6 pb-6 md:p-6' : 'p-6'"
@@ -155,7 +157,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': sdgsVisible, 'translate-y-10 opacity-0': !sdgsVisible }" :style="{ 'animation-delay': sdgsVisible ? '500ms' : '0ms' }">
             <div 
               class="bg-sky-600 text-white rounded-lg shadow-lg text-center aspect-square flex flex-col justify-center md:aspect-auto h-40 md:h-56 cursor-pointer md:cursor-default transition-all duration-300"
               :class="flippedCards[5] ? 'pt-4 px-6 pb-6 md:p-6' : 'p-6'"
@@ -180,74 +182,88 @@
         </div>
 
         <div class="w-24 mx-auto border-t-2 border-primary-brown my-12"></div>
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-brown">從教育到食農</h2>
+        
+        <!-- 從教育到食農流程區塊 -->
+        <div ref="processSection" class="transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': processVisible, 'translate-y-20 opacity-0': !processVisible }">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-brown">從教育到食農</h2>
 
-        <div class="flex items-center justify-center gap-1 md:gap-2 mb-2 md:mb-4 max-w-6xl mx-auto">
-          <div class="bg-green-700 text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
-            <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">認識</h3>
+          <div class="flex items-center justify-center gap-1 md:gap-2 mb-2 md:mb-4 max-w-6xl mx-auto">
+            <div class="bg-green-700 text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
+              <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">認識</h3>
+            </div>
+            <span class="material-icons text-[#94AD49] text-lg md:text-6xl font-bold bg-gray-50/50 p-1 md:p-2 rounded-xl">arrow_forward</span>
+            <div class="bg-[#94AD49] text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
+              <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">了解</h3>
+            </div>
+            <span class="material-icons text-[#94AD49] text-lg md:text-6xl font-bold bg-gray-50/50 p-1 md:p-2 rounded-xl">arrow_forward</span>
+            <div class="bg-green-700 text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
+              <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">討論</h3>
+            </div>
           </div>
-          <span class="material-icons text-[#94AD49] text-lg md:text-6xl font-bold bg-gray-50/50 p-1 md:p-2 rounded-xl">arrow_forward</span>
-          <div class="bg-[#94AD49] text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
-            <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">了解</h3>
+          <div class="flex justify-center gap-1 md:gap-2 mb-8 md:mb-12 max-w-6xl mx-auto">
+            <p class="text-center w-40 md:w-52 text-green-700 font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">食農教育基本概念</p>
+            <div class="w-8 md:w-20"></div>
+            <p class="text-center w-40 md:w-52 text-[#94AD49] font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">智慧農業的技術與原理</p>
+            <div class="w-8 md:w-20"></div>
+            <p class="text-center w-40 md:w-52 text-green-700 font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">討論如何將技術應用在場域</p>
           </div>
-          <span class="material-icons text-[#94AD49] text-lg md:text-6xl font-bold bg-gray-50/50 p-1 md:p-2 rounded-xl">arrow_forward</span>
-          <div class="bg-green-700 text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
-            <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">討論</h3>
-          </div>
-        </div>
-        <div class="flex justify-center gap-1 md:gap-2 mb-8 md:mb-12 max-w-6xl mx-auto">
-          <p class="text-center w-40 md:w-52 text-green-700 font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">食農教育基本概念</p>
-          <div class="w-8 md:w-20"></div>
-          <p class="text-center w-40 md:w-52 text-[#94AD49] font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">智慧農業的技術與原理</p>
-          <div class="w-8 md:w-20"></div>
-          <p class="text-center w-40 md:w-52 text-green-700 font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">討論如何將技術應用在場域</p>
-        </div>
 
-        <div class="flex items-center justify-center gap-1 md:gap-2 mb-2 md:mb-4 max-w-6xl mx-auto">
-          <div class="bg-[#94AD49] text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
-            <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">實作</h3>
+          <div class="flex items-center justify-center gap-1 md:gap-2 mb-2 md:mb-4 max-w-6xl mx-auto">
+            <div class="bg-[#94AD49] text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
+              <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">實作</h3>
+            </div>
+            <span class="material-icons text-green-700 text-lg md:text-6xl font-bold bg-gray-50/50 p-1 md:p-2 rounded-xl">arrow_forward</span>
+            <div class="bg-green-700 text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
+              <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">參訪</h3>
+            </div>
+            <span class="material-icons text-green-700 text-lg md:text-6xl font-bold bg-gray-50/50 p-1 md:p-2 rounded-xl">arrow_forward</span>
+            <div class="bg-[#94AD49] text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
+              <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">成果</h3>
+            </div>
           </div>
-          <span class="material-icons text-green-700 text-lg md:text-6xl font-bold bg-gray-50/50 p-1 md:p-2 rounded-xl">arrow_forward</span>
-          <div class="bg-green-700 text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
-            <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">參訪</h3>
+          <div class="flex justify-center gap-1 md:gap-2 mb-8 md:mb-12 max-w-6xl mx-auto">
+            <p class="text-center w-40 md:w-52 text-[#94AD49] font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">探究與實作科技田間管理</p>
+            <div class="w-8 md:w-20"></div>
+            <p class="text-center w-40 md:w-52 text-green-700 font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">實地參訪科技農業場域</p>
+            <div class="w-8 md:w-20"></div>
+            <p class="text-center w-40 md:w-52 text-[#94AD49] font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">成果發表與心得分享</p>
           </div>
-          <span class="material-icons text-green-700 text-lg md:text-6xl font-bold bg-gray-50/50 p-1 md:p-2 rounded-xl">arrow_forward</span>
-          <div class="bg-[#94AD49] text-white p-1 md:p-2 rounded-lg w-40 h-12 md:w-52 md:h-24 flex items-center justify-center">
-            <h3 class="text-xl md:text-3xl font-bold md:font-semibold tracking-[0.05em] md:tracking-normal">成果</h3>
-          </div>
-        </div>
-        <div class="flex justify-center gap-1 md:gap-2 mb-8 md:mb-12 max-w-6xl mx-auto">
-          <p class="text-center w-40 md:w-52 text-[#94AD49] font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">探究與實作科技田間管理</p>
-          <div class="w-8 md:w-20"></div>
-          <p class="text-center w-40 md:w-52 text-green-700 font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">實地參訪科技農業場域</p>
-          <div class="w-8 md:w-20"></div>
-          <p class="text-center w-40 md:w-52 text-[#94AD49] font-bold md:font-semibold text-sm md:text-lg tracking-[0.05em] md:tracking-normal">成果發表與心得分享</p>
         </div>
 
         <div class="w-24 mx-auto border-t-2 border-primary-brown my-12"></div>
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-brown">學期課程參考</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-12 mx-auto px-8 md:px-0" style="max-width: 56rem;">
-          <div>
-            <a href="https://resource.webduino.io/docs/selected_course_all/selected_course_03" class="block rounded-lg shadow-md mb-3 md:mb-6 hover:opacity-90 transition-opacity cursor-pointer">
-              <img alt="課堂食農" class="w-full h-auto rounded-lg" src="/assets/l05.jpg"/>
-            </a>
-          </div>
-          <div>
-            <a href="https://resource.webduino.io/docs/selected_course_all/selected_course_08" class="block rounded-lg shadow-md mb-3 md:mb-6 hover:opacity-90 transition-opacity cursor-pointer">
-              <img alt="校園實踐" class="w-full h-auto rounded-lg" src="/assets/l06.jpg"/>
-            </a>
+        
+        <!-- 學期課程參考區塊 -->
+        <div ref="courseSection" class="transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': courseVisible, 'translate-y-20 opacity-0': !courseVisible }">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-brown">學期課程參考</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-12 mx-auto px-8 md:px-0" style="max-width: 56rem;">
+            <div class="transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': courseVisible, 'translate-y-10 opacity-0': !courseVisible }" :style="{ 'animation-delay': courseVisible ? '0ms' : '0ms' }">
+              <a href="https://resource.webduino.io/docs/selected_course_all/selected_course_03" class="block rounded-lg shadow-md mb-3 md:mb-6 hover:opacity-90 transition-opacity cursor-pointer">
+                <img alt="課堂食農" class="w-full h-auto rounded-lg" src="/assets/l05.jpg"/>
+              </a>
+            </div>
+            <div class="transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': courseVisible, 'translate-y-10 opacity-0': !courseVisible }" :style="{ 'animation-delay': courseVisible ? '200ms' : '0ms' }">
+              <a href="https://resource.webduino.io/docs/selected_course_all/selected_course_08" class="block rounded-lg shadow-md mb-3 md:mb-6 hover:opacity-90 transition-opacity cursor-pointer">
+                <img alt="校園實踐" class="w-full h-auto rounded-lg" src="/assets/l06.jpg"/>
+              </a>
+            </div>
           </div>
         </div>
-         <div class="w-24 mx-auto border-t-2 border-primary-brown my-12"></div>
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-brown">學校裝設實照</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 max-w-5xl mx-auto">
-          <img alt="School farming setup with sensors" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-41.jpg"/>
-          <img alt="Outdoor farming equipment at a school" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-42.jpg"/>
-          <img alt="Student interacting with farming technology" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-43.jpg"/>
-          <img alt="Close-up of plants in a school garden" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-44.jpg"/>
-          <img alt="Another view of outdoor farming setup" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-45.jpg"/>
-          <img alt="Harvested produce from school garden" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md" src="/assets/s-46.jpg"/>
+        
+        <div class="w-24 mx-auto border-t-2 border-primary-brown my-12"></div>
+        
+        <!-- 學校裝設實照區塊 -->
+        <div ref="photoSection" class="transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': photoVisible, 'translate-y-20 opacity-0': !photoVisible }">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-brown">學校裝設實照</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 max-w-5xl mx-auto">
+            <img alt="School farming setup with sensors" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': photoVisible, 'translate-y-10 opacity-0': !photoVisible }" :style="{ 'animation-delay': photoVisible ? '0ms' : '0ms' }" src="/assets/s-41.jpg"/>
+            <img alt="Outdoor farming equipment at a school" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': photoVisible, 'translate-y-10 opacity-0': !photoVisible }" :style="{ 'animation-delay': photoVisible ? '100ms' : '0ms' }" src="/assets/s-42.jpg"/>
+            <img alt="Student interacting with farming technology" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': photoVisible, 'translate-y-10 opacity-0': !photoVisible }" :style="{ 'animation-delay': photoVisible ? '200ms' : '0ms' }" src="/assets/s-43.jpg"/>
+            <img alt="Close-up of plants in a school garden" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': photoVisible, 'translate-y-10 opacity-0': !photoVisible }" :style="{ 'animation-delay': photoVisible ? '300ms' : '0ms' }" src="/assets/s-44.jpg"/>
+            <img alt="Another view of outdoor farming setup" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': photoVisible, 'translate-y-10 opacity-0': !photoVisible }" :style="{ 'animation-delay': photoVisible ? '400ms' : '0ms' }" src="/assets/s-45.jpg"/>
+            <img alt="Harvested produce from school garden" class="w-full aspect-square md:h-48 object-cover rounded-lg shadow-md transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': photoVisible, 'translate-y-10 opacity-0': !photoVisible }" :style="{ 'animation-delay': photoVisible ? '500ms' : '0ms' }" src="/assets/s-46.jpg"/>
+          </div>
         </div>
+        
         <button class="btn-primary block mx-auto px-10 mb-12 text-xl" style="font-weight: 700 !important;">
           <span class="md:font-medium">立即洽詢食農方案</span>
         </button>
@@ -296,7 +312,105 @@ export default {
   data() {
     return {
       showMobileMenu: false,
-      flippedCards: [false, false, false, false, false, false]
+      flippedCards: [false, false, false, false, false, false],
+      // 動畫控制變數
+      introVisible: false,
+      sdgsVisible: false,
+      processVisible: false,
+      courseVisible: false,
+      photoVisible: false
+    }
+  },
+  mounted() {
+    // 設置 Intersection Observer 來監聽各個區塊
+    this.introObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.introVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    this.sdgsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.sdgsVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    this.processObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.processVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    this.courseObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.courseVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    this.photoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.photoVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    // 開始觀察各個區塊
+    if (this.$refs.introSection) {
+      this.introObserver.observe(this.$refs.introSection)
+    }
+    if (this.$refs.sdgsSection) {
+      this.sdgsObserver.observe(this.$refs.sdgsSection)
+    }
+    if (this.$refs.processSection) {
+      this.processObserver.observe(this.$refs.processSection)
+    }
+    if (this.$refs.courseSection) {
+      this.courseObserver.observe(this.$refs.courseSection)
+    }
+    if (this.$refs.photoSection) {
+      this.photoObserver.observe(this.$refs.photoSection)
+    }
+  },
+  beforeDestroy() {
+    // 清理 observers
+    if (this.introObserver) {
+      this.introObserver.disconnect()
+    }
+    if (this.sdgsObserver) {
+      this.sdgsObserver.disconnect()
+    }
+    if (this.processObserver) {
+      this.processObserver.disconnect()
+    }
+    if (this.courseObserver) {
+      this.courseObserver.disconnect()
+    }
+    if (this.photoObserver) {
+      this.photoObserver.disconnect()
     }
   },
   methods: {

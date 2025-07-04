@@ -77,9 +77,10 @@
       <div class="w-full border-b border-gray-200"></div>
 
       <!-- 全台安裝場域 -->
-      <section class="py-8 md:py-16" id="installations">
+      <section ref="installationsSection" class="py-8 md:py-16 transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': installationsVisible, 'translate-y-20 opacity-0': !installationsVisible }" id="installations">
         <div class="container mx-auto px-4 text-center">
-          <h3 class="text-3xl md:text-4xl font-bold text-green-700 mb-8 md:mb-4">全台安裝場域</h3>
+          <h3 class="text-3xl md:text-4xl font-bold text-green-700 mb-4">全台安裝場域</h3>
+          <p class="text-lg md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8 md:mb-4 font-semibold">全台超過 200 個場域安裝使用中</p>
                       <div class="relative inline-block w-full max-w-sm md:max-w-lg lg:max-w-4xl mx-auto" style="aspect-ratio: 1066/1244;">
               <img alt="台灣安裝場域地圖" class="w-full h-full object-cover rounded-lg md:shadow-md md:hover:shadow-xl transition-shadow duration-300" src="/assets/台灣地圖2.png"/>
               <img alt="桃城蒔菜標記" class="absolute top-[9%] left-[77.3%] md:top-[9.5%] md:left-[77%] lg:top-[11%] lg:left-[77%] transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 cursor-pointer hover:scale-110 transition-transform duration-300" src="/assets/SVG/桃城蒔菜.svg" @click="openFarmPopup('taocheng')"/>
@@ -200,7 +201,7 @@
       </section>
 
       <!-- 新一代樂農小主機 -->
-      <section class="py-6 md:py-8 bg-white">
+      <section ref="newHostSection" class="py-6 md:py-8 bg-white transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': newHostVisible, 'translate-y-20 opacity-0': !newHostVisible }">
         <div class="px-4 lg:px-8">
           <div class="bg-white p-4 md:p-12 lg:p-16 rounded-2xl flex flex-col md:flex-row items-center max-w-7xl mx-auto">
             <!-- 手機版：標題在上面 -->
@@ -255,8 +256,8 @@
                          'scale-90 opacity-60': index !== currentProductIndex,
                          'scale-100 opacity-100': index === currentProductIndex
                        }">
-                    <img :alt="product.alt" class="w-3/4 h-40 object-contain rounded-md mb-4 mx-auto" :src="product.image"/>
-                    <h4 class="text-2xl font-bold text-green-700 mb-2 h-16 flex items-center justify-center">{{ product.title }}</h4>
+                    <img :alt="product.alt" class="w-3/4 h-40 object-contain rounded-md mb-2 mx-auto" :src="product.image"/>
+                    <h4 class="font-bold text-green-700 mb-1 h-16 flex items-center justify-center" style="font-size: 1.375rem;">{{ product.title }}</h4>
                     <p class="text-gray-600 mb-4 text-lg">{{ product.description }}</p>
                   </div>
                 </div>
@@ -332,7 +333,7 @@
       </section>
 
       <!-- 串接氣象站 -->
-      <section class="py-8 md:py-20 bg-gradient-to-br from-blue-50 to-green-50">
+      <section ref="weatherSection" class="py-8 md:py-20 bg-gradient-to-br from-blue-50 to-green-50 transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': weatherVisible, 'translate-y-20 opacity-0': !weatherVisible }">
         <div class="container mx-auto px-4">
           <h3 class="text-3xl md:text-4xl font-bold text-green-700 text-center mb-6">串接氣象站</h3>
           <p class="text-xl text-gray-600 text-center mb-6 md:mb-12 max-w-2xl mx-auto">即時監測氣象數據，智慧預測環境變化，讓農作物在最適宜的條件下成長。</p>
@@ -343,7 +344,7 @@
       </section>
 
       <!-- 場域控制一目瞭然 -->
-      <section class="py-8 md:py-20 bg-gradient-to-br from-green-50 to-blue-50">
+      <section ref="dashboardSection" class="py-8 md:py-20 bg-gradient-to-br from-green-50 to-blue-50 transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': dashboardVisible, 'translate-y-20 opacity-0': !dashboardVisible }">
         <div class="container mx-auto px-4">
           <h3 class="text-3xl md:text-4xl font-bold text-green-700 text-center mb-6">場域控制一目瞭然</h3>
           <p class="text-xl text-gray-600 text-center mb-6 md:mb-12 max-w-2xl mx-auto">直觀的儀表板設計，讓您輕鬆掌握所有設備狀態，一鍵操控整個農場。</p>
@@ -354,58 +355,58 @@
       </section>
 
       <!-- 我們可以控制什麼 -->
-      <section class="py-16">
+      <section ref="controlSection" class="py-16 transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-20 opacity-0': !controlVisible }">
         <div class="container mx-auto px-4">
                       <h3 class="text-3xl md:text-4xl font-bold text-green-700 text-center mb-12">我們可以控制什麼</h3>
           <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '0ms' : '0ms' }">
               <img src="/assets/0_con-13.png" alt="澆灌水" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">澆灌水</p>
             </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '50ms' : '0ms' }">
               <img src="/assets/0_con-14.png" alt="風扇" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">風扇</p>
             </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '100ms' : '0ms' }">
               <img src="/assets/0_con-15.png" alt="馬達" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">馬達</p>
             </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '150ms' : '0ms' }">
               <img src="/assets/0_con-16.png" alt="水霧" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">水霧</p>
             </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '200ms' : '0ms' }">
               <img src="/assets/0_con-17.png" alt="捲簾" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">捲簾</p>
             </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '250ms' : '0ms' }">
               <img src="/assets/0_con-18.png" alt="燈光" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">燈光</p>
             </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '300ms' : '0ms' }">
               <img src="/assets/0_con-19.png" alt="光度" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">光度</p>
             </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '350ms' : '0ms' }">
               <img src="/assets/0_con-20.png" alt="溫濕度" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">溫濕度</p>
-          </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            </div>
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '400ms' : '0ms' }">
               <img src="/assets/0_con-21.png" alt="土壤濕度" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">土壤濕度</p>
-          </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            </div>
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '450ms' : '0ms' }">
               <img src="/assets/0_con-22.png" alt="流量計" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">流量計</p>
-          </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            </div>
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '500ms' : '0ms' }">
               <img src="/assets/0_con-23.png" alt="雨量計" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-base md:text-base lg:text-base">雨量計</p>
-          </div>
-            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square">
+            </div>
+            <div class="flex flex-col items-center justify-center p-3 md:p-4 lg:p-6 bg-gray-100 rounded-lg shadow aspect-square transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': controlVisible, 'translate-y-10 opacity-0': !controlVisible }" :style="{ 'animation-delay': controlVisible ? '550ms' : '0ms' }">
               <img src="/assets/0_con-24.png" alt="各式 RS485" class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mb-2 md:mb-3 lg:mb-3"/>
               <p class="text-gray-700 text-sm md:text-base lg:text-base">各式 RS485</p>
-          </div>
+            </div>
           </div>
         </div>
       </section>
@@ -429,6 +430,114 @@
               <img alt="SI整合商示意圖" class="w-full h-48 md:h-40 lg:h-48 object-cover rounded-md mb-4 md:mb-3 lg:mb-4" src="/assets/SI.png"/>
               <h4 class="text-2xl font-bold text-green-700 mb-2">SI 整合商</h4>
               <p class="text-gray-600 mb-4 md:mb-2 lg:mb-4 text-lg">我們專注技術的開發，與您在規劃場域的專業攜手配合，幫助農戶更輕鬆踏入智慧農業。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相關報導 -->
+      <section ref="newsSection" class="py-16 bg-white transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-20 opacity-0': !newsVisible }">
+        <div class="container mx-auto px-4">
+          <h3 class="text-3xl md:text-4xl font-bold text-green-700 text-center mb-12">相關報導</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- YouTube 影片 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '0ms' : '0ms' }">
+              <div class="relative aspect-video">
+                <iframe 
+                  class="w-full h-full" 
+                  src="https://www.youtube.com/embed/X9cX8nzDrjk" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="p-6">
+                <a href="https://youtu.be/X9cX8nzDrjk?si=LcLX255H8zwpJbIw" target="_blank" class="block">
+                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">太陽公公來節水：滑手機的智慧農業管理</h4>
+                </a>
+                <a href="https://youtu.be/X9cX8nzDrjk?si=LcLX255H8zwpJbIw" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">觀看完整影片 →</a>
+              </div>
+            </div>
+
+            <!-- 新頭殼新聞 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '200ms' : '0ms' }">
+              <a href="https://newtalk.tw/news/view/2022-04-18/741454" target="_blank" class="block">
+                <div class="relative aspect-video">
+                  <img src="/assets/報導/02.jpg" alt="新頭殼新聞預覽圖" class="w-full h-full object-cover"/>
+                </div>
+              </a>
+              <div class="p-6">
+                <a href="https://newtalk.tw/news/view/2022-04-18/741454" target="_blank" class="block">
+                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">食農教育新潮流 新北市鶯歌、永和國中智慧e化跨域行</h4>
+                </a>
+                <a href="https://newtalk.tw/news/view/2022-04-18/741454" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+              </div>
+            </div>
+
+            <!-- 食力新聞 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '400ms' : '0ms' }">
+              <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" class="block">
+                <div class="relative aspect-video">
+                  <img src="/assets/報導/03.jpg" alt="食力新聞預覽圖" class="w-full h-full object-cover"/>
+                </div>
+              </a>
+              <div class="p-6">
+                <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" class="block">
+                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">手機就能遠端澆水、檢索適栽種類！桃園農改場智慧植栽管理系統成校園食育推手</h4>
+                </a>
+                <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+              </div>
+            </div>
+
+            <!-- Webduino 資源網報導 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '600ms' : '0ms' }">
+              <a href="https://resource.webduino.io/blog/science-fair-masterpiece" target="_blank" class="block">
+                <div class="relative aspect-video">
+                  <img src="/assets/報導/04.webp" alt="Webduino 資源網報導預覽圖" class="w-full h-full object-cover"/>
+                </div>
+              </a>
+              <div class="p-6">
+                <a href="https://resource.webduino.io/blog/science-fair-masterpiece" target="_blank" class="block">
+                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">智慧植栽系統打造 AI 科技菜園，台中國安國小奪科展佳作</h4>
+                </a>
+                <a href="https://resource.webduino.io/blog/science-fair-masterpiece" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+              </div>
+            </div>
+
+            <!-- 雄蜂授粉智慧灌溉影片 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '800ms' : '0ms' }">
+              <div class="relative aspect-video">
+                <iframe 
+                  class="w-full h-full" 
+                  src="https://www.youtube.com/embed/_ZHjH14OKos" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="p-6">
+                <a href="https://youtu.be/_ZHjH14OKos?si=czPyLhdECDVoxxiW" target="_blank" class="block">
+                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">雄蜂授粉.智慧灌溉 陳冠銘種出美味番茄</h4>
+                </a>
+                <a href="https://youtu.be/_ZHjH14OKos?si=czPyLhdECDVoxxiW" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">觀看完整影片 →</a>
+              </div>
+            </div>
+
+            <!-- 上下游新聞報導 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '1000ms' : '0ms' }">
+              <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" class="block">
+                <div class="relative aspect-video">
+                  <img src="/assets/報導/06.jpg" alt="上下游新聞報導預覽圖" class="w-full h-full object-cover"/>
+                </div>
+              </a>
+              <div class="p-6">
+                <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" class="block">
+                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">紅龍果快中暑了？智慧感控灑水退燒！幫農民對抗極端天候，手機用Line就可遙控</h4>
+                </a>
+                <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+              </div>
             </div>
           </div>
         </div>
@@ -485,6 +594,12 @@ export default {
       productVisible: false, // 控制產品區塊動畫顯示
       smartVisible: false, // 控制智慧管理區塊動畫顯示
       userVisible: false, // 控制用戶區塊動畫顯示
+      installationsVisible: false, // 控制全台安裝場域區塊動畫顯示
+      newHostVisible: false, // 控制新一代樂農小主機區塊動畫顯示
+      weatherVisible: false, // 控制串接氣象站區塊動畫顯示
+      dashboardVisible: false, // 控制場域控制一目瞭然區塊動畫顯示
+      controlVisible: false, // 控制我們可以控制什麼區塊動畫顯示
+      newsVisible: false, // 控制相關報導區塊動畫顯示
       currentProductIndex: 0, // 當前顯示的產品索引
       touchStartX: 0, // 觸控開始的X座標
       touchEndX: 0, // 觸控結束的X座標
@@ -576,6 +691,79 @@ export default {
       rootMargin: '0px 0px -50px 0px'
     })
 
+    // 新增的 Intersection Observer
+    // 設置 Intersection Observer 來監聽全台安裝場域區塊
+    this.installationsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.installationsVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    // 設置 Intersection Observer 來監聽新一代樂農小主機區塊
+    this.newHostObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.newHostVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    // 設置 Intersection Observer 來監聽串接氣象站區塊
+    this.weatherObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.weatherVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    // 設置 Intersection Observer 來監聽場域控制一目瞭然區塊
+    this.dashboardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.dashboardVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    // 設置 Intersection Observer 來監聽我們可以控制什麼區塊
+    this.controlObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.controlVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
+    // 設置 Intersection Observer 來監聽相關報導區塊
+    this.newsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.newsVisible = true
+        }
+      })
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    })
+
     // 開始觀察 hero 區塊
     if (this.$refs.heroSection) {
       this.heroObserver.observe(this.$refs.heroSection)
@@ -603,6 +791,26 @@ export default {
     if (this.$refs.userSection) {
       this.userObserver.observe(this.$refs.userSection)
     }
+
+    // 開始觀察新增的區塊
+    if (this.$refs.installationsSection) {
+      this.installationsObserver.observe(this.$refs.installationsSection)
+    }
+    if (this.$refs.newHostSection) {
+      this.newHostObserver.observe(this.$refs.newHostSection)
+    }
+    if (this.$refs.weatherSection) {
+      this.weatherObserver.observe(this.$refs.weatherSection)
+    }
+    if (this.$refs.dashboardSection) {
+      this.dashboardObserver.observe(this.$refs.dashboardSection)
+    }
+    if (this.$refs.controlSection) {
+      this.controlObserver.observe(this.$refs.controlSection)
+    }
+    if (this.$refs.newsSection) {
+      this.newsObserver.observe(this.$refs.newsSection)
+    }
   },
   beforeDestroy() {
     // 清理 observers
@@ -620,6 +828,25 @@ export default {
     }
     if (this.userObserver) {
       this.userObserver.disconnect()
+    }
+    // 清理新增的 observers
+    if (this.installationsObserver) {
+      this.installationsObserver.disconnect()
+    }
+    if (this.newHostObserver) {
+      this.newHostObserver.disconnect()
+    }
+    if (this.weatherObserver) {
+      this.weatherObserver.disconnect()
+    }
+    if (this.dashboardObserver) {
+      this.dashboardObserver.disconnect()
+    }
+    if (this.controlObserver) {
+      this.controlObserver.disconnect()
+    }
+    if (this.newsObserver) {
+      this.newsObserver.disconnect()
     }
   },
   methods: {
@@ -667,16 +894,34 @@ export default {
       if (Math.abs(touchDiff) > minSwipeDistance) {
         if (touchDiff > 0) {
           // 向左滑動，顯示下一個產品
-          this.nextProduct()
+          this.handleInfiniteSwipe('next')
         } else {
           // 向右滑動，顯示上一個產品
-          this.prevProduct()
+          this.handleInfiniteSwipe('prev')
         }
       }
       
       this.isSwiping = false
       this.touchStartX = 0
       this.touchEndX = 0
+    },
+    // 新增：無限循環的滑動邏輯
+    handleInfiniteSwipe(direction) {
+      if (direction === 'next') {
+        // 如果是最後一張，滑動到第一張
+        if (this.currentProductIndex === this.products.length - 1) {
+          this.currentProductIndex = 0
+        } else {
+          this.currentProductIndex++
+        }
+      } else {
+        // 如果是第一張，滑動到最後一張
+        if (this.currentProductIndex === 0) {
+          this.currentProductIndex = this.products.length - 1
+        } else {
+          this.currentProductIndex--
+        }
+      }
     }
   }
 }
