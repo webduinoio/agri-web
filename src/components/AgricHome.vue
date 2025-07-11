@@ -8,6 +8,7 @@
           <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
           <a class="hover:text-green-200" href="#installations">場域實績</a>
           <a class="hover:text-green-200" href="/education">食農教育</a>
+          <a class="hover:text-green-200" href="/reference-planning">參考規劃</a>
           <a class="hover:text-green-200" href="#contact">聯絡我們</a>
           <a class="hover:text-green-200" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
         </nav>
@@ -20,6 +21,7 @@
             <a class="hover:text-green-200 py-2" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
             <a class="hover:text-green-200 py-2" href="#installations">場域實績</a>
             <a class="hover:text-green-200 py-2" href="/education">食農教育</a>
+            <a class="hover:text-green-200 py-2" href="/reference-planning">參考規劃</a>
             <a class="hover:text-green-200 py-2" href="#contact">聯絡我們</a>
             <a class="hover:text-green-200 py-2" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
           </nav>
@@ -484,7 +486,7 @@
               </a>
               <div class="p-6">
                 <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" class="block">
-                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">手機就能遠端澆水、檢索適栽種類！桃園農改場智慧植栽管理系統成校園食育推手</h4>
+                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">桃園農改場智慧植栽管理系統成校園食育推手！手機就能遠端澆水、檢索適栽種類！</h4>
                 </a>
                 <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
               </div>
@@ -510,7 +512,7 @@
               <div class="relative aspect-video">
                 <iframe 
                   class="w-full h-full" 
-                  src="https://www.youtube.com/embed/_ZHjH14OKos" 
+                  src="https://www.youtube.com/embed/_ZHjH14OKos?start=76" 
                   title="YouTube video player" 
                   frameborder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -518,10 +520,10 @@
                 </iframe>
               </div>
               <div class="p-6">
-                <a href="https://youtu.be/_ZHjH14OKos?si=czPyLhdECDVoxxiW" target="_blank" class="block">
-                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">雄蜂授粉.智慧灌溉 陳冠銘種出美味番茄</h4>
+                <a href="https://youtu.be/_ZHjH14OKos?si=enBzTnl1RiIKU0u_&t=76" target="_blank" class="block">
+                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">熊蜂授粉.智慧灌溉 陳冠銘種出美味番茄</h4>
                 </a>
-                <a href="https://youtu.be/_ZHjH14OKos?si=czPyLhdECDVoxxiW" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">觀看完整影片 →</a>
+                <a href="https://youtu.be/_ZHjH14OKos?si=enBzTnl1RiIKU0u_&t=76" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">觀看完整影片 →</a>
               </div>
             </div>
 
@@ -552,8 +554,8 @@
             <h5 class="text-lg font-semibold text-white mb-3" id="contact">聯絡我們</h5>
             <p class="mb-1">慶奇科技股份有限公司</p>
             <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">place</span> 高雄市前鎮區復興四路 2 號 4 樓 A10</p>
-            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">phone</span> 07-3388-511</p>
-            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">email</span> service@webduino.io</p>
+            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">phone</span> <a href="tel:07-3388-511" class="hover:text-green-400">07-3388-511</a></p>
+            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">email</span> <a href="#" @click.prevent="copyEmail" class="hover:text-green-400 cursor-pointer">service@webduino.io</a></p>
           </div>
           <div>
             <h5 class="text-lg font-semibold text-white mb-3">快速連結</h5>
@@ -922,6 +924,39 @@ export default {
           this.currentProductIndex--
         }
       }
+    },
+    // 複製信箱到剪貼簿
+    copyEmail() {
+      const email = 'service@webduino.io'
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).then(() => {
+          // 可以添加一個簡單的提示
+          alert('信箱已複製到剪貼簿！')
+        }).catch(err => {
+          console.error('複製失敗:', err)
+          this.fallbackCopyEmail(email)
+        })
+      } else {
+        this.fallbackCopyEmail(email)
+      }
+    },
+    // 備用的複製方法（適用於較舊的瀏覽器）
+    fallbackCopyEmail(text) {
+      const textArea = document.createElement('textarea')
+      textArea.value = text
+      textArea.style.position = 'fixed'
+      textArea.style.left = '-999999px'
+      textArea.style.top = '-999999px'
+      document.body.appendChild(textArea)
+      textArea.focus()
+      textArea.select()
+      try {
+        document.execCommand('copy')
+        alert('信箱已複製到剪貼簿！')
+      } catch (err) {
+        console.error('複製失敗:', err)
+      }
+      document.body.removeChild(textArea)
     }
   }
 }

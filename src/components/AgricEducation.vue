@@ -278,8 +278,8 @@
             <h5 class="text-lg font-semibold text-white mb-3" id="contact">聯絡我們</h5>
             <p class="mb-1">慶奇科技股份有限公司</p>
             <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">place</span> 高雄市前鎮區復興四路 2 號 4 樓 A10</p>
-            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">phone</span> 07-3388-511</p>
-            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">email</span> service@webduino.io</p>
+            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">phone</span> <a href="tel:07-3388-511" class="hover:text-green-400">07-3388-511</a></p>
+            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">email</span> <a href="#" @click.prevent="copyEmail" class="hover:text-green-400 cursor-pointer">service@webduino.io</a></p>
           </div>
           <div>
             <h5 class="text-lg font-semibold text-white mb-3">快速連結</h5>
@@ -318,7 +318,10 @@ export default {
       sdgsVisible: false,
       processVisible: false,
       courseVisible: false,
-      photoVisible: false
+      photoVisible: false,
+      // 自動翻牌相關
+      autoFlipTimer: null,
+      currentCardIndex: 0
     }
   },
   mounted() {
@@ -394,6 +397,9 @@ export default {
     if (this.$refs.photoSection) {
       this.photoObserver.observe(this.$refs.photoSection)
     }
+
+    // 手機版自動翻牌功能
+    this.startAutoFlip()
   },
   beforeDestroy() {
     // 清理 observers
@@ -412,6 +418,11 @@ export default {
     if (this.photoObserver) {
       this.photoObserver.disconnect()
     }
+
+    // 清理自動翻牌定時器
+    if (this.autoFlipTimer) {
+      clearInterval(this.autoFlipTimer)
+    }
   },
   methods: {
     toggleMobileMenu() {
@@ -419,6 +430,52 @@ export default {
     },
     toggleCard(index) {
       this.flippedCards[index] = !this.flippedCards[index]
+    },
+    // 開始自動翻牌（僅手機版）
+    startAutoFlip() {
+      // 只在手機版啟用自動翻牌
+      if (window.innerWidth < 768) {
+        this.autoFlipTimer = setInterval(() => {
+          // 翻轉當前卡片
+          this.flippedCards[this.currentCardIndex] = !this.flippedCards[this.currentCardIndex]
+          
+          // 移動到下一個卡片
+          this.currentCardIndex = (this.currentCardIndex + 1) % this.flippedCards.length
+        }, 3000) // 每3秒翻一次
+      }
+    },
+    // 複製信箱到剪貼簿
+    copyEmail() {
+      const email = 'service@webduino.io'
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).then(() => {
+          // 可以添加一個簡單的提示
+          alert('信箱已複製到剪貼簿！')
+        }).catch(err => {
+          console.error('複製失敗:', err)
+          this.fallbackCopyEmail(email)
+        })
+      } else {
+        this.fallbackCopyEmail(email)
+      }
+    },
+    // 備用的複製方法（適用於較舊的瀏覽器）
+    fallbackCopyEmail(text) {
+      const textArea = document.createElement('textarea')
+      textArea.value = text
+      textArea.style.position = 'fixed'
+      textArea.style.left = '-999999px'
+      textArea.style.top = '-999999px'
+      document.body.appendChild(textArea)
+      textArea.focus()
+      textArea.select()
+      try {
+        document.execCommand('copy')
+        alert('信箱已複製到剪貼簿！')
+      } catch (err) {
+        console.error('複製失敗:', err)
+      }
+      document.body.removeChild(textArea)
     }
   }
 }
