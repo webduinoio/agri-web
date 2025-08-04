@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm outdated:*)",
+      "Bash(npm view:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(stagewise --version)",
+      "Bash(hash -r)",
+      "Bash(/Users/marty/.nvm/versions/node/v18.14.0/bin/stagewise --version)",
+      "Bash(npm cache clean:*)",
+      "Bash(npx stagewise:*)",
+      "Bash(npm run dev:*)"
+    ],
+    "deny": []
+  }
+}
