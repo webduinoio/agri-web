@@ -3,7 +3,7 @@
     <!-- Header -->
     <header class="bg-green-700/80 text-white fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
       <div class="px-4 lg:px-8 py-3 flex justify-between items-center">
-        <router-link to="/home" class="text-2xl font-bold">慶奇科技</router-link>
+        <a href="#" @click.prevent="scrollToTop" class="text-2xl font-bold cursor-pointer">慶奇科技</a>
         <nav class="hidden md:flex space-x-6 items-center text-lg">
           <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
           <a class="hover:text-green-200" href="#installations">場域實績</a>
@@ -515,55 +515,55 @@
                 </iframe>
               </div>
               <div class="p-6">
-                <a href="https://youtu.be/X9cX8nzDrjk?si=LcLX255H8zwpJbIw" target="_blank" class="block">
+                <a href="https://youtu.be/X9cX8nzDrjk?si=LcLX255H8zwpJbIw" target="_blank" rel="noopener noreferrer" class="block">
                   <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">太陽公公來節水：滑手機的智慧農業管理</h4>
                 </a>
-                <a href="https://youtu.be/X9cX8nzDrjk?si=LcLX255H8zwpJbIw" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">觀看完整影片 →</a>
+                <a href="https://youtu.be/X9cX8nzDrjk?si=LcLX255H8zwpJbIw" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-700 font-semibold">觀看完整影片 →</a>
               </div>
             </div>
 
             <!-- 新頭殼新聞 -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '200ms' : '0ms' }">
-              <a href="https://newtalk.tw/news/view/2022-04-18/741454" target="_blank" class="block">
+              <a href="https://newtalk.tw/news/view/2022-04-18/741454" target="_blank" rel="noopener noreferrer" class="block">
                 <div class="relative aspect-video">
                   <img src="/assets/報導/02.jpg" alt="新頭殼新聞預覽圖" class="w-full h-full object-cover"/>
                 </div>
               </a>
               <div class="p-6">
-                <a href="https://newtalk.tw/news/view/2022-04-18/741454" target="_blank" class="block">
+                <a href="https://newtalk.tw/news/view/2022-04-18/741454" target="_blank" rel="noopener noreferrer" class="block">
                   <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">食農教育新潮流 新北市鶯歌、永和國中智慧e化跨域行</h4>
                 </a>
-                <a href="https://newtalk.tw/news/view/2022-04-18/741454" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+                <a href="https://newtalk.tw/news/view/2022-04-18/741454" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
               </div>
             </div>
 
             <!-- 食力新聞 -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '400ms' : '0ms' }">
-              <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" class="block">
+              <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" rel="noopener noreferrer" class="block">
                 <div class="relative aspect-video">
                   <img src="/assets/報導/03.jpg" alt="食力新聞預覽圖" class="w-full h-full object-cover"/>
                 </div>
               </a>
               <div class="p-6">
-                <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" class="block">
+                <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" rel="noopener noreferrer" class="block">
                   <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">桃園農改場智慧植栽管理系統成校園食育推手！手機就能遠端澆水、檢索適栽種類！</h4>
                 </a>
-                <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+                <a href="https://www.foodnext.net/life/education/paper/5593704179?fbclid=IwAR0cyabGxGEESDUdSq4XhMuyaczGiqFBSEbD9pns9rCpxVk_vYReuFFQQW0" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
               </div>
             </div>
 
             <!-- Webduino 資源網報導 -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '600ms' : '0ms' }">
-              <a href="https://resource.webduino.io/blog/science-fair-masterpiece" target="_blank" class="block">
+              <a href="https://resource.webduino.io/blog/science-fair-masterpiece" target="_blank" rel="noopener noreferrer" class="block">
                 <div class="relative aspect-video">
                   <img src="/assets/報導/04.webp" alt="Webduino 資源網報導預覽圖" class="w-full h-full object-cover"/>
                 </div>
               </a>
               <div class="p-6">
-                <a href="https://resource.webduino.io/blog/science-fair-masterpiece" target="_blank" class="block">
+                <a href="https://resource.webduino.io/blog/science-fair-masterpiece" target="_blank" rel="noopener noreferrer" class="block">
                   <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">智慧植栽系統打造 AI 科技菜園，台中國安國小奪科展佳作</h4>
                 </a>
-                <a href="https://resource.webduino.io/blog/science-fair-masterpiece" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+                <a href="https://resource.webduino.io/blog/science-fair-masterpiece" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
               </div>
             </div>
 
@@ -580,40 +580,40 @@
                 </iframe>
               </div>
               <div class="p-6">
-                <a href="https://youtu.be/_ZHjH14OKos?si=enBzTnl1RiIKU0u_&t=76" target="_blank" class="block">
+                <a href="https://youtu.be/_ZHjH14OKos?si=enBzTnl1RiIKU0u_&t=76" target="_blank" rel="noopener noreferrer" class="block">
                   <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">熊蜂授粉.智慧灌溉 陳冠銘種出美味番茄</h4>
                 </a>
-                <a href="https://youtu.be/_ZHjH14OKos?si=enBzTnl1RiIKU0u_&t=76" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">觀看完整影片 →</a>
+                <a href="https://youtu.be/_ZHjH14OKos?si=enBzTnl1RiIKU0u_&t=76" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-700 font-semibold">觀看完整影片 →</a>
               </div>
             </div>
 
             <!-- 上下游新聞報導 -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '1000ms' : '0ms' }">
-              <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" class="block">
+              <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" rel="noopener noreferrer" class="block">
                 <div class="relative aspect-video">
                   <img src="/assets/報導/06.jpg" alt="上下游新聞報導預覽圖" class="w-full h-full object-cover"/>
                 </div>
               </a>
               <div class="p-6">
-                <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" class="block">
+                <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" rel="noopener noreferrer" class="block">
                   <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">紅龍果快中暑了？智慧感控灑水退燒！幫農民對抗極端天候，手機用Line就可遙控</h4>
                 </a>
-                <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+                <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
               </div>
             </div>
 
             <!-- ETtoday 新聞報導 -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '1200ms' : '0ms' }">
-              <a href="https://www.ettoday.net/news/20191218/1604630.html" target="_blank" class="block">
+              <a href="https://www.ettoday.net/news/20191218/1604630.html" target="_blank" rel="noopener noreferrer" class="block">
                 <div class="relative aspect-video">
                   <img src="/assets/報導/07.jpg" alt="ETtoday 新聞報導預覽圖" class="w-full h-full object-cover"/>
                 </div>
               </a>
               <div class="p-6">
-                <a href="https://www.ettoday.net/news/20191218/1604630.html" target="_blank" class="block">
+                <a href="https://www.ettoday.net/news/20191218/1604630.html" target="_blank" rel="noopener noreferrer" class="block">
                   <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">智慧農業新技術：提升農作效率與品質</h4>
                 </a>
-                <a href="https://www.ettoday.net/news/20191218/1604630.html" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+                <a href="https://www.ettoday.net/news/20191218/1604630.html" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
               </div>
             </div>
           </div>
@@ -622,11 +622,11 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-12">
+    <footer id="contact" class="bg-gray-800 text-gray-300 py-12">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h5 class="text-lg font-semibold text-white mb-3" id="contact">聯絡我們</h5>
+            <h5 class="text-lg font-semibold text-white mb-3">聯絡我們</h5>
             <p class="mb-1">慶奇科技股份有限公司</p>
             <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">place</span> 高雄市前鎮區復興四路 2 號 4 樓 A10</p>
             <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">phone</span> <a href="tel:07-3388-511" class="hover:text-green-400">07-3388-511</a></p>
@@ -645,7 +645,7 @@
           <div>
             <h5 class="text-lg font-semibold text-white mb-3">關注我們</h5>
             <div class="flex justify-start">
-              <a href="https://www.facebook.com/agrickit" target="_blank"><img alt="Facebook icon" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj0469GvjxwDlqnECXSV_ypXfmB7cLw_yXMNyQdtj6OnI3_RkzFtmTF7ECgIJNDT4tyBB6Q7DG4v2Z8PjzQQXzfrqQB-mdWQuv0khop_iZlI4VaJGA9Ijl5pPclEq1H8a9veoU77zXqoWDnwD4gjRD3-WJR77PIw_A81jUIsY_ewcm4D2iGS9QYiEuZ3sv9HzTB_vZsS0mrOgUEEQ11hkco1Edvjv3K3qLtoVLlBCFaTW78M1Zb5cmE0q2K-F4QvhcO7RkzfEyEIIF"/></a>
+              <a href="https://www.facebook.com/agrickit" target="_blank" rel="noopener noreferrer"><img alt="Facebook icon" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj0469GvjxwDlqnECXSV_ypXfmB7cLw_yXMNyQdtj6OnI3_RkzFtmTF7ECgIJNDT4tyBB6Q7DG4v2Z8PjzQQXzfrqQB-mdWQuv0khop_iZlI4VaJGA9Ijl5pPclEq1H8a9veoU77zXqoWDnwD4gjRD3-WJR77PIw_A81jUIsY_ewcm4D2iGS9QYiEuZ3sv9HzTB_vZsS0mrOgUEEQ11hkco1Edvjv3K3qLtoVLlBCFaTW78M1Zb5cmE0q2K-F4QvhcO7RkzfEyEIIF"/></a>
             </div>
           </div>
         </div>
@@ -817,6 +817,9 @@ export default {
     },
     toggleMobileMenu() {
       this.showMobileMenu = !this.showMobileMenu
+    },
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     },
     // 開始場域實績數字動畫
     startAchievementAnimation() {

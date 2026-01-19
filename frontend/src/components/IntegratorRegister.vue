@@ -107,10 +107,10 @@
       <section class="mb-12">
         <h2 class="section-title bg-blue-600">如何設定</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a href="https://md.webduino.io/s/22TOZk5pV#%E6%A8%82%E8%BE%B2%E5%B0%8F%E4%B8%BB%E6%A9%9F" target="_blank" class="btn btn-primary">樂農小主機</a>
-                      <a href="https://md.webduino.io/s/22TOZk5pV#%E6%A8%82%E8%BE%B2%E5%B0%8F%E4%B8%BB%E6%A9%9F-PRO" target="_blank" class="btn btn-primary">樂農小主機 PRO</a>
-                      <a href="https://md.webduino.io/s/22TOZk5pV#%E6%A8%82%E8%BE%B2%E5%B0%8F%E4%B8%BB%E6%A9%9F-PRO" target="_blank" class="btn btn-primary">Wi-Fi 四路控制器</a>
-          <a href="https://md.webduino.io/s/22TOZk5pV#%E8%A6%96%E8%A6%BA%E5%8C%96%E7%B7%A8%E8%BC%AF%E5%99%A8" target="_blank" class="btn btn-primary">積木程式教學</a>
+          <a href="https://md.webduino.io/s/22TOZk5pV#%E6%A8%82%E8%BE%B2%E5%B0%8F%E4%B8%BB%E6%A9%9F" target="_blank" rel="noopener noreferrer" class="btn btn-primary">樂農小主機</a>
+                      <a href="https://md.webduino.io/s/22TOZk5pV#%E6%A8%82%E8%BE%B2%E5%B0%8F%E4%B8%BB%E6%A9%9F-PRO" target="_blank" rel="noopener noreferrer" class="btn btn-primary">樂農小主機 PRO</a>
+                      <a href="https://md.webduino.io/s/22TOZk5pV#%E6%A8%82%E8%BE%B2%E5%B0%8F%E4%B8%BB%E6%A9%9F-PRO" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Wi-Fi 四路控制器</a>
+          <a href="https://md.webduino.io/s/22TOZk5pV#%E8%A6%96%E8%A6%BA%E5%8C%96%E7%B7%A8%E8%BC%AF%E5%99%A8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">積木程式教學</a>
         </div>
       </section>
 
@@ -264,7 +264,7 @@
           <div>
             <h5 class="text-lg font-semibold text-white mb-3">關注我們</h5>
             <div class="flex justify-start">
-              <a href="https://www.facebook.com/agrickit" target="_blank"><img alt="Facebook icon" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj0469GvjxwDlqnECXSV_ypXfmB7cLw_yXMNyQdtj6OnI3_RkzFtmTF7ECgIJNDT4tyBB6Q7DG4v2Z8PjzQQXzfrqQB-mdWQuv0khop_iZlI4VaJGA9Ijl5pPclEq1H8a9veoU77zXqoWDnwD4gjRD3-WJR77PIw_A81jUIsY_ewcm4D2iGS9QYiEuZ3sv9HzTB_vZsS0mrOgUEEQ11hkco1Edvjv3K3qLtoVLlBCFaTW78M1Zb5cmE0q2K-F4QvhcO7RkzfEyEIIF"/></a>
+              <a href="https://www.facebook.com/agrickit" target="_blank" rel="noopener noreferrer"><img alt="Facebook icon" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj0469GvjxwDlqnECXSV_ypXfmB7cLw_yXMNyQdtj6OnI3_RkzFtmTF7ECgIJNDT4tyBB6Q7DG4v2Z8PjzQQXzfrqQB-mdWQuv0khop_iZlI4VaJGA9Ijl5pPclEq1H8a9veoU77zXqoWDnwD4gjRD3-WJR77PIw_A81jUIsY_ewcm4D2iGS9QYiEuZ3sv9HzTB_vZsS0mrOgUEEQ11hkco1Edvjv3K3qLtoVLlBCFaTW78M1Zb5cmE0q2K-F4QvhcO7RkzfEyEIIF"/></a>
             </div>
           </div>
         </div>
