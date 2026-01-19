@@ -3,12 +3,12 @@
     <!-- Header -->
     <header class="bg-green-700/80 text-white fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
       <div class="px-4 lg:px-8 py-3 flex justify-between items-center">
-        <a href="/home" class="text-2xl font-bold">慶奇科技</a>
+        <router-link to="/home" class="text-2xl font-bold">慶奇科技</router-link>
         <nav class="hidden md:flex space-x-6 items-center text-lg">
           <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
           <a class="hover:text-green-200" href="#installations">場域實績</a>
-          <a class="hover:text-green-200" href="/education">食農教育</a>
-          <a class="hover:text-green-200" href="/reference-planning">參考規劃</a>
+          <router-link class="hover:text-green-200" to="/education">食農教育</router-link>
+          <router-link class="hover:text-green-200" to="/reference-planning">參考規劃</router-link>
           <a class="hover:text-green-200" href="#contact">聯絡我們</a>
           <a class="hover:text-green-200" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
         </nav>
@@ -20,8 +20,8 @@
           <nav class="flex flex-col space-y-2 p-4">
             <a class="hover:text-green-200 py-2" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
             <a class="hover:text-green-200 py-2" href="#installations">場域實績</a>
-            <a class="hover:text-green-200 py-2" href="/education">食農教育</a>
-            <a class="hover:text-green-200 py-2" href="/reference-planning">參考規劃</a>
+            <router-link class="hover:text-green-200 py-2" to="/education">食農教育</router-link>
+            <router-link class="hover:text-green-200 py-2" to="/reference-planning">參考規劃</router-link>
             <a class="hover:text-green-200 py-2" href="#contact">聯絡我們</a>
             <a class="hover:text-green-200 py-2" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
           </nav>
@@ -31,6 +31,8 @@
 
     <!-- Main -->
     <main>
+      <!-- SEO H1 - 視覺隱藏但對搜尋引擎可見 -->
+      <h1 class="sr-only">樂農智慧農業系統 - 環境監測與自動灌溉控制</h1>
       <!-- Hero Section -->
       <section 
         class="relative h-[400px] md:h-[600px] lg:h-[700px] flex items-center justify-center text-white overflow-hidden"
@@ -51,7 +53,7 @@
           <img src="/assets/logo.png" alt="樂農智慧農業" class="mx-auto mb-6 md:mb-8 h-24 md:h-40 lg:h-48 w-auto object-contain"/>
           <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 justify-center">
             <a class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 md:px-8 rounded-lg shadow-md transition duration-300 text-lg md:text-xl" href="https://agric-dashboard.webduino.io/login">登入樂農系統</a>
-            <a class="bg-white hover:bg-gray-100 text-green-600 font-semibold py-3 px-6 md:px-8 rounded-lg shadow-md transition duration-300 text-lg md:text-xl" href="/integrator-register">整合商登錄</a>
+            <router-link class="bg-white hover:bg-gray-100 text-green-600 font-semibold py-3 px-6 md:px-8 rounded-lg shadow-md transition duration-300 text-lg md:text-xl" to="/integrator-register">整合商登錄</router-link>
           </div>
         </div>
       </section>
@@ -78,13 +80,51 @@
 
       <div class="w-full border-b border-gray-200"></div>
 
+      <!-- 場域實績 -->
+      <section ref="achievementSection" class="py-12 md:py-16 relative transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': achievementVisible, 'translate-y-20 opacity-0': !achievementVisible }">
+        <!-- 背景圖片 -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/pictures/空拍.png');"></div>
+        <!-- 深色遮罩（帶綠色調） -->
+        <div class="absolute inset-0" style="background-color: rgba(49, 71, 58, 0.5);"></div>
+        <div class="container mx-auto px-4 relative z-10">
+          <h3 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">場域實績</h3>
+          <p class="text-base md:text-lg text-white text-center mb-10">樂農系統累積客戶場域總計</p>
+          <div class="flex justify-center items-center gap-8 md:gap-16 lg:gap-20">
+            <!-- 總面積 -->
+            <div class="flex flex-col items-center">
+              <div class="w-28 h-28 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full border-[12px] achievement-border bg-gray-900/80 flex flex-col items-center justify-center transition-transform duration-300" :class="{ 'animate-bounce-once': achievementAnimationDone }">
+                <span class="text-3xl md:text-5xl lg:text-6xl font-bold achievement-highlight">{{ animatedArea }}</span>
+                <span class="text-sm md:text-lg text-white">公頃</span>
+              </div>
+              <p class="mt-3 text-sm md:text-lg text-white">總面積</p>
+            </div>
+            <!-- 溫室數量 -->
+            <div class="flex flex-col items-center">
+              <div class="w-28 h-28 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full border-[12px] achievement-border bg-gray-900/80 flex flex-col items-center justify-center transition-transform duration-300" :class="{ 'animate-bounce-once': achievementAnimationDone }">
+                <span class="text-3xl md:text-5xl lg:text-6xl font-bold achievement-highlight">{{ animatedGreenhouses }}</span>
+                <span class="text-sm md:text-lg text-white">間</span>
+              </div>
+              <p class="mt-3 text-sm md:text-lg text-white">溫室數量</p>
+            </div>
+            <!-- 年省人工成本 -->
+            <div class="flex flex-col items-center">
+              <div class="w-28 h-28 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full border-[12px] achievement-border bg-gray-900/80 flex flex-col items-center justify-center transition-transform duration-300" :class="{ 'animate-bounce-once': achievementAnimationDone }">
+                <span class="text-3xl md:text-5xl lg:text-6xl font-bold achievement-highlight">{{ animatedCost }}</span>
+                <span class="text-sm md:text-lg text-white">萬</span>
+              </div>
+              <p class="mt-3 text-sm md:text-lg text-white">年省人工成本</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- 全台安裝場域 -->
       <section ref="installationsSection" class="py-8 md:py-16 transition-all duration-1000 ease-out" :class="{ 'translate-y-0 opacity-100': installationsVisible, 'translate-y-20 opacity-0': !installationsVisible }" id="installations">
         <div class="container mx-auto px-4 text-center">
           <h3 class="text-3xl md:text-4xl font-bold text-green-700 mb-4">全台安裝場域</h3>
           <p class="text-lg md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8 md:mb-4 font-semibold">全台超過 200 個場域安裝使用中</p>
                       <div class="relative inline-block w-full max-w-sm md:max-w-lg lg:max-w-4xl mx-auto" style="aspect-ratio: 1066/1244;">
-              <img alt="台灣安裝場域地圖" class="w-full h-full object-cover rounded-lg md:shadow-md md:hover:shadow-xl transition-shadow duration-300" src="/assets/台灣地圖2.png"/>
+              <img alt="樂農智慧農業全台超過200個安裝場域分布圖" class="w-full h-full object-cover rounded-lg md:shadow-md md:hover:shadow-xl transition-shadow duration-300" src="/assets/台灣地圖2.png"/>
               <img alt="桃城蒔菜標記" class="absolute top-[9%] left-[77.3%] md:top-[9.5%] md:left-[77%] lg:top-[11%] lg:left-[77%] transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 cursor-pointer hover:scale-110 transition-transform duration-300" src="/assets/SVG/桃城蒔菜.svg" @click="openFarmPopup('taocheng')"/>
               <img alt="富春山農場標記" class="absolute bottom-[11%] left-[49.5%] md:bottom-[14%] md:left-[49.5%] lg:bottom-[18%] lg:left-[49.5%] transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 cursor-pointer hover:scale-110 transition-transform duration-300" src="/assets/SVG/富春山農場.svg" @click="openFarmPopup('fuchun')"/>
               <img alt="儒園鮮果標記" class="absolute bottom-[3%] left-[53%] md:bottom-[6.5%] md:left-[53%] lg:bottom-[10%] lg:left-[53%] transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 cursor-pointer hover:scale-110 transition-transform duration-300" src="/assets/SVG/儒園鮮果.svg" @click="openFarmPopup('ruyuan')"/>
@@ -93,7 +133,7 @@
       </section>
 
       <!-- Pop-up Window -->
-      <div v-if="currentFarm" class="fixed inset-0 flex items-center justify-center z-50" @click="closePopup">
+      <div v-if="currentFarm" class="fixed inset-0 flex items-center justify-center z-50 bg-black/50" @click="closePopup">
         <div class="bg-white bg-opacity-85 backdrop-blur-md border-4 border-white rounded-lg shadow-2xl max-w-xl w-full mx-4 max-h-[90vh] flex flex-col" @click.stop>
           <!-- 固定標題區域 -->
           <div class="flex justify-between items-center p-8 pb-4 flex-shrink-0">
@@ -104,6 +144,26 @@
           </div>
           <!-- 可滾動內容區域 -->
           <div class="px-8 pb-8 overflow-y-auto flex-1">
+            <!-- 效益亮點區塊 -->
+            <div class="mb-6">
+              <h4 class="text-lg font-bold text-green-700 mb-2">效益亮點</h4>
+              <p class="text-sm text-gray-600 mb-4">面積：{{ getFarmArea() }} 公頃</p>
+              <div class="flex justify-center gap-3">
+                <div v-for="(benefit, index) in getFarmBenefits()" :key="index" class="flex flex-col items-center">
+                  <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-yellow-400 bg-gray-800 flex flex-col items-center justify-center">
+                    <span v-if="benefit.isUp" class="text-xs text-red-400">▲</span>
+                    <span v-else class="text-xs text-green-400">▼</span>
+                    <span class="text-base md:text-lg font-bold achievement-highlight">{{ benefit.value }}</span>
+                  </div>
+                  <p class="mt-2 text-xs md:text-sm text-gray-600">{{ benefit.label }}</p>
+                </div>
+              </div>
+            </div>
+
+            <hr class="border-gray-200 mb-6">
+
+            <h4 class="text-lg font-bold text-green-700 mb-4">安裝設備</h4>
+
             <!-- 桃城蒔菜照片展示 -->
             <div v-if="currentFarm === 'taocheng'" class="space-y-6">
               <div class="text-center">
@@ -180,20 +240,20 @@
           </div>
           <div ref="techSection" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 text-center">
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg aspect-square flex flex-col justify-center pt-6 md:pt-6 transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': techVisible, 'translate-y-10 opacity-0': !techVisible }" :style="{ 'animation-delay': techVisible ? '0ms' : '0ms' }">
-              <img alt="手機遠端遙控圖示" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_01.svg"/>
+              <img alt="環境監測功能圖示 - 即時收集溫濕度光度數據" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_01.svg"/>
               <h4 class="text-lg md:text-2xl font-bold md:font-semibold mb-2 text-green-700">環境監測</h4>
               
             </div>
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg aspect-square flex flex-col justify-center pt-6 md:pt-6 transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': techVisible, 'translate-y-10 opacity-0': !techVisible }" :style="{ 'animation-delay': techVisible ? '200ms' : '0ms' }">
-              <img alt="AI智慧控制圖示" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_02.svg"/>
+              <img alt="數據分析功能圖示 - 歷史數據分析與趨勢預測" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_02.svg"/>
               <h4 class="text-lg md:text-2xl font-bold md:font-semibold mb-2 text-green-700">數據分析</h4>
             </div>
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg aspect-square flex flex-col justify-center pt-6 md:pt-6 transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': techVisible, 'translate-y-10 opacity-0': !techVisible }" :style="{ 'animation-delay': techVisible ? '400ms' : '0ms' }">
-              <img alt="數據分析圖示" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_03.svg"/>
+              <img alt="專屬模型功能圖示 - 作物專屬AI栽培模型" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_03.svg"/>
               <h4 class="text-lg md:text-2xl font-bold md:font-semibold mb-2 text-green-700">專屬模型</h4>
             </div>
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg aspect-square flex flex-col justify-center pt-6 md:pt-6 transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': techVisible, 'translate-y-10 opacity-0': !techVisible }" :style="{ 'animation-delay': techVisible ? '600ms' : '0ms' }">
-              <img alt="數據分析圖示" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_04.svg"/>
+              <img alt="自動控制功能圖示 - 智慧自動化灌溉與環控" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_04.svg"/>
               <h4 class="text-lg md:text-2xl font-bold md:font-semibold mb-2 text-green-700">自動控制</h4>
             </div>
           </div>
@@ -211,7 +271,7 @@
               <h4 class="text-3xl font-bold text-green-700 mb-2">新一代樂農小主機</h4>
             </div>
             
-            <img alt="小主機們" class="w-full md:w-1/2 rounded-lg mb-1 md:mb-0 md:mr-12" src="https://md.webduino.io/uploads/upload_d9104de43bc3ff1f4e3e238c4959a7ae.png"/>
+            <img alt="樂農小主機系列產品 - 基礎版與PRO版智慧農業控制主機" class="w-full md:w-1/2 rounded-lg mb-1 md:mb-0 md:mr-12" src="https://md.webduino.io/uploads/upload_d9104de43bc3ff1f4e3e238c4959a7ae.png"/>
             
             <div class="md:w-1/2 text-center md:text-left">
               <!-- 桌面版：標題在這裡 -->
@@ -340,7 +400,7 @@
           <h3 class="text-3xl md:text-4xl font-bold text-green-700 text-center mb-6">串接氣象站</h3>
           <p class="text-xl text-gray-600 text-center mb-6 md:mb-12 max-w-2xl mx-auto">即時監測氣象數據，智慧預測環境變化，讓農作物在最適宜的條件下成長。</p>
           <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-5xl mx-auto">
-            <img alt="場域控制儀表板截圖" class="w-full h-auto object-contain rounded-lg" src="/assets/氣象站.png"/>
+            <img alt="樂農氣象站數據儀表板 - 即時監測氣象環境數據" class="w-full h-auto object-contain rounded-lg" src="/assets/氣象站.png"/>
           </div>
         </div>
       </section>
@@ -351,7 +411,7 @@
           <h3 class="text-3xl md:text-4xl font-bold text-green-700 text-center mb-6">場域控制一目瞭然</h3>
           <p class="text-xl text-gray-600 text-center mb-6 md:mb-12 max-w-2xl mx-auto">直觀的儀表板設計，讓您輕鬆掌握所有設備狀態，一鍵操控整個農場。</p>
           <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-5xl mx-auto">
-            <img alt="場域控制儀表板截圖" class="w-full h-auto object-contain rounded-lg" src="/assets/儀表板_25.png"/>
+            <img alt="樂農雲端儀表板 - 場域環境數據即時監控與設備控制畫面" class="w-full h-auto object-contain rounded-lg" src="/assets/儀表板_25.png"/>
           </div>
         </div>
       </section>
@@ -541,6 +601,21 @@
                 <a href="https://www.newsmarket.com.tw/blog/171433/?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBExTWRFcU5CZFlUUGkyYVcxdgEeSE_rv3wyd56rdSmUDYHZXbAtar1EuuNqJv0vFh-56bxe_bVu9c5ZxIk7LO4_aem_g1hn-FyUeSqyZ_Ptnkkwjg" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
               </div>
             </div>
+
+            <!-- ETtoday 新聞報導 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 ease-out hover:shadow-xl hover:scale-105" :class="{ 'translate-y-0 opacity-100': newsVisible, 'translate-y-10 opacity-0': !newsVisible }" :style="{ 'animation-delay': newsVisible ? '1200ms' : '0ms' }">
+              <a href="https://www.ettoday.net/news/20191218/1604630.html" target="_blank" class="block">
+                <div class="relative aspect-video">
+                  <img src="/assets/報導/07.jpg" alt="ETtoday 新聞報導預覽圖" class="w-full h-full object-cover"/>
+                </div>
+              </a>
+              <div class="p-6">
+                <a href="https://www.ettoday.net/news/20191218/1604630.html" target="_blank" class="block">
+                  <h4 class="text-xl font-bold text-green-700 mb-2 hover:text-green-600 cursor-pointer">智慧農業新技術：提升農作效率與品質</h4>
+                </a>
+                <a href="https://www.ettoday.net/news/20191218/1604630.html" target="_blank" class="text-gray-500 hover:text-gray-700 font-semibold">閱讀完整報導 →</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -562,8 +637,8 @@
             <ul class="space-y-1">
               <li><a class="hover:text-green-400" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a></li>
               <li><a class="hover:text-green-400" href="#installations">場域實績</a></li>
-              <li><a class="hover:text-green-400" href="/education">食農教育</a></li>
-              <li><a class="hover:text-green-400" href="/integrator-register">整合商專區</a></li>
+              <li><router-link class="hover:text-green-400" to="/education">食農教育</router-link></li>
+              <li><router-link class="hover:text-green-400" to="/integrator-register">整合商專區</router-link></li>
               
             </ul>
           </div>
@@ -602,10 +677,17 @@ export default {
       dashboardVisible: false, // 控制場域控制一目瞭然區塊動畫顯示
       controlVisible: false, // 控制我們可以控制什麼區塊動畫顯示
       newsVisible: false, // 控制相關報導區塊動畫顯示
+      achievementVisible: false, // 控制場域實績區塊動畫顯示
       currentProductIndex: 0, // 當前顯示的產品索引
       touchStartX: 0, // 觸控開始的X座標
       touchEndX: 0, // 觸控結束的X座標
       isSwiping: false, // 是否正在滑動
+      // 場域實績數字動畫相關
+      animatedArea: 0, // 動畫中的總面積數值
+      animatedGreenhouses: 0, // 動畫中的溫室數量
+      animatedCost: 0, // 動畫中的年省人工成本
+      hasAnimatedAchievement: false, // 是否已執行過動畫
+      achievementAnimationDone: false, // 數字動畫完成後觸發彈跳
       products: [
         {
           image: '/assets/tinyhost.png',
@@ -629,229 +711,58 @@ export default {
     }
   },
   mounted() {
-    // 設置 Intersection Observer 來監聽 hero 區塊
-    this.heroObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.heroVisible = true
-          // 延遲1秒後顯示文字（等手機動畫開始）
-          setTimeout(() => {
-            this.textVisible = true
-          }, 1000)
-        }
-      })
-    }, {
-      threshold: 0.1, // 當 10% 的元素可見時觸發
-      rootMargin: '0px 0px -50px 0px' // 在元素進入視窗前 50px 時觸發
+    // 定義所有需要觀察的區塊
+    const sections = [
+      { ref: 'heroSection', key: 'heroVisible', onVisible: () => {
+        setTimeout(() => { this.textVisible = true }, 1000)
+      }},
+      { ref: 'techSection', key: 'techVisible' },
+      { ref: 'productSection', key: 'productVisible' },
+      { ref: 'productSectionDesktop', key: 'productVisible' },
+      { ref: 'smartSection', key: 'smartVisible' },
+      { ref: 'userSection', key: 'userVisible' },
+      { ref: 'achievementSection', key: 'achievementVisible', onVisible: () => {
+        this.startAchievementAnimation()
+      }},
+      { ref: 'installationsSection', key: 'installationsVisible' },
+      { ref: 'newHostSection', key: 'newHostVisible' },
+      { ref: 'weatherSection', key: 'weatherVisible' },
+      { ref: 'dashboardSection', key: 'dashboardVisible' },
+      { ref: 'controlSection', key: 'controlVisible' },
+      { ref: 'newsSection', key: 'newsVisible' }
+    ]
+
+    // 儲存所有 observers 以便清理
+    this.observers = []
+
+    // 為每個區塊建立並啟動 observer
+    sections.forEach(({ ref, key, onVisible }) => {
+      const observer = this.createObserver(key, onVisible)
+      if (this.$refs[ref]) {
+        observer.observe(this.$refs[ref])
+      }
+      this.observers.push(observer)
     })
-
-    // 設置 Intersection Observer 來監聽技術區塊
-    this.techObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.techVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 設置 Intersection Observer 來監聽產品區塊
-    this.productObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.productVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 設置 Intersection Observer 來監聽智慧管理區塊
-    this.smartObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.smartVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 設置 Intersection Observer 來監聽用戶區塊
-    this.userObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.userVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 新增的 Intersection Observer
-    // 設置 Intersection Observer 來監聽全台安裝場域區塊
-    this.installationsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.installationsVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 設置 Intersection Observer 來監聽新一代樂農小主機區塊
-    this.newHostObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.newHostVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 設置 Intersection Observer 來監聽串接氣象站區塊
-    this.weatherObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.weatherVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 設置 Intersection Observer 來監聽場域控制一目瞭然區塊
-    this.dashboardObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.dashboardVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 設置 Intersection Observer 來監聽我們可以控制什麼區塊
-    this.controlObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.controlVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 設置 Intersection Observer 來監聽相關報導區塊
-    this.newsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.newsVisible = true
-        }
-      })
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    })
-
-    // 開始觀察 hero 區塊
-    if (this.$refs.heroSection) {
-      this.heroObserver.observe(this.$refs.heroSection)
-    }
-
-    // 開始觀察技術區塊
-    if (this.$refs.techSection) {
-      this.techObserver.observe(this.$refs.techSection)
-    }
-
-    // 開始觀察產品區塊
-    if (this.$refs.productSection) {
-      this.productObserver.observe(this.$refs.productSection)
-    }
-    if (this.$refs.productSectionDesktop) {
-      this.productObserver.observe(this.$refs.productSectionDesktop)
-    }
-
-    // 開始觀察智慧管理區塊
-    if (this.$refs.smartSection) {
-      this.smartObserver.observe(this.$refs.smartSection)
-    }
-
-    // 開始觀察用戶區塊
-    if (this.$refs.userSection) {
-      this.userObserver.observe(this.$refs.userSection)
-    }
-
-    // 開始觀察新增的區塊
-    if (this.$refs.installationsSection) {
-      this.installationsObserver.observe(this.$refs.installationsSection)
-    }
-    if (this.$refs.newHostSection) {
-      this.newHostObserver.observe(this.$refs.newHostSection)
-    }
-    if (this.$refs.weatherSection) {
-      this.weatherObserver.observe(this.$refs.weatherSection)
-    }
-    if (this.$refs.dashboardSection) {
-      this.dashboardObserver.observe(this.$refs.dashboardSection)
-    }
-    if (this.$refs.controlSection) {
-      this.controlObserver.observe(this.$refs.controlSection)
-    }
-    if (this.$refs.newsSection) {
-      this.newsObserver.observe(this.$refs.newsSection)
-    }
   },
   beforeDestroy() {
-    // 清理 observers
-    if (this.heroObserver) {
-      this.heroObserver.disconnect()
-    }
-    if (this.techObserver) {
-      this.techObserver.disconnect()
-    }
-    if (this.productObserver) {
-      this.productObserver.disconnect()
-    }
-    if (this.smartObserver) {
-      this.smartObserver.disconnect()
-    }
-    if (this.userObserver) {
-      this.userObserver.disconnect()
-    }
-    // 清理新增的 observers
-    if (this.installationsObserver) {
-      this.installationsObserver.disconnect()
-    }
-    if (this.newHostObserver) {
-      this.newHostObserver.disconnect()
-    }
-    if (this.weatherObserver) {
-      this.weatherObserver.disconnect()
-    }
-    if (this.dashboardObserver) {
-      this.dashboardObserver.disconnect()
-    }
-    if (this.controlObserver) {
-      this.controlObserver.disconnect()
-    }
-    if (this.newsObserver) {
-      this.newsObserver.disconnect()
-    }
+    // 清理所有 observers
+    this.observers.forEach(observer => observer.disconnect())
   },
   methods: {
+    // 建立 Intersection Observer 的共用函式
+    createObserver(visibleKey, onVisible) {
+      return new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this[visibleKey] = true
+            if (onVisible) onVisible()
+          }
+        })
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      })
+    },
     openFarmPopup(farmName) {
       this.currentFarm = farmName
     },
@@ -870,8 +781,86 @@ export default {
           return '農場資訊'
       }
     },
+    getFarmArea() {
+      switch (this.currentFarm) {
+        case 'taocheng':
+          return '4.5'
+        case 'fuchun':
+          return '7'
+        case 'ruyuan':
+          return '1.5'
+        default:
+          return '-'
+      }
+    },
+    getFarmBenefits() {
+      switch (this.currentFarm) {
+        case 'taocheng':
+          return [
+            { value: '152天', label: '省工' },
+            { value: '20%', label: '省水' }
+          ]
+        case 'fuchun':
+          return [
+            { value: '90%', label: '省工' },
+            { value: '60%', label: '省水' },
+            { value: '30%', label: '省肥' }
+          ]
+        case 'ruyuan':
+          return [
+            { value: '10%', label: '增產', isUp: true },
+            { value: '20%', label: '減損' }
+          ]
+        default:
+          return []
+      }
+    },
     toggleMobileMenu() {
       this.showMobileMenu = !this.showMobileMenu
+    },
+    // 開始場域實績數字動畫
+    startAchievementAnimation() {
+      if (this.hasAnimatedAchievement) return
+      this.hasAnimatedAchievement = true
+
+      const duration = 2000 // 動畫持續時間（毫秒）
+
+      // 總面積動畫（18.6）
+      this.animateNumber('animatedArea', 18.6, duration, 1)
+      // 溫室數量動畫（257）
+      this.animateNumber('animatedGreenhouses', 257, duration, 0)
+      // 年省人工成本動畫（320）
+      this.animateNumber('animatedCost', 320, duration, 0)
+
+      // 數字動畫完成後觸發圓框彈跳效果
+      setTimeout(() => {
+        this.achievementAnimationDone = true
+      }, duration)
+    },
+    // 數字動畫核心函數
+    animateNumber(property, targetValue, duration, decimals) {
+      const startTime = performance.now()
+      const startValue = 0
+
+      const animate = (currentTime) => {
+        const elapsed = currentTime - startTime
+        const progress = Math.min(elapsed / duration, 1)
+
+        // 使用 easeOutQuart 緩動函數，讓動畫更自然
+        const easeProgress = 1 - Math.pow(1 - progress, 4)
+
+        const currentValue = startValue + (targetValue - startValue) * easeProgress
+        this[property] = decimals > 0 ? currentValue.toFixed(decimals) : Math.round(currentValue)
+
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        } else {
+          // 確保最終值準確
+          this[property] = decimals > 0 ? targetValue.toFixed(decimals) : targetValue
+        }
+      }
+
+      requestAnimationFrame(animate)
     },
     nextProduct() {
       this.currentProductIndex = (this.currentProductIndex + 1) % this.products.length
@@ -997,5 +986,50 @@ h3 {
 
 .animate-phone {
   animation: phoneAnimation 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 圓框彈跳動畫 */
+@keyframes bounceOnce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-once {
+  animation: bounceOnce 0.6s ease-out forwards;
+}
+
+/* 場域實績區塊的亮黃綠色 */
+.achievement-highlight {
+  color: rgb(233, 243, 106);
+}
+
+.achievement-border {
+  border-color: rgb(233, 243, 106);
+}
+
+/* 視覺隱藏但對螢幕閱讀器和搜尋引擎可見 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style> 

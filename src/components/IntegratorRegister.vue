@@ -23,12 +23,12 @@
     <!-- Header -->
     <header class="bg-green-700/80 text-white fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
       <div class="px-4 lg:px-8 py-3 flex justify-between items-center">
-        <a href="/home" class="text-2xl font-bold">慶奇科技</a>
+        <router-link to="/home" class="text-2xl font-bold">慶奇科技</router-link>
         <nav class="hidden md:flex space-x-6 items-center text-lg">
           <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
-          <a class="hover:text-green-200" href="/home#installations">場域實績</a>
-          <a class="hover:text-green-200" href="/education">食農教育</a>
-          <a class="hover:text-green-200" href="/home#contact">聯絡我們</a>
+          <router-link class="hover:text-green-200" to="/home#installations">場域實績</router-link>
+          <router-link class="hover:text-green-200" to="/education">食農教育</router-link>
+          <router-link class="hover:text-green-200" to="/home#contact">聯絡我們</router-link>
           <a class="hover:text-green-200" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
         </nav>
         <button class="md:hidden text-white" @click="toggleMobileMenu">
@@ -38,9 +38,9 @@
         <div v-if="showMobileMenu" class="absolute top-full left-0 right-0 bg-green-700 md:hidden">
           <nav class="flex flex-col space-y-2 p-4">
             <a class="hover:text-green-200 py-2" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
-            <a class="hover:text-green-200 py-2" href="/home#installations">場域實績</a>
-            <a class="hover:text-green-200 py-2" href="/education">食農教育</a>
-            <a class="hover:text-green-200 py-2" href="/home#contact">聯絡我們</a>
+            <router-link class="hover:text-green-200 py-2" to="/home#installations">場域實績</router-link>
+            <router-link class="hover:text-green-200 py-2" to="/education">食農教育</router-link>
+            <router-link class="hover:text-green-200 py-2" to="/home#contact">聯絡我們</router-link>
             <a class="hover:text-green-200 py-2" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
           </nav>
         </div>
@@ -256,9 +256,9 @@
             <h5 class="text-lg font-semibold text-white mb-3">快速連結</h5>
             <ul class="space-y-1">
               <li><a class="hover:text-green-400" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a></li>
-              <li><a class="hover:text-green-400" href="/home#installations">場域實績</a></li>
-              <li><a class="hover:text-green-400" href="/education">食農教育</a></li>
-              <li><a class="hover:text-green-400" href="/integrator-register">整合商專區</a></li>
+              <li><router-link class="hover:text-green-400" to="/home#installations">場域實績</router-link></li>
+              <li><router-link class="hover:text-green-400" to="/education">食農教育</router-link></li>
+              <li><router-link class="hover:text-green-400" to="/integrator-register">整合商專區</router-link></li>
             </ul>
           </div>
           <div>
