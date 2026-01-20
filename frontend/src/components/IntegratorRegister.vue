@@ -28,7 +28,8 @@
           <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
           <router-link class="hover:text-green-200" to="/home#installations">場域實績</router-link>
           <router-link class="hover:text-green-200" to="/education">食農教育</router-link>
-          <router-link class="hover:text-green-200" to="/home#contact">聯絡我們</router-link>
+          <router-link class="hover:text-green-200" to="/reference-planning">參考規劃</router-link>
+          <a class="hover:text-green-200" href="#contact">聯絡我們</a>
           <a class="hover:text-green-200" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
         </nav>
         <button class="md:hidden text-white" @click="toggleMobileMenu">
@@ -40,7 +41,8 @@
             <a class="hover:text-green-200 py-2" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
             <router-link class="hover:text-green-200 py-2" to="/home#installations">場域實績</router-link>
             <router-link class="hover:text-green-200 py-2" to="/education">食農教育</router-link>
-            <router-link class="hover:text-green-200 py-2" to="/home#contact">聯絡我們</router-link>
+            <router-link class="hover:text-green-200 py-2" to="/reference-planning">參考規劃</router-link>
+            <a class="hover:text-green-200 py-2" href="#contact">聯絡我們</a>
             <a class="hover:text-green-200 py-2" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
           </nav>
         </div>
@@ -242,11 +244,11 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-12" :class="{ 'opacity-50': showPasswordModal }">
+    <footer id="contact" class="bg-gray-800 text-gray-300 py-12" :class="{ 'opacity-50': showPasswordModal }">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h5 class="text-lg font-semibold text-white mb-3" id="contact">聯絡我們</h5>
+            <h5 class="text-lg font-semibold text-white mb-3">聯絡我們</h5>
             <p class="mb-1">慶奇科技股份有限公司</p>
             <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">place</span> 高雄市前鎮區復興四路 2 號 4 樓 A10</p>
             <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">phone</span> <a href="tel:07-3388-511" class="hover:text-green-400">07-3388-511</a></p>
