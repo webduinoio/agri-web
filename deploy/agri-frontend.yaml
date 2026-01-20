@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: agri-kit-frontend
+  namespace: production
+  labels:
+    app: agri-kit-frontend
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: agri-kit-frontend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: production
+  name: agri-kit-frontend
+  labels:
+    app: agri-kit-frontend
+spec:
+  selector:
+    matchLabels:
+      app: agri-kit-frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: agri-kit-frontend
+    spec:
+      containers:
+        - image: nginx:1.25.2-alpine3.18
+          name: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-web-content
+              mountPath: /usr/share/nginx/html
+              subPath: public
+            - name: nginx-config-file
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx/nginx.conf
+          resources:
+            limits:
+              cpu: 200m
+              memory: 256Mi
+      volumes:
+        - name: nginx-web-content
+          hostPath:
+            path: /mnt/a96g-nfs/agri-kit-frontend
+            type: DirectoryOrCreate
+        - name: nginx-config-file
+          hostPath:
+            path: /mnt/a96g-nfs/agri-kit-frontend
+            type: DirectoryOrCreate
