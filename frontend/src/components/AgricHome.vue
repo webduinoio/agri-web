@@ -133,100 +133,98 @@
       </section>
 
       <!-- Pop-up Window -->
-      <div v-if="currentFarm" class="fixed inset-0 flex items-center justify-center z-50 bg-black/50" @click="closePopup">
-        <div class="bg-white bg-opacity-85 backdrop-blur-md border-4 border-white rounded-lg shadow-2xl max-w-xl w-full mx-4 max-h-[90vh] flex flex-col" @click.stop>
-          <!-- 固定標題區域 -->
-          <div class="flex justify-between items-center p-8 pb-4 flex-shrink-0">
-            <h2 class="text-2xl font-bold text-green-700">{{ getFarmTitle() }}</h2>
-            <button @click="closePopup" class="text-gray-500 hover:text-gray-700">
-              <span class="material-icons">close</span>
+      <div v-if="currentFarm" class="fixed inset-0 flex items-center justify-center z-50 bg-black/60" @click="closePopup">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[90vh] flex flex-col overflow-hidden" @click.stop>
+          <!-- 封面照片區域 -->
+          <div class="relative h-32 md:h-40 flex-shrink-0">
+            <img :alt="getFarmName() + '場域封面照'" :src="getFarmCover()" class="w-full h-full object-cover"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <!-- 關閉按鈕 -->
+            <button @click="closePopup" class="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition">
+              <span class="material-icons text-xl">close</span>
             </button>
+            <!-- 標題覆蓋在封面上 -->
+            <div class="absolute bottom-3 left-5 right-5">
+              <h2 class="text-xl md:text-2xl font-bold text-white mb-0.5">{{ getFarmName() }}</h2>
+              <p class="text-white/90 text-xs md:text-sm">{{ getFarmLocation() }}｜{{ getFarmType() }}｜{{ getFarmArea() }} 公頃</p>
+            </div>
           </div>
+
           <!-- 可滾動內容區域 -->
-          <div class="px-8 pb-8 overflow-y-auto flex-1">
-            <!-- 效益亮點區塊 -->
-            <div class="mb-6">
-              <h4 class="text-lg font-bold text-green-700 mb-2">效益亮點</h4>
-              <p class="text-sm text-gray-600 mb-4">面積：{{ getFarmArea() }} 公頃</p>
-              <div class="flex justify-center gap-3">
-                <div v-for="(benefit, index) in getFarmBenefits()" :key="index" class="flex flex-col items-center">
-                  <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-yellow-400 bg-gray-800 flex flex-col items-center justify-center">
-                    <span v-if="benefit.isUp" class="text-xs text-red-400">▲</span>
-                    <span v-else class="text-xs text-green-400">▼</span>
-                    <span class="text-base md:text-lg font-bold achievement-highlight">{{ benefit.value }}</span>
+          <div class="px-6 py-5 overflow-y-auto flex-1">
+            <!-- 效益成果區塊 -->
+            <div class="mb-5">
+              <h4 class="text-base font-bold text-gray-800 mb-4 flex items-center">
+                <span class="w-1 h-5 bg-green-600 rounded-full mr-2"></span>
+                效益成果
+              </h4>
+              <!-- 效益卡片 -->
+              <div class="grid gap-3" :class="getFarmBenefits().length === 2 ? 'grid-cols-2' : 'grid-cols-3'">
+                <div v-for="(benefit, index) in getFarmBenefits()" :key="index" class="bg-gray-50 rounded-xl p-4 text-center">
+                  <div class="flex items-center justify-center mb-1">
+                    <span v-if="benefit.isUp" class="text-red-500 mr-1">▲</span>
+                    <span v-else class="text-green-600 mr-1">▼</span>
+                    <span class="text-2xl md:text-3xl font-bold text-gray-800">{{ benefit.value }}</span>
                   </div>
-                  <p class="mt-2 text-xs md:text-sm text-gray-600">{{ benefit.label }}</p>
+                  <p class="text-sm text-gray-600 font-medium">{{ benefit.label }}</p>
                 </div>
               </div>
             </div>
 
-            <hr class="border-gray-200 mb-6">
+            <!-- 分隔線 -->
+            <hr class="border-gray-200 mb-5">
 
-            <h4 class="text-lg font-bold text-green-700 mb-4">安裝設備</h4>
+            <!-- 安裝設備區塊 -->
+            <div>
+              <h4 class="text-base font-bold text-gray-800 mb-4 flex items-center">
+                <span class="w-1 h-5 bg-green-600 rounded-full mr-2"></span>
+                安裝設備
+              </h4>
 
-            <!-- 桃城蒔菜照片展示 -->
-            <div v-if="currentFarm === 'taocheng'" class="space-y-6">
-              <div class="text-center">
-                <img alt="桃城蒔菜場域照片1" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城1.jpg"/>
-                <p class="text-base text-gray-700 font-medium">馬達控制器</p>
-              </div>
-              
-              <div class="text-center">
-                <img alt="桃城蒔菜場域照片2" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城2.jpg"/>
-                <p class="text-base text-gray-700 font-medium">馬達控制器</p>
-              </div>
-              
-              <div class="text-center">
-                <img alt="桃城蒔菜場域照片3" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城3.jpg"/>
-                <p class="text-base text-gray-700 font-medium">馬達控制器偵測流量計數據保護馬達管路</p>
-              </div>
-              
-              <div class="text-center">
-                <img alt="桃城蒔菜場域照片4" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城4.jpg"/>
-                <p class="text-base text-gray-700 font-medium">灌溉用控制器</p>
-              </div>
-              
-              <div class="text-center">
-                <img alt="桃城蒔菜場域照片5" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城5.jpg"/>
-                <p class="text-base text-gray-700 font-medium">溫室內環境感測器</p>
-              </div>
-              
-              <div class="text-center">
-                <img alt="桃城蒔菜場域照片6" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/桃城6.jpg"/>
-                <p class="text-base text-gray-700 font-medium">溫室外累積光度環境感測器</p>
-              </div>
-            </div>
-
-            <!-- 富春山農場照片展示 -->
-            <div v-if="currentFarm === 'fuchun'" class="space-y-6">
-              <div class="text-center">
-                <img alt="富春山農場場域照片1" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/富春山1.jpg"/>
-                <p class="text-base text-gray-700 font-medium">自動液肥控制系統：加壓馬達、電磁閥、文氏管、三台灌溉用控制器</p>
-              </div>
-              
-              <div class="text-center">
-                <img alt="富春山農場場域照片2" class="w-full h-64 object-contain rounded-lg mb-3" src="/assets/場域照片/富春山2.jpg"/>
-                <p class="text-base text-gray-700 font-medium">電箱與控制器</p>
-              </div>
-              
-              <div class="text-center">
-                <img alt="富春山農場場域照片3" class="w-full h-80 object-contain rounded-lg mb-3" src="/assets/場域照片/富春山3.jpg"/>
-                <p class="text-base text-gray-700 font-medium">環境感測器，偵測網室內環境的溫濕度。</p>
-              </div>
-            </div>
-
-                          <!-- 儒園鮮果照片展示 -->
-              <div v-if="currentFarm === 'ruyuan'" class="space-y-6">
-                <div class="text-center">
-                  <img alt="儒園鮮果場域照片1" class="w-full h-80 object-contain rounded-lg mb-3" src="/assets/場域照片/儒園1.jpg"/>
-                  <p class="text-base text-gray-700 font-medium">灌溉、降溫用控制器</p>
+              <!-- 設備輪播 -->
+              <div class="relative">
+                <!-- 輪播容器 -->
+                <div class="overflow-hidden rounded-xl">
+                  <div class="relative h-52 md:h-64">
+                    <img
+                      :alt="getCurrentEquipment().alt"
+                      :src="getCurrentEquipment().src"
+                      class="w-full h-full object-contain bg-gray-100 rounded-xl"
+                    />
+                  </div>
                 </div>
-                
-                <div class="text-center">
-                  <img alt="儒園鮮果場域照片2" class="w-full h-80 object-contain rounded-lg mb-3" src="/assets/場域照片/儒園2.jpg"/>
-                  <p class="text-base text-gray-700 font-medium">偵測環境溫濕度用環境感測器</p>
+
+                <!-- 左右箭頭 -->
+                <button
+                  v-if="getFarmEquipments().length > 1"
+                  @click="prevEquipment"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-md flex items-center justify-center transition"
+                >
+                  <span class="material-icons text-gray-600 text-lg">chevron_left</span>
+                </button>
+                <button
+                  v-if="getFarmEquipments().length > 1"
+                  @click="nextEquipment"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-md flex items-center justify-center transition"
+                >
+                  <span class="material-icons text-gray-600 text-lg">chevron_right</span>
+                </button>
+
+                <!-- 設備說明 -->
+                <p class="text-center text-sm text-gray-700 mt-3 font-medium">{{ getCurrentEquipment().description }}</p>
+
+                <!-- 指示點 -->
+                <div v-if="getFarmEquipments().length > 1" class="flex justify-center gap-1.5 mt-3">
+                  <button
+                    v-for="(_, index) in getFarmEquipments()"
+                    :key="index"
+                    @click="equipmentIndex = index"
+                    class="w-2 h-2 rounded-full transition-all"
+                    :class="equipmentIndex === index ? 'bg-green-600 w-4' : 'bg-gray-300 hover:bg-gray-400'"
+                  ></button>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
@@ -238,23 +236,23 @@
           <div class="text-center mb-8 md:mb-12">
                           <p class="text-lg md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">樂農智慧農業是<span class="text-green-600 font-semibold">以農民需求為出發點</span>、藉由農民的栽種經驗，以及場域感測器收集的數據建立專屬模型，能透過雲端平台進行自動化控制，<span class="text-green-600 font-semibold">減輕農務負擔與成本</span>。</p>
           </div>
-          <div ref="techSection" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 text-center">
+          <div ref="techSection" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg aspect-square flex flex-col justify-center pt-6 md:pt-6 transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': techVisible, 'translate-y-10 opacity-0': !techVisible }" :style="{ 'animation-delay': techVisible ? '0ms' : '0ms' }">
               <img alt="環境監測功能圖示 - 即時收集溫濕度光度數據" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_01.svg"/>
-              <h4 class="text-lg md:text-2xl font-bold md:font-semibold mb-2 text-green-700">環境監測</h4>
+              <h4 class="text-lg md:text-xl lg:text-2xl font-bold md:font-semibold mb-2 text-green-700">環境監測</h4>
               
             </div>
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg aspect-square flex flex-col justify-center pt-6 md:pt-6 transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': techVisible, 'translate-y-10 opacity-0': !techVisible }" :style="{ 'animation-delay': techVisible ? '200ms' : '0ms' }">
               <img alt="數據分析功能圖示 - 歷史數據分析與趨勢預測" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_02.svg"/>
-              <h4 class="text-lg md:text-2xl font-bold md:font-semibold mb-2 text-green-700">數據分析</h4>
+              <h4 class="text-lg md:text-xl lg:text-2xl font-bold md:font-semibold mb-2 text-green-700">數據分析</h4>
             </div>
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg aspect-square flex flex-col justify-center pt-6 md:pt-6 transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': techVisible, 'translate-y-10 opacity-0': !techVisible }" :style="{ 'animation-delay': techVisible ? '400ms' : '0ms' }">
               <img alt="專屬模型功能圖示 - 作物專屬AI栽培模型" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_03.svg"/>
-              <h4 class="text-lg md:text-2xl font-bold md:font-semibold mb-2 text-green-700">專屬模型</h4>
+              <h4 class="text-lg md:text-xl lg:text-2xl font-bold md:font-semibold mb-2 text-green-700">專屬模型</h4>
             </div>
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg aspect-square flex flex-col justify-center pt-6 md:pt-6 transition-all duration-700 ease-out" :class="{ 'translate-y-0 opacity-100': techVisible, 'translate-y-10 opacity-0': !techVisible }" :style="{ 'animation-delay': techVisible ? '600ms' : '0ms' }">
               <img alt="自動控制功能圖示 - 智慧自動化灌溉與環控" class="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 md:mb-4" src="/assets/SVG/4_04.svg"/>
-              <h4 class="text-lg md:text-2xl font-bold md:font-semibold mb-2 text-green-700">自動控制</h4>
+              <h4 class="text-lg md:text-xl lg:text-2xl font-bold md:font-semibold mb-2 text-green-700">自動控制</h4>
             </div>
           </div>
 
@@ -411,7 +409,7 @@
           <h3 class="text-3xl md:text-4xl font-bold text-green-700 text-center mb-6">場域控制一目瞭然</h3>
           <p class="text-xl text-gray-600 text-center mb-6 md:mb-12 max-w-2xl mx-auto">直觀的儀表板設計，讓您輕鬆掌握所有設備狀態，一鍵操控整個農場。</p>
           <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-5xl mx-auto">
-            <img alt="樂農雲端儀表板 - 場域環境數據即時監控與設備控制畫面" class="w-full h-auto object-contain rounded-lg" src="/assets/儀表板_25.png"/>
+            <img alt="樂農雲端儀表板 - 場域環境數據即時監控與設備控制畫面" class="w-full h-auto object-contain rounded-lg" src="https://md.webduino.io/uploads/upload_a8bb857ed257cbbcaa32f597ad0aaefe.png"/>
           </div>
         </div>
       </section>
@@ -664,6 +662,7 @@ export default {
   data() {
     return {
       currentFarm: null, // 當前選中的農場：'taocheng'、'fuchun'、'ruyuan'
+      equipmentIndex: 0, // 設備輪播當前索引
       showMobileMenu: false, // 手機版選單顯示狀態
       heroVisible: false, // 控制hero區塊動畫顯示
       techVisible: false, // 控制技術區塊動畫顯示
@@ -765,20 +764,62 @@ export default {
     },
     openFarmPopup(farmName) {
       this.currentFarm = farmName
+      this.equipmentIndex = 0 // 重置輪播索引
     },
     closePopup() {
       this.currentFarm = null
+      this.equipmentIndex = 0
     },
-    getFarmTitle() {
+    // 農場名稱
+    getFarmName() {
       switch (this.currentFarm) {
         case 'taocheng':
-          return '桃城蒔菜 - 安裝場域'
+          return '桃城蒔菜'
         case 'fuchun':
-          return '富春山農場 - 安裝場域'
+          return '富春山農場'
         case 'ruyuan':
-          return '儒園鮮果 - 安裝場域'
+          return '儒園鮮果'
         default:
-          return '農場資訊'
+          return '農場'
+      }
+    },
+    // 農場地點
+    getFarmLocation() {
+      switch (this.currentFarm) {
+        case 'taocheng':
+          return '桃園'
+        case 'fuchun':
+          return '臺南'
+        case 'ruyuan':
+          return '屏東'
+        default:
+          return ''
+      }
+    },
+    // 農場類型
+    getFarmType() {
+      switch (this.currentFarm) {
+        case 'taocheng':
+          return '溫網室蔬菜'
+        case 'fuchun':
+          return '網室木瓜'
+        case 'ruyuan':
+          return '露天果園'
+        default:
+          return ''
+      }
+    },
+    // 封面照片
+    getFarmCover() {
+      switch (this.currentFarm) {
+        case 'taocheng':
+          return '/pictures/封面_桃城蒔菜.jpg'
+        case 'fuchun':
+          return '/pictures/封面_富春山.jpg'
+        case 'ruyuan':
+          return '/pictures/封面_儒園鮮果.avif'
+        default:
+          return ''
       }
     },
     getFarmArea() {
@@ -814,6 +855,61 @@ export default {
         default:
           return []
       }
+    },
+    // 效益說明文字
+    getFarmBenefitDescription() {
+      switch (this.currentFarm) {
+        case 'taocheng':
+          return '導入樂農系統後，每年節省 152 天的人工巡田時間，透過自動化灌溉系統節省 20% 用水量。'
+        case 'fuchun':
+          return '透過智慧灌溉與施肥系統，大幅降低人力成本 90%、用水量 60%、肥料使用量 30%。'
+        case 'ruyuan':
+          return '精準環境控制讓蓮霧產量提升 10%，同時減少 20% 的果實損耗率。'
+        default:
+          return ''
+      }
+    },
+    // 設備照片列表
+    getFarmEquipments() {
+      switch (this.currentFarm) {
+        case 'taocheng':
+          return [
+            { src: '/assets/場域照片/桃城1.jpg', alt: '馬達控制器', description: '馬達控制器' },
+            { src: '/assets/場域照片/桃城2.jpg', alt: '馬達控制器', description: '馬達控制器' },
+            { src: '/assets/場域照片/桃城3.jpg', alt: '流量計', description: '馬達控制器偵測流量計數據保護馬達管路' },
+            { src: '/assets/場域照片/桃城4.jpg', alt: '灌溉控制器', description: '灌溉用控制器' },
+            { src: '/assets/場域照片/桃城5.jpg', alt: '環境感測器', description: '溫室內環境感測器' },
+            { src: '/assets/場域照片/桃城6.jpg', alt: '光度感測器', description: '溫室外累積光度環境感測器' }
+          ]
+        case 'fuchun':
+          return [
+            { src: '/assets/場域照片/富春山1.jpg', alt: '液肥控制系統', description: '自動液肥控制系統：加壓馬達、電磁閥、文氏管、三台灌溉用控制器' },
+            { src: '/assets/場域照片/富春山2.jpg', alt: '電箱與控制器', description: '電箱與控制器' },
+            { src: '/assets/場域照片/富春山3.jpg', alt: '環境感測器', description: '環境感測器，偵測網室內環境的溫濕度' }
+          ]
+        case 'ruyuan':
+          return [
+            { src: '/assets/場域照片/儒園1.jpg', alt: '灌溉降溫控制器', description: '灌溉、降溫用控制器' },
+            { src: '/assets/場域照片/儒園2.jpg', alt: '環境感測器', description: '偵測環境溫濕度用環境感測器' }
+          ]
+        default:
+          return []
+      }
+    },
+    // 取得當前設備
+    getCurrentEquipment() {
+      const equipments = this.getFarmEquipments()
+      return equipments[this.equipmentIndex] || { src: '', alt: '', description: '' }
+    },
+    // 上一個設備
+    prevEquipment() {
+      const equipments = this.getFarmEquipments()
+      this.equipmentIndex = (this.equipmentIndex - 1 + equipments.length) % equipments.length
+    },
+    // 下一個設備
+    nextEquipment() {
+      const equipments = this.getFarmEquipments()
+      this.equipmentIndex = (this.equipmentIndex + 1) % equipments.length
     },
     toggleMobileMenu() {
       this.showMobileMenu = !this.showMobileMenu
