@@ -1,33 +1,7 @@
 <template>
   <div class="bg-white">
     <!-- Header -->
-    <header class="bg-green-700/80 text-white fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
-      <div class="px-4 lg:px-8 py-3 flex justify-between items-center">
-        <a href="#" @click.prevent="scrollToTop" class="text-2xl font-bold cursor-pointer">慶奇科技</a>
-        <nav class="hidden md:flex space-x-6 items-center text-lg">
-          <a class="hover:text-green-200" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
-          <a class="hover:text-green-200" href="#installations">場域實績</a>
-          <router-link class="hover:text-green-200" to="/education">食農教育</router-link>
-          <router-link class="hover:text-green-200" to="/reference-planning">參考規劃</router-link>
-          <a class="hover:text-green-200" href="#contact">聯絡我們</a>
-          <a class="hover:text-green-200" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
-        </nav>
-        <button class="md:hidden text-white" @click="toggleMobileMenu">
-          <span class="material-icons">menu</span>
-        </button>
-        <!-- Mobile Menu -->
-        <div v-if="showMobileMenu" class="absolute top-full left-0 right-0 bg-green-700 md:hidden">
-          <nav class="flex flex-col space-y-2 p-4">
-            <a class="hover:text-green-200 py-2" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a>
-            <a class="hover:text-green-200 py-2" href="#installations">場域實績</a>
-            <router-link class="hover:text-green-200 py-2" to="/education">食農教育</router-link>
-            <router-link class="hover:text-green-200 py-2" to="/reference-planning">參考規劃</router-link>
-            <a class="hover:text-green-200 py-2" href="#contact">聯絡我們</a>
-            <a class="hover:text-green-200 py-2" href="https://md.webduino.io/s/22TOZk5pV">使用教學</a>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <NavBar />
 
     <!-- Main -->
     <main>
@@ -657,13 +631,17 @@
 </template>
 
 <script>
+import NavBar from './common/NavBar.vue'
+
 export default {
   name: 'AgricHome',
+  components: {
+    NavBar
+  },
   data() {
     return {
       currentFarm: null, // 當前選中的農場：'taocheng'、'fuchun'、'ruyuan'
       equipmentIndex: 0, // 設備輪播當前索引
-      showMobileMenu: false, // 手機版選單顯示狀態
       heroVisible: false, // 控制hero區塊動畫顯示
       techVisible: false, // 控制技術區塊動畫顯示
       textVisible: false, // 控制文字動畫顯示
@@ -910,12 +888,6 @@ export default {
     nextEquipment() {
       const equipments = this.getFarmEquipments()
       this.equipmentIndex = (this.equipmentIndex + 1) % equipments.length
-    },
-    toggleMobileMenu() {
-      this.showMobileMenu = !this.showMobileMenu
-    },
-    scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
     },
     // 開始場域實績數字動畫
     startAchievementAnimation() {
