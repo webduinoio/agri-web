@@ -47,7 +47,7 @@
           <!-- 卡片 4: 校園農場 -->
           <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer" @click="openPopup('greenhouse-cooling')">
             <div class="h-56 overflow-hidden">
-              <img src="/assets/場域規劃/情境/溫室環控降溫_情境.png" alt="環控降溫" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"/>
+              <img src="/assets/場域規劃/情境/溫室環控降溫_情境.jpg" alt="環控降溫" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"/>
             </div>
             <div class="p-8">
               <h3 class="text-xl font-bold text-green-700 mb-3">溫室環控｜降溫</h3>
@@ -69,7 +69,7 @@
           <!-- 卡片 6: 葉菜類栽培 -->
           <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer" @click="openPopup('shade-light')">
             <div class="h-56 overflow-hidden">
-              <img src="/assets/場域規劃/情境/遮陰網及補光燈_情境.png" alt="葉菜類栽培規劃" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"/>
+              <img src="/assets/場域規劃/情境/遮陰網及補光燈_情境.jpg" alt="葉菜類栽培規劃" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"/>
             </div>
             <div class="p-8">
               <h3 class="text-xl font-bold text-green-700 mb-3">遮陰網及補光燈</h3>
@@ -80,7 +80,7 @@
           <!-- 卡片 7: 水耕栽培 -->
           <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer" @click="openPopup('fan-cooling')">
             <div class="h-56 overflow-hidden">
-              <img src="/assets/場域規劃/情境/風扇水牆自動降溫_情境.png" alt="風扇水牆自動降溫規劃" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"/>
+              <img src="/assets/場域規劃/情境/風扇水牆自動降溫_情境.jpg" alt="風扇水牆自動降溫規劃" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"/>
             </div>
             <div class="p-8">
               <h3 class="text-xl font-bold text-green-700 mb-3">風扇水牆自動降溫</h3>
@@ -120,10 +120,10 @@
             <img v-if="popupTitle === '溫室環控｜定時灌溉'" src="/assets/場域規劃/情境/溫室環控定時灌溉_情境.jpg" alt="溫室規劃示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
             <img v-if="popupTitle === '溫室環控｜光積值灌溉'" src="/assets/場域規劃/情境/溫室環控光積值灌溉_情境.jpg" alt="網室規劃示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
             <img v-if="popupTitle === '溫室環控｜注肥'" src="/assets/場域規劃/情境/溫室環控注肥_情境.jpg" alt="農場規劃示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
-            <img v-if="popupTitle === '溫室環控｜降溫'" src="/assets/場域規劃/情境/溫室環控降溫_情境.png" alt="環控降溫示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
+            <img v-if="popupTitle === '溫室環控｜降溫'" src="/assets/場域規劃/情境/溫室環控降溫_情境.jpg" alt="環控降溫示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
             <img v-if="popupTitle === '盆花土壤濕度計灌溉'" src="/assets/場域規劃/情境/盆花土壤濕度計灌溉_情境.jpg" alt="盆花土壤濕度計灌溉示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
-            <img v-if="popupTitle === '遮陰網及補光燈'" src="/assets/場域規劃/情境/遮陰網及補光燈_情境.png" alt="遮陰網及補光燈示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
-            <img v-if="popupTitle === '風扇水牆自動降溫'" src="/assets/場域規劃/情境/風扇水牆自動降溫_情境.png" alt="風扇水牆自動降溫示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
+            <img v-if="popupTitle === '遮陰網及補光燈'" src="/assets/場域規劃/情境/遮陰網及補光燈_情境.jpg" alt="遮陰網及補光燈示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
+            <img v-if="popupTitle === '風扇水牆自動降溫'" src="/assets/場域規劃/情境/風扇水牆自動降溫_情境.jpg" alt="風扇水牆自動降溫示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
             <img v-if="popupTitle === 'Google 試算表控制及記錄'" src="/assets/場域規劃/情境/Google試算表控制及記錄_情境.jpg" alt="智慧監控中心規劃示意圖" class="w-full h-48 object-cover rounded-lg shadow-md"/>
           </div>
           <!-- 定時灌溉內容 -->

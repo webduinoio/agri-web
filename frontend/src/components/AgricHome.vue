@@ -63,30 +63,30 @@
         <div class="container mx-auto px-4 relative z-10">
           <h3 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">場域實績</h3>
           <p class="text-base md:text-lg text-white text-center mb-10">樂農系統累積客戶場域總計</p>
-          <div class="flex justify-center items-center gap-8 md:gap-16 lg:gap-20">
+          <div class="flex justify-center items-center gap-3 md:gap-16 lg:gap-20">
             <!-- 總面積 -->
             <div class="flex flex-col items-center">
-              <div class="w-28 h-28 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full border-[12px] achievement-border bg-gray-900/80 flex flex-col items-center justify-center transition-transform duration-300" :class="{ 'animate-bounce-once': achievementAnimationDone }">
-                <span class="text-3xl md:text-5xl lg:text-6xl font-bold achievement-highlight">{{ animatedArea }}</span>
-                <span class="text-sm md:text-lg text-white">公頃</span>
+              <div class="w-24 h-24 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full border-[8px] md:border-[12px] achievement-border bg-gray-900/80 flex flex-col items-center justify-center transition-transform duration-300" :class="{ 'animate-bounce-once': achievementAnimationDone }">
+                <span class="text-2xl md:text-5xl lg:text-6xl font-bold achievement-highlight">{{ animatedArea }}</span>
+                <span class="text-xs md:text-lg text-white">公頃</span>
               </div>
-              <p class="mt-3 text-sm md:text-lg text-white">總面積</p>
+              <p class="mt-2 md:mt-3 text-xs md:text-lg text-white">總面積</p>
             </div>
             <!-- 溫室數量 -->
             <div class="flex flex-col items-center">
-              <div class="w-28 h-28 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full border-[12px] achievement-border bg-gray-900/80 flex flex-col items-center justify-center transition-transform duration-300" :class="{ 'animate-bounce-once': achievementAnimationDone }">
-                <span class="text-3xl md:text-5xl lg:text-6xl font-bold achievement-highlight">{{ animatedGreenhouses }}</span>
-                <span class="text-sm md:text-lg text-white">間</span>
+              <div class="w-24 h-24 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full border-[8px] md:border-[12px] achievement-border bg-gray-900/80 flex flex-col items-center justify-center transition-transform duration-300" :class="{ 'animate-bounce-once': achievementAnimationDone }">
+                <span class="text-2xl md:text-5xl lg:text-6xl font-bold achievement-highlight">{{ animatedGreenhouses }}</span>
+                <span class="text-xs md:text-lg text-white">間</span>
               </div>
-              <p class="mt-3 text-sm md:text-lg text-white">溫室數量</p>
+              <p class="mt-2 md:mt-3 text-xs md:text-lg text-white">溫室數量</p>
             </div>
             <!-- 年省人工成本 -->
             <div class="flex flex-col items-center">
-              <div class="w-28 h-28 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full border-[12px] achievement-border bg-gray-900/80 flex flex-col items-center justify-center transition-transform duration-300" :class="{ 'animate-bounce-once': achievementAnimationDone }">
-                <span class="text-3xl md:text-5xl lg:text-6xl font-bold achievement-highlight">{{ animatedCost }}</span>
-                <span class="text-sm md:text-lg text-white">萬</span>
+              <div class="w-24 h-24 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full border-[8px] md:border-[12px] achievement-border bg-gray-900/80 flex flex-col items-center justify-center transition-transform duration-300" :class="{ 'animate-bounce-once': achievementAnimationDone }">
+                <span class="text-2xl md:text-5xl lg:text-6xl font-bold achievement-highlight">{{ animatedCost }}</span>
+                <span class="text-xs md:text-lg text-white">萬</span>
               </div>
-              <p class="mt-3 text-sm md:text-lg text-white">年省人工成本</p>
+              <p class="mt-2 md:mt-3 text-xs md:text-lg text-white">年省人工成本</p>
             </div>
           </div>
         </div>
