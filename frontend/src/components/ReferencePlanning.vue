@@ -268,7 +268,7 @@
               <h3 class="text-3xl font-bold text-green-700 mb-4 text-center">桃改場專家積木</h3>
               <div class="bg-gray-200 p-6 rounded-lg">
                 <div class="text-center mb-6">
-                  <img src="/assets/場域規劃/積木/00.png" alt="桃改場專家積木" class="w-full max-w-lg mx-auto shadow-sm cursor-pointer hover:opacity-80 transition-opacity" @error="handleImageError" @click="openImageModal('/assets/場域規劃/積木/積木01.png', '桃改場專家積木')"/>
+                  <img src="/assets/場域規劃/積木/光積值.png" alt="桃改場專家積木" class="w-full max-w-lg mx-auto shadow-sm cursor-pointer hover:opacity-80 transition-opacity" @error="handleImageError" @click="openImageModal('/assets/場域規劃/積木/光積值.png', '桃改場專家積木')"/>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div class="bg-white p-4 rounded-md shadow-sm">
@@ -351,7 +351,7 @@
               <h3 class="text-3xl font-bold text-green-700 mb-4 text-center">桃改場專家積木</h3>
               <div class="bg-gray-200 p-6 rounded-lg">
                 <div class="text-center mb-6">
-                  <div class="w-full max-w-lg mx-auto bg-white rounded-lg shadow-sm h-64"></div>
+                  <img src="/assets/場域規劃/積木/注肥.png" alt="桃改場專家積木" class="w-full max-w-lg mx-auto shadow-sm cursor-pointer hover:opacity-80 transition-opacity" @error="handleImageError" @click="openImageModal('/assets/場域規劃/積木/注肥.png', '桃改場專家積木')"/>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div class="bg-white p-4 rounded-md shadow-sm">
@@ -783,32 +783,7 @@
     </div>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-800 text-gray-300 py-12">
-      <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-          <div>
-            <h5 class="text-lg font-semibold text-white mb-3">聯絡我們</h5>
-            <p class="mb-1">慶奇科技股份有限公司</p>
-            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">place</span> 高雄市前鎮區復興四路 2 號 4 樓 A10</p>
-            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">phone</span> <a href="tel:07-3388-511" class="hover:text-green-400">07-3388-511</a></p>
-            <p class="mb-1"><span class="material-icons text-sm inline-block align-middle mr-1">email</span> <a href="#" @click.prevent="copyEmail" class="hover:text-green-400 cursor-pointer">service@webduino.io</a></p>
-          </div>
-          <div>
-            <h5 class="text-lg font-semibold text-white mb-3">快速連結</h5>
-            <ul class="space-y-1">
-              <li><a class="hover:text-green-400" href="https://docs.google.com/presentation/d/1cAhRIjyeO9gIdUx1NNDx5akyijlQkPgEJWQmGHGgLdk/edit?slide=id.g2c779aded82_1_0#slide=id.g2c779aded82_1_0">產品介紹</a></li>
-              <li><router-link class="hover:text-green-400" to="/home#installations">場域實績</router-link></li>
-              <li><router-link class="hover:text-green-400" to="/education">食農教育</router-link></li>
-              <li><router-link class="hover:text-green-400" to="/integrator-register">整合商專區</router-link></li>
-            </ul>
-          </div>
-        </div>
-        <div class="border-t border-gray-700 pt-8 text-center text-sm">
-          <p>© 2025 慶奇科技股份有限公司 版權所有</p>
-          <p>本網站內容均受著作權法保護，未經授權不得轉載。</p>
-        </div>
-      </div>
-    </footer>
+    <Footer />
 
     <!-- 圖片放大模態框 -->
     <div v-if="showImageModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75" @click="closeImageModal">
@@ -824,11 +799,13 @@
 
 <script>
 import NavBar from './common/NavBar.vue'
+import Footer from './common/Footer.vue'
 
 export default {
   name: 'ReferencePlanning',
   components: {
-    NavBar
+    NavBar,
+    Footer
   },
   data() {
     return {
@@ -892,38 +869,6 @@ export default {
       this.showImageModal = false
       this.modalImageSrc = ''
       this.modalImageAlt = ''
-    },
-    // 複製信箱到剪貼簿
-    copyEmail() {
-      const email = 'service@webduino.io'
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(email).then(() => {
-          alert('信箱已複製到剪貼簿！')
-        }).catch(err => {
-          console.error('複製失敗:', err)
-          this.fallbackCopyEmail(email)
-        })
-      } else {
-        this.fallbackCopyEmail(email)
-      }
-    },
-    // 備用的複製方法
-    fallbackCopyEmail(text) {
-      const textArea = document.createElement('textarea')
-      textArea.value = text
-      textArea.style.position = 'fixed'
-      textArea.style.left = '-999999px'
-      textArea.style.top = '-999999px'
-      document.body.appendChild(textArea)
-      textArea.focus()
-      textArea.select()
-      try {
-        document.execCommand('copy')
-        alert('信箱已複製到剪貼簿！')
-      } catch (err) {
-        console.error('複製失敗:', err)
-      }
-      document.body.removeChild(textArea)
     }
   }
 }
