@@ -4,11 +4,11 @@
     <div v-if="showPasswordModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" @click="closePasswordModal">
       <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4" @click.stop>
         <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">整合商認證</h2>
-        <p class="text-gray-600 mb-4 text-center">請輸入整合商認證碼 123456</p>
+        <p class="text-gray-600 mb-4 text-center">請輸入整合商驗證碼</p>
         <input 
           v-model="passwordInput" 
           type="password" 
-          placeholder="請輸入認證碼"
+          placeholder="請輸入驗證碼"
           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 mb-4"
           @keyup.enter="checkPassword"
         />
@@ -243,7 +243,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">產品規格</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">四路 / 八路繼電器</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/四八路規格.jpg" alt="四八路繼電器規格" class="mx-auto"/>
           </div>
@@ -340,7 +340,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">土壤水份電導率溫度三合一傳感器規格表</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">土壤三合一感測器</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/土壤規格.jpg" alt="土壤三合一感測器" class="mx-auto"/>
           </div>
@@ -437,7 +437,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">百葉箱溫溼光度三合一</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">百葉箱溫溼光度三合一</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/百葉箱規格.jpg" alt="百葉箱規格" class="mx-auto"/>
           </div>
@@ -554,7 +554,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">水流量計（6分） 規格表</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">水流量計（6分）</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/流量計規格.jpg" alt="流量計規格" class="mx-auto"/>
           </div>
@@ -615,7 +615,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">樂農小主機</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">樂農小主機</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/小主機規格.jpg" alt="樂農小主機規格" class="mx-auto"/>
           </div>
@@ -712,7 +712,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">樂農小主機 PRO</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">樂農小主機 PRO</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/小主機 pro 規格.jpg" alt="樂農小主機 PRO 規格" class="mx-auto"/>
           </div>
@@ -785,7 +785,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">無線轉接器</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">無線轉接器</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/無線轉接器規格.jpg" alt="無線轉接器規格" class="mx-auto"/>
           </div>
@@ -862,7 +862,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">紅外線測溫儀</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">紅外線測溫儀</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/紅外線測溫儀規格.jpg" alt="紅外線測溫儀規格" class="mx-auto"/>
           </div>
@@ -919,7 +919,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">風速風向參數</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">風速風向感測器</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/風速計規格.jpg" alt="風速計規格" class="mx-auto"/>
           </div>
@@ -979,7 +979,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">水質酸鹼度 + 溫度</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">水質酸鹼度感測器</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/水質酸鹼度 + 溫度規格.png" alt="水質酸鹼度 + 溫度規格" class="mx-auto w-1/3"/>
           </div>
@@ -1052,7 +1052,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">水濁度偵測</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">水濁度感測器</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/水濁度偵測1規格.png" alt="水濁度偵測規格" class="mx-auto w-1/3"/>
           </div>
@@ -1125,7 +1125,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">水濁度偵測</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">水濁度感測器</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/水濁度偵測2規格.png" alt="水濁度偵測規格" class="mx-auto w-1/3"/>
           </div>
@@ -1202,7 +1202,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">光學雨量感測器</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">光學雨量感測器</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/規格圖片/光學雨量計規格.jpg" alt="光學雨量計規格" class="mx-auto w-1/3"/>
           </div>
@@ -1283,7 +1283,7 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">Wi-Fi 四路控制器</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center pr-8">Wi-Fi 四路控制器</h2>
           <div class="mb-4 md:mb-6 text-center">
             <img src="/assets/設備/四路控制器.png" alt="Wi-Fi 四路控制器" class="mx-auto w-48 h-48 object-contain"/>
           </div>
@@ -1365,13 +1365,20 @@ export default {
     }
   },
   mounted() {
-    // 檢查是否已經認證過 (暫時隱藏記憶功能)
-    // const isAuth = sessionStorage.getItem('integratorAuth')
-    // if (isAuth === 'true') {
-    //   this.isAuthenticated = true
-    //   this.showPasswordModal = false
-    // }
-    
+    // 檢查是否已經認證過 (24小時內有效)
+    const authTime = localStorage.getItem('integratorAuthTime')
+    if (authTime) {
+      const now = Date.now()
+      const hoursPassed = (now - parseInt(authTime)) / (1000 * 60 * 60)
+      if (hoursPassed < 24) {
+        this.isAuthenticated = true
+        this.showPasswordModal = false
+      } else {
+        // 超過24小時，清除記錄
+        localStorage.removeItem('integratorAuthTime')
+      }
+    }
+
     // 確保頁面在頂部並防止背景滾動
     if (this.showPasswordModal) {
       window.scrollTo(0, 0)
@@ -1397,92 +1404,126 @@ export default {
       this.modalImageSrc = ''
       this.modalImageAlt = ''
     },
+    disableBodyScroll() {
+      document.body.style.overflow = 'hidden'
+    },
+    enableBodyScroll() {
+      document.body.style.overflow = ''
+    },
     openSpecModal() {
       this.showSpecModal = true
+      this.disableBodyScroll()
     },
     closeSpecModal() {
       this.showSpecModal = false
+      this.enableBodyScroll()
     },
     openSoilModal() {
       this.showSoilModal = true
+      this.disableBodyScroll()
     },
     closeSoilModal() {
       this.showSoilModal = false
+      this.enableBodyScroll()
     },
     openWeatherModal() {
       this.showWeatherModal = true
+      this.disableBodyScroll()
     },
     closeWeatherModal() {
       this.showWeatherModal = false
+      this.enableBodyScroll()
     },
     openFlowModal() {
       this.showFlowModal = true
+      this.disableBodyScroll()
     },
     closeFlowModal() {
       this.showFlowModal = false
+      this.enableBodyScroll()
     },
     openTinyHostModal() {
       this.showTinyHostModal = true
+      this.disableBodyScroll()
     },
     closeTinyHostModal() {
       this.showTinyHostModal = false
+      this.enableBodyScroll()
     },
     openTinyHostProModal() {
       this.showTinyHostProModal = true
+      this.disableBodyScroll()
     },
     closeTinyHostProModal() {
       this.showTinyHostProModal = false
+      this.enableBodyScroll()
     },
     openWirelessAdapterModal() {
       this.showWirelessAdapterModal = true
+      this.disableBodyScroll()
     },
     closeWirelessAdapterModal() {
       this.showWirelessAdapterModal = false
+      this.enableBodyScroll()
     },
     openInfraredModal() {
       this.showInfraredModal = true
+      this.disableBodyScroll()
     },
     closeInfraredModal() {
       this.showInfraredModal = false
+      this.enableBodyScroll()
     },
     openWindModal() {
       this.showWindModal = true
+      this.disableBodyScroll()
     },
     closeWindModal() {
       this.showWindModal = false
+      this.enableBodyScroll()
     },
     openWaterQualityModal() {
       this.showWaterQualityModal = true
+      this.disableBodyScroll()
     },
     closeWaterQualityModal() {
       this.showWaterQualityModal = false
+      this.enableBodyScroll()
     },
     openTurbidity1Modal() {
       this.showTurbidity1Modal = true
+      this.disableBodyScroll()
     },
     closeTurbidity1Modal() {
       this.showTurbidity1Modal = false
+      this.enableBodyScroll()
     },
     openTurbidity2Modal() {
       this.showTurbidity2Modal = true
+      this.disableBodyScroll()
     },
     closeTurbidity2Modal() {
       this.showTurbidity2Modal = false
+      this.enableBodyScroll()
     },
     openRainGaugeModal() {
       this.showRainGaugeModal = true
+      this.disableBodyScroll()
     },
     closeRainGaugeModal() {
       this.showRainGaugeModal = false
+      this.enableBodyScroll()
     },
     openWiFiControllerModal() {
       this.showWiFiControllerModal = true
+      this.disableBodyScroll()
     },
     closeWiFiControllerModal() {
       this.showWiFiControllerModal = false
+      this.enableBodyScroll()
     },
     checkPassword() {
-      if (this.passwordInput === '123456') {
+      if (this.passwordInput === '24979962') {
         this.isAuthenticated = true
         this.showPasswordModal = false
         this.passwordError = ''
@@ -1490,10 +1531,10 @@ export default {
         document.body.style.overflow = ''
         document.body.style.position = ''
         document.body.style.width = ''
-        // 記住認證狀態 (暫時隱藏記憶功能)
-        // sessionStorage.setItem('integratorAuth', 'true')
+        // 記住認證狀態 (24小時內有效)
+        localStorage.setItem('integratorAuthTime', Date.now().toString())
       } else {
-        this.passwordError = '認證碼錯誤，請重新輸入'
+        this.passwordError = '驗證碼錯誤，請重新輸入'
         this.passwordInput = ''
       }
     },
