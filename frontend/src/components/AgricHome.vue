@@ -591,6 +591,211 @@
           </div>
         </div>
       </section>
+
+      <!-- 雲端方案說明 -->
+      <section class="py-12 md:py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h3 class="text-3xl md:text-4xl font-bold text-green-700 text-center mb-8 md:mb-12">雲端方案說明</h3>
+
+          <!-- 價格表格 - 桌面版 -->
+          <div class="hidden md:block max-w-4xl mx-auto mb-8">
+            <div class="overflow-hidden rounded-lg border border-gray-200 shadow-lg">
+              <table class="w-full">
+                <thead>
+                  <tr>
+                    <th class="bg-gray-100 py-4 px-4 text-left text-gray-700 font-semibold border-b border-gray-200 w-1/4"></th>
+                    <th class="bg-amber-500 py-4 px-4 text-center text-white font-bold text-lg w-1/4">一年方案</th>
+                    <th class="py-4 px-4 text-center text-white font-bold text-lg w-1/4" style="background-color: #5384d4;">二年方案</th>
+                    <th class="py-4 px-4 text-center text-white font-bold text-lg w-1/4" style="background-color: rgb(164, 115, 212);">三年方案</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-4 px-4 text-gray-700 font-medium bg-gray-50">費用（依帳號）</td>
+                    <td class="py-4 px-4 text-center"><span class="text-2xl font-bold text-amber-600">$1,500</span><span class="text-gray-500">/年</span></td>
+                    <td class="py-4 px-4 text-center"><span class="text-2xl font-bold" style="color: #5384d4;">$2,700</span><span class="text-gray-500">/2年</span></td>
+                    <td class="py-4 px-4 text-center"><span class="text-2xl font-bold" style="color: rgb(164, 115, 212);">$3,600</span><span class="text-gray-500">/3年</span></td>
+                  </tr>
+                  <tr class="border-b border-gray-200 bg-white">
+                    <td class="py-4 px-4 text-gray-700 font-medium bg-gray-50">智慧節點</td>
+                    <td class="py-4 px-4 text-center text-amber-600 font-semibold">無上限</td>
+                    <td class="py-4 px-4 text-center font-semibold" style="color: #5384d4;">無上限</td>
+                    <td class="py-4 px-4 text-center font-semibold" style="color: rgb(164, 115, 212);">無上限</td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-4 px-4 text-gray-700 font-medium bg-gray-50">手機巡田</td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2 border-amber-500"></span></td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2" style="border-color: #5384d4;"></span></td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2" style="border-color: rgb(164, 115, 212);"></span></td>
+                  </tr>
+                  <tr class="border-b border-gray-200 bg-white">
+                    <td class="py-4 px-4 text-gray-700 font-medium bg-gray-50">遠端巡田</td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2 border-amber-500"></span></td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2" style="border-color: #5384d4;"></span></td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2" style="border-color: rgb(164, 115, 212);"></span></td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-4 px-4 text-gray-700 font-medium bg-gray-50">定時啟動</td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2 border-amber-500"></span></td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2" style="border-color: #5384d4;"></span></td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2" style="border-color: rgb(164, 115, 212);"></span></td>
+                  </tr>
+                  <tr class="border-b border-gray-200 bg-white">
+                    <td class="py-4 px-4 text-gray-700 font-medium bg-gray-50">自動灌溉</td>
+                    <td class="py-4 px-4 text-center text-amber-600 font-medium text-sm">最多三個即時任務</td>
+                    <td class="py-4 px-4 text-center font-medium text-sm" style="color: #5384d4;">最多三個即時任務</td>
+                    <td class="py-4 px-4 text-center font-medium text-sm" style="color: rgb(164, 115, 212);">最多三個即時任務</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-4 text-gray-700 font-medium bg-gray-50">Line 通知</td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2 border-amber-500"></span></td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2" style="border-color: #5384d4;"></span></td>
+                    <td class="py-4 px-4 text-center"><span class="inline-block w-6 h-6 rounded-full border-2" style="border-color: rgb(164, 115, 212);"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 價格表格 - 手機版（卡片式） -->
+          <div class="md:hidden space-y-4 mb-8">
+            <!-- 一年方案 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-amber-500">
+              <div class="bg-amber-500 py-3 px-4">
+                <h4 class="text-white font-bold text-lg text-center">一年方案</h4>
+              </div>
+              <div class="p-4">
+                <div class="text-center mb-4">
+                  <span class="text-3xl font-bold text-amber-600">$1,500</span>
+                  <span class="text-gray-500">/年</span>
+                </div>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">智慧節點</span>
+                    <span class="text-amber-600 font-semibold">無上限</span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">手機巡田</span>
+                    <span class="w-5 h-5 rounded-full border-2 border-amber-500"></span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">遠端巡田</span>
+                    <span class="w-5 h-5 rounded-full border-2 border-amber-500"></span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">定時啟動</span>
+                    <span class="w-5 h-5 rounded-full border-2 border-amber-500"></span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">自動灌溉</span>
+                    <span class="text-amber-600 font-medium text-xs">最多三個即時任務</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="text-gray-600">Line 通知</span>
+                    <span class="w-5 h-5 rounded-full border-2 border-amber-500"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 二年方案 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4" style="border-color: #5384d4;">
+              <div class="py-3 px-4" style="background-color: #5384d4;">
+                <h4 class="text-white font-bold text-lg text-center">二年方案</h4>
+              </div>
+              <div class="p-4">
+                <div class="text-center mb-4">
+                  <span class="text-3xl font-bold" style="color: #5384d4;">$2,700</span>
+                  <span class="text-gray-500">/2年</span>
+                </div>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">智慧節點</span>
+                    <span class="font-semibold" style="color: #5384d4;">無上限</span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">手機巡田</span>
+                    <span class="w-5 h-5 rounded-full border-2" style="border-color: #5384d4;"></span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">遠端巡田</span>
+                    <span class="w-5 h-5 rounded-full border-2" style="border-color: #5384d4;"></span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">定時啟動</span>
+                    <span class="w-5 h-5 rounded-full border-2" style="border-color: #5384d4;"></span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">自動灌溉</span>
+                    <span class="font-medium text-xs" style="color: #5384d4;">最多三個即時任務</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="text-gray-600">Line 通知</span>
+                    <span class="w-5 h-5 rounded-full border-2" style="border-color: #5384d4;"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 三年方案 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4" style="border-color: rgb(164, 115, 212);">
+              <div class="py-3 px-4" style="background-color: rgb(164, 115, 212);">
+                <h4 class="text-white font-bold text-lg text-center">三年方案</h4>
+              </div>
+              <div class="p-4">
+                <div class="text-center mb-4">
+                  <span class="text-3xl font-bold" style="color: rgb(164, 115, 212);">$3,600</span>
+                  <span class="text-gray-500">/3年</span>
+                </div>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">智慧節點</span>
+                    <span class="font-semibold" style="color: rgb(164, 115, 212);">無上限</span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">手機巡田</span>
+                    <span class="w-5 h-5 rounded-full border-2" style="border-color: rgb(164, 115, 212);"></span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">遠端巡田</span>
+                    <span class="w-5 h-5 rounded-full border-2" style="border-color: rgb(164, 115, 212);"></span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">定時啟動</span>
+                    <span class="w-5 h-5 rounded-full border-2" style="border-color: rgb(164, 115, 212);"></span>
+                  </li>
+                  <li class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-gray-600">自動灌溉</span>
+                    <span class="font-medium text-xs" style="color: rgb(164, 115, 212);">最多三個即時任務</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="text-gray-600">Line 通知</span>
+                    <span class="w-5 h-5 rounded-full border-2" style="border-color: rgb(164, 115, 212);"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 註解說明 -->
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-lg p-6 shadow border border-gray-200">
+              <div class="space-y-2 text-sm text-gray-600 mb-4">
+                <p>註 1：每一方案含最多三個即時任務，如需增加即時任務，每一任務加收 $1,200/年，到期日以該帳戶雲端方案截止日期為主。</p>
+                <p>註 2：系統啟用日，自您的第一個控制器設備綁定帳號<span class="underline font-medium text-gray-700">並啟動即時任務日</span>起算。</p>
+                <p>註 3：3 年方案以上，往後每年費用皆以 $1,200/年計費。</p>
+              </div>
+              <hr class="my-4 border-gray-200">
+              <ul class="space-y-1.5 text-sm text-gray-500">
+                <li>・以上價格皆不含現場安裝服務及即時任務積木設定。</li>
+                <li>・以上硬體本公司出廠皆會進行上線測試，保固期間，除原廠判定瑕疵外，售出概不退換。</li>
+                <li>・產品若經判定為原廠瑕疵，由本公司負責郵寄更換良品乙台，惟現場安裝拆卸及連帶衍生費用，概由用戶端自行處理。</li>
+                <li>・此促銷方案，除雲端服務問題洽本公司諮詢，場域現場硬體安裝、使用問題，用戶端需自行處理（可詢問安裝廠商或洽該輔導場域之改良場農業專家）。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->

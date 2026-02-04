@@ -193,23 +193,25 @@
         <h2 class="section-title bg-lime-600">場域報價參考</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <h3 class="case-study-title text-2xl text-center mb-8">場域作物：花卉</h3>
+            <h3 class="case-study-title text-2xl text-center mb-8">場域作物：種苗</h3>
             <div class="case-study-card">
-              <p class="case-study-item text-xl pl-4">場域大小：50 坪</p>
-              <p class="case-study-item text-xl pl-4">栽種環境：溫網室</p>
+              <!-- 種苗照片 -->
+              <img src="/assets/種苗.avif" alt="種苗場域" class="w-full h-48 object-cover rounded-lg mb-4" />
+              <p class="case-study-item text-xl pl-4">栽種環境：露天</p>
               <p class="case-study-item text-xl pl-4">灌溉方式：噴灌</p>
               <p class="case-study-item text-xl pl-4">需求點：環境變因控制水量與灑水時間</p>
-              <button class="mt-4 btn btn-primary w-full bg-lime-500 hover:bg-lime-600">參考報價</button>
+              <button class="mt-4 btn btn-primary w-full bg-lime-500 hover:bg-lime-600" @click="openImageModal('/assets/種苗報價.png', '種苗場域參考報價')">參考報價</button>
             </div>
           </div>
           <div>
-            <h3 class="case-study-title text-2xl text-center mb-8">場域作物：有機水稻</h3>
+            <h3 class="case-study-title text-2xl text-center mb-8">場域作物：葉菜</h3>
             <div class="case-study-card">
-              <p class="case-study-item text-xl pl-4">場域大小：5 分</p>
-              <p class="case-study-item text-xl pl-4">栽種環境：露天</p>
-              <p class="case-study-item text-xl pl-4">灌溉方式：淹灌</p>
-              <p class="case-study-item text-xl pl-4">需求點：控制水量/生態觀察</p>
-              <button class="mt-4 btn btn-primary w-full bg-lime-500 hover:bg-lime-600">參考報價</button>
+              <!-- 葉菜照片 -->
+              <img src="/assets/葉菜.png" alt="葉菜場域" class="w-full h-48 object-cover rounded-lg mb-4" />
+              <p class="case-study-item text-xl pl-4">栽種環境：溫網室</p>
+              <p class="case-study-item text-xl pl-4">灌溉方式：滴灌</p>
+              <p class="case-study-item text-xl pl-4">需求點：控制水量/生態觀察/校園食農教育</p>
+              <button class="mt-4 btn btn-primary w-full bg-lime-500 hover:bg-lime-600" @click="openImageModal('/assets/葉菜報價.png', '葉菜場域參考報價')">參考報價</button>
             </div>
           </div>
         </div>
