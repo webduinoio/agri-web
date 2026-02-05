@@ -612,9 +612,9 @@
                 <tbody>
                   <tr class="border-b border-gray-200">
                     <td class="py-4 px-4 text-gray-700 font-medium bg-gray-50">費用（依帳號）</td>
-                    <td class="py-4 px-4 text-center"><span class="text-2xl font-bold text-amber-600">$1,500</span><span class="text-gray-500">/年</span></td>
-                    <td class="py-4 px-4 text-center"><span class="text-2xl font-bold" style="color: #5384d4;">$2,700</span><span class="text-gray-500">/2年</span></td>
-                    <td class="py-4 px-4 text-center"><span class="text-2xl font-bold" style="color: rgb(164, 115, 212);">$3,600</span><span class="text-gray-500">/3年</span></td>
+                    <td class="py-4 px-4 text-center"><span class="text-2xl font-bold text-amber-600">1,500 元</span><span class="text-gray-500">/年</span></td>
+                    <td class="py-4 px-4 text-center"><span class="text-2xl font-bold" style="color: #5384d4;">2,700 元</span><span class="text-gray-500">/2年</span></td>
+                    <td class="py-4 px-4 text-center"><span class="text-2xl font-bold" style="color: rgb(164, 115, 212);">3,600 元</span><span class="text-gray-500">/3年</span></td>
                   </tr>
                   <tr class="border-b border-gray-200 bg-white">
                     <td class="py-4 px-4 text-gray-700 font-medium bg-gray-50">智慧節點</td>
@@ -666,7 +666,7 @@
               </div>
               <div class="p-4">
                 <div class="text-center mb-4">
-                  <span class="text-3xl font-bold text-amber-600">$1,500</span>
+                  <span class="text-3xl font-bold text-amber-600">1,500 元</span>
                   <span class="text-gray-500">/年</span>
                 </div>
                 <ul class="space-y-2 text-sm">
@@ -705,7 +705,7 @@
               </div>
               <div class="p-4">
                 <div class="text-center mb-4">
-                  <span class="text-3xl font-bold" style="color: #5384d4;">$2,700</span>
+                  <span class="text-3xl font-bold" style="color: #5384d4;">2,700 元</span>
                   <span class="text-gray-500">/2年</span>
                 </div>
                 <ul class="space-y-2 text-sm">
@@ -744,7 +744,7 @@
               </div>
               <div class="p-4">
                 <div class="text-center mb-4">
-                  <span class="text-3xl font-bold" style="color: rgb(164, 115, 212);">$3,600</span>
+                  <span class="text-3xl font-bold" style="color: rgb(164, 115, 212);">3,600 元</span>
                   <span class="text-gray-500">/3年</span>
                 </div>
                 <ul class="space-y-2 text-sm">
@@ -781,9 +781,9 @@
           <div class="max-w-4xl mx-auto">
             <div class="bg-white rounded-lg p-6 shadow border border-gray-200">
               <div class="space-y-2 text-sm text-gray-600 mb-4">
-                <p>註 1：每一方案含最多三個即時任務，如需增加即時任務，每一任務加收 $1,200/年，到期日以該帳戶雲端方案截止日期為主。</p>
+                <p>註 1：每一方案含最多三個即時任務，如需增加即時任務，每一任務加收 1,200 元/年，到期日以該帳戶雲端方案截止日期為主。</p>
                 <p>註 2：系統啟用日，自您的第一個控制器設備綁定帳號<span class="underline font-medium text-gray-700">並啟動即時任務日</span>起算。</p>
-                <p>註 3：3 年方案以上，往後每年費用皆以 $1,200/年計費。</p>
+                <p>註 3：3 年方案以上，往後每年費用皆以 1,200 元/年計費。</p>
               </div>
               <hr class="my-4 border-gray-200">
               <ul class="space-y-1.5 text-sm text-gray-500">

@@ -11,8 +11,7 @@
         <span><span class="material-icons text-sm inline-block align-middle mr-1">email</span><a href="#" @click.prevent="copyEmail" class="hover:text-green-400 cursor-pointer">service@webduino.io</a></span>
       </div>
       <div class="border-t border-gray-700 pt-6 text-center text-sm">
-        <p>© 2025 慶奇科技股份有限公司 版權所有</p>
-        <p>本網站內容均受著作權法保護，未經授權不得轉載。</p>
+        <p>Copyright 2026 | All Rights Reserved. Powered by Webduino</p>
       </div>
     </div>
   </footer>

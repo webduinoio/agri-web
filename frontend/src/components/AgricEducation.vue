@@ -12,7 +12,9 @@
         <p class="text-center text-gray-500 text-sm mb-8">圖片來源：農業部｜食農教育知能手冊</p>
         <img src="/assets/全民食農.png" alt="全民食農教育" class="w-full max-w-4xl mx-auto rounded-lg mb-2"/>
         <p class="text-center text-gray-500 text-sm mb-4 lg:mt-4">圖片來源：農業部｜食農教育知能手冊</p>
-        <button class="btn-secondary block mx-auto mb-12 px-10 text-xl md:text-2xl lg:text-2xl font-bold md:font-medium">食農教育補助資訊</button>
+        <div class="text-center">
+          <a href="https://fae.moa.gov.tw/" target="_blank" rel="noopener noreferrer" class="btn-secondary inline-flex items-center justify-center gap-1 mb-12 px-10 text-xl md:text-2xl lg:text-2xl font-bold md:font-medium">食農教育補助資訊<span class="material-icons text-base">open_in_new</span></a>
+        </div>
       </div>
 
       <img src="/assets/食農樂農.png" alt="食農教育 x 樂農智慧農業" class="w-full h-auto object-contain mb-12"/>
@@ -240,9 +242,11 @@
           </div>
         </div>
         
-        <button class="btn-primary block mx-auto px-10 mb-12 text-xl" style="font-weight: 700 !important;">
-          <span class="md:font-medium">立即洽詢食農方案</span>
-        </button>
+        <div class="flex items-center justify-center gap-2 mb-12 animate-bounce-slow">
+          <span class="material-symbols-outlined text-primary-green text-3xl">stat_minus_2</span>
+          <span class="text-xl md:text-2xl font-bold text-primary-green">立即洽詢食農方案</span>
+          <span class="material-symbols-outlined text-primary-green text-3xl">stat_minus_2</span>
+        </div>
       </div>
     </main>
 
@@ -465,5 +469,22 @@ html {
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.text-primary-green {
+  color: #94AD49;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
 }
 </style> 
