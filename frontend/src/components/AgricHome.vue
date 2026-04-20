@@ -103,11 +103,186 @@
               <img alt="富春山農場標記" class="absolute bottom-[11%] left-[49.5%] md:bottom-[14%] md:left-[49.5%] lg:bottom-[18%] lg:left-[49.5%] transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 cursor-pointer hover:scale-110 transition-transform duration-300" src="/assets/SVG/富春山農場.svg" @click="openFarmPopup('fuchun')"/>
               <img alt="儒園鮮果標記" class="absolute bottom-[3%] left-[53%] md:bottom-[6.5%] md:left-[53%] lg:bottom-[10%] lg:left-[53%] transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 cursor-pointer hover:scale-110 transition-transform duration-300" src="/assets/SVG/儒園鮮果.svg" @click="openFarmPopup('ruyuan')"/>
             </div>
+          <!-- 觀看更多場域按鈕 -->
+          <div class="mt-8 text-center">
+            <button @click="showFarmList = true" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+              <span class="material-icons text-xl">explore</span>
+              觀看更多場域
+            </button>
+          </div>
         </div>
       </section>
 
+      <!-- 場域列表模態框 -->
+      <div v-if="showFarmList" class="fixed inset-0 flex items-center justify-center bg-black/60" style="z-index: 9998;" @click="showFarmList = false">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl mx-4 max-h-[85vh] flex flex-col overflow-hidden" @click.stop>
+          <!-- 標題列 -->
+          <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 flex-shrink-0">
+            <div>
+              <h3 class="text-2xl font-bold text-green-700">場域列表</h3>
+              <p class="text-sm text-gray-500 mt-1">點擊卡片查看場域詳情</p>
+            </div>
+            <button @click="showFarmList = false" class="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
+              <span class="material-icons text-gray-500 text-xl">close</span>
+            </button>
+          </div>
+          <!-- 可滾動卡片區域 -->
+          <div class="p-6 overflow-y-auto flex-1">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <!-- 桃城蒔菜 -->
+              <div class="bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden group" @click="openFarmPopup('taocheng')">
+                <div class="relative h-40 overflow-hidden">
+                  <img src="/pictures/封面_桃城蒔菜.jpg" alt="桃城蒔菜" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                  <div class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">溫網室蔬菜</div>
+                </div>
+                <div class="p-4">
+                  <h4 class="text-lg font-bold text-gray-800 mb-1">桃城蒔菜</h4>
+                  <div class="flex items-center text-gray-500 text-xs mb-2">
+                    <span class="material-icons text-sm mr-1">location_on</span>
+                    <span>桃園</span>
+                    <span class="mx-1">·</span>
+                    <span>4.5 公頃</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flex items-center text-xs">
+                      <span class="text-green-600 mr-0.5">▼</span>
+                      <span class="font-semibold text-gray-700">省工 152天</span>
+                    </div>
+                    <div class="flex items-center text-xs">
+                      <span class="text-green-600 mr-0.5">▼</span>
+                      <span class="font-semibold text-gray-700">省水 20%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 富春山農場 -->
+              <div class="bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden group" @click="openFarmPopup('fuchun')">
+                <div class="relative h-40 overflow-hidden">
+                  <img src="/pictures/封面_富春山.jpg" alt="富春山農場" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                  <div class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">網室木瓜</div>
+                </div>
+                <div class="p-4">
+                  <h4 class="text-lg font-bold text-gray-800 mb-1">富春山農場</h4>
+                  <div class="flex items-center text-gray-500 text-xs mb-2">
+                    <span class="material-icons text-sm mr-1">location_on</span>
+                    <span>臺南</span>
+                    <span class="mx-1">·</span>
+                    <span>7 公頃</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flex items-center text-xs">
+                      <span class="text-green-600 mr-0.5">▼</span>
+                      <span class="font-semibold text-gray-700">省工 90%</span>
+                    </div>
+                    <div class="flex items-center text-xs">
+                      <span class="text-green-600 mr-0.5">▼</span>
+                      <span class="font-semibold text-gray-700">省水 60%</span>
+                    </div>
+                    <div class="flex items-center text-xs">
+                      <span class="text-green-600 mr-0.5">▼</span>
+                      <span class="font-semibold text-gray-700">省肥 30%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 儒園鮮果 -->
+              <div class="bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden group" @click="openFarmPopup('ruyuan')">
+                <div class="relative h-40 overflow-hidden">
+                  <img src="/pictures/封面_儒園鮮果.avif" alt="儒園鮮果" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                  <div class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">露天果園</div>
+                </div>
+                <div class="p-4">
+                  <h4 class="text-lg font-bold text-gray-800 mb-1">儒園鮮果</h4>
+                  <div class="flex items-center text-gray-500 text-xs mb-2">
+                    <span class="material-icons text-sm mr-1">location_on</span>
+                    <span>屏東</span>
+                    <span class="mx-1">·</span>
+                    <span>3 公頃</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flex items-center text-xs">
+                      <span class="text-red-500 mr-0.5">▲</span>
+                      <span class="font-semibold text-gray-700">增產 10%</span>
+                    </div>
+                    <div class="flex items-center text-xs">
+                      <span class="text-green-600 mr-0.5">▼</span>
+                      <span class="font-semibold text-gray-700">減損 20%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 崙坪國小 -->
+              <div class="bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden group" @click="openFarmPopup('lunping')">
+                <div class="relative h-40 overflow-hidden">
+                  <img src="/pictures/封面_崙坪國小.jpg" alt="崙坪國小" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                  <div class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">食農教育</div>
+                </div>
+                <div class="p-4">
+                  <h4 class="text-lg font-bold text-gray-800 mb-1">崙坪國小</h4>
+                  <div class="flex items-center text-gray-500 text-xs mb-2">
+                    <span class="material-icons text-sm mr-1">location_on</span>
+                    <span>桃園</span>
+                    <span class="mx-1">·</span>
+                    <span>1 棟溫室</span>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded-full">食農教育</span>
+                    <span class="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded-full">感測土壤</span>
+                    <span class="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded-full">智慧澆灌</span>
+                  </div>
+                </div>
+              </div>
+              <!-- 國外場域 -->
+              <div class="bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden group" @click="openFarmPopup('thailand')">
+                <div class="relative h-40 overflow-hidden">
+                  <img src="/pictures/封面_國外場域.png" alt="國外場域" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                  <div class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">網室菊花苗</div>
+                </div>
+                <div class="p-4">
+                  <h4 class="text-lg font-bold text-gray-800 mb-1">國外場域</h4>
+                  <div class="flex items-center text-gray-500 text-xs mb-2">
+                    <span class="material-icons text-sm mr-1">location_on</span>
+                    <span>泰國</span>
+                    <span class="mx-1">·</span>
+                    <span>50 坪</span>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded-full">網室</span>
+                    <span class="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded-full">菊花苗田</span>
+                  </div>
+                </div>
+              </div>
+              <!-- 桃園八德盆花業者 -->
+              <div class="bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden group" @click="openFarmPopup('bade')">
+                <div class="relative h-40 overflow-hidden">
+                  <img src="/pictures/封面_八德盆花.png" alt="桃園八德盆花業者" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                  <div class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">溫網室盆花</div>
+                </div>
+                <div class="p-4">
+                  <h4 class="text-lg font-bold text-gray-800 mb-1">桃園八德盆花業者</h4>
+                  <div class="flex items-center text-gray-500 text-xs mb-2">
+                    <span class="material-icons text-sm mr-1">location_on</span>
+                    <span>桃園</span>
+                    <span class="mx-1">·</span>
+                    <span>7 分地</span>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded-full">感測土壤</span>
+                    <span class="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded-full">智慧澆灌</span>
+                    <div class="flex items-center text-xs">
+                      <span class="text-green-600 mr-0.5">▼</span>
+                      <span class="font-semibold text-gray-700">省人力 20%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Pop-up Window -->
-      <div v-if="currentFarm" class="fixed inset-0 flex items-center justify-center z-50 bg-black/60" @click="closePopup">
+      <div v-if="currentFarm" class="fixed inset-0 flex items-center justify-center bg-black/60" style="z-index: 9999;" @click="closePopup">
         <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[90vh] flex flex-col overflow-hidden" @click.stop>
           <!-- 封面照片區域 -->
           <div class="relative h-32 md:h-40 flex-shrink-0">
@@ -120,7 +295,7 @@
             <!-- 標題覆蓋在封面上 -->
             <div class="absolute bottom-3 left-5 right-5">
               <h2 class="text-xl md:text-2xl font-bold text-white mb-0.5">{{ getFarmName() }}</h2>
-              <p class="text-white/90 text-xs md:text-sm">{{ getFarmLocation() }}｜{{ getFarmType() }}｜{{ getFarmArea() }} 公頃</p>
+              <p class="text-white/90 text-xs md:text-sm">{{ getFarmLocation() }}｜{{ getFarmType() }}｜{{ getFarmAreaDisplay() }}</p>
             </div>
           </div>
 
@@ -815,7 +990,8 @@ export default {
   },
   data() {
     return {
-      currentFarm: null, // 當前選中的農場：'taocheng'、'fuchun'、'ruyuan'
+      showFarmList: false, // 控制場域列表模態框
+      currentFarm: null, // 當前選中的農場
       equipmentIndex: 0, // 設備輪播當前索引
       heroVisible: false, // 控制hero區塊動畫顯示
       techVisible: false, // 控制技術區塊動畫顯示
@@ -895,6 +1071,7 @@ export default {
       }
       this.observers.push(observer)
     })
+
   },
   beforeDestroy() {
     // 清理所有 observers
@@ -932,6 +1109,12 @@ export default {
           return '富春山農場'
         case 'ruyuan':
           return '儒園鮮果'
+        case 'lunping':
+          return '崙坪國小'
+        case 'bade':
+          return '桃園八德盆花業者'
+        case 'thailand':
+          return '國外場域'
         default:
           return '農場'
       }
@@ -945,6 +1128,12 @@ export default {
           return '臺南'
         case 'ruyuan':
           return '屏東'
+        case 'lunping':
+          return '桃園'
+        case 'bade':
+          return '桃園'
+        case 'thailand':
+          return '泰國'
         default:
           return ''
       }
@@ -958,6 +1147,12 @@ export default {
           return '網室木瓜'
         case 'ruyuan':
           return '露天果園'
+        case 'lunping':
+          return '食農教育'
+        case 'bade':
+          return '溫網室盆花'
+        case 'thailand':
+          return '網室菊花苗'
         default:
           return ''
       }
@@ -971,6 +1166,12 @@ export default {
           return '/pictures/封面_富春山.jpg'
         case 'ruyuan':
           return '/pictures/封面_儒園鮮果.avif'
+        case 'lunping':
+          return '/pictures/封面_崙坪國小.jpg'
+        case 'bade':
+          return '/pictures/封面_八德盆花.png'
+        case 'thailand':
+          return '/pictures/封面_國外場域.png'
         default:
           return ''
       }
@@ -983,9 +1184,22 @@ export default {
           return '7'
         case 'ruyuan':
           return '1.5'
+        case 'lunping':
+          return '1 棟溫室'
+        case 'bade':
+          return '7 分地'
+        case 'thailand':
+          return '50 坪'
         default:
           return '-'
       }
+    },
+    getFarmAreaDisplay() {
+      const area = this.getFarmArea()
+      if (this.currentFarm === 'lunping' || this.currentFarm === 'bade' || this.currentFarm === 'thailand') {
+        return area
+      }
+      return area + ' 公頃'
     },
     getFarmBenefits() {
       switch (this.currentFarm) {
@@ -1005,6 +1219,14 @@ export default {
             { value: '10%', label: '增產', isUp: true },
             { value: '20%', label: '減損' }
           ]
+        case 'lunping':
+          return []
+        case 'bade':
+          return [
+            { value: '20%', label: '省人力' }
+          ]
+        case 'thailand':
+          return []
         default:
           return []
       }
@@ -1018,6 +1240,12 @@ export default {
           return '透過智慧灌溉與施肥系統，大幅降低人力成本 90%、用水量 60%、肥料使用量 30%。'
         case 'ruyuan':
           return '精準環境控制讓蓮霧產量提升 10%，同時減少 20% 的果實損耗率。'
+        case 'lunping':
+          return '結合食農教育，透過土壤感測與智慧澆灌系統，讓學生親身體驗智慧農業。'
+        case 'bade':
+          return '導入土壤感測與智慧澆灌系統，節省 20% 人力成本，提升盆花栽培效率。'
+        case 'thailand':
+          return ''
         default:
           return ''
       }
@@ -1044,6 +1272,26 @@ export default {
           return [
             { src: '/assets/場域照片/儒園1.jpg', alt: '灌溉降溫控制器', description: '灌溉、降溫用控制器' },
             { src: '/assets/場域照片/儒園2.jpg', alt: '環境感測器', description: '偵測環境溫濕度用環境感測器' }
+          ]
+        case 'lunping':
+          return [
+            { src: '/assets/場域照片/崙坪1.jpg', alt: '場域照片', description: '崙坪國小溫室場域' },
+            { src: '/assets/場域照片/崙坪2.jpg', alt: '場域照片', description: '崙坪國小設備安裝' },
+            { src: '/assets/場域照片/崙坪3.jpg', alt: '場域照片', description: '崙坪國小智慧農業教學' }
+          ]
+        case 'bade':
+          return [
+            { src: '/assets/場域照片/八德1.jpg', alt: '場域照片', description: '桃園八德盆花業者場域' },
+            { src: '/assets/場域照片/八德2.jpg', alt: '場域照片', description: '桃園八德盆花業者設備' },
+            { src: '/assets/場域照片/八德3.jpg', alt: '場域照片', description: '桃園八德盆花業者設備' },
+            { src: '/assets/場域照片/八德4.jpg', alt: '場域照片', description: '桃園八德盆花業者設備' }
+          ]
+        case 'thailand':
+          return [
+            { src: '/assets/場域照片/國外場域1.jpg', alt: '場域照片', description: '國外場域' },
+            { src: '/assets/場域照片/國外場域2.jpg', alt: '場域照片', description: '國外場域' },
+            { src: '/assets/場域照片/國外場域3.png', alt: '場域照片', description: '國外場域' },
+            { src: '/assets/場域照片/國外場域4.png', alt: '場域照片', description: '國外場域' }
           ]
         default:
           return []
